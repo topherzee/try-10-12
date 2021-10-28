@@ -1,0 +1,19 @@
+# http://localhost:8080/magnoliaAuthor/.rest/delivery/hands?@ancestor=/Topher
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+workspace: hands
+depth: 3
+limit: 100
+# personalized: true
+bypassWorkspaceAcls: true
+systemProperties:
+
+nodeTypes:
+  # - mgnl:folder
+  - mgnl:content
+
+# references:
+#   - name: cardReference
+#     propertyName: cards
+#     referenceResolver:
+#       class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+#       targetWorkspace: cards

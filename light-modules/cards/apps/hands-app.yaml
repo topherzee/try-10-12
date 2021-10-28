@@ -1,0 +1,12 @@
+!content-type:hand
+name: hands-app
+label: Hands
+
+#Optionally override any of the app configuration supplied by the content type.
+subApps:
+  detail:
+    label: Hand
+    form:
+      properties:
+        description:
+          rows: 8

@@ -1,0 +1,12 @@
+!content-type:card
+name: cards-app
+label: Cards
+
+#Optionally override any of the app configuration supplied by the content type.
+subApps:
+  detail:
+    label: Card Detail
+    form:
+      properties:
+        description:
+          rows: 8
