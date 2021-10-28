@@ -4,8 +4,6 @@ uris:
 allowedOrigins:
   - '*'
 allowedMethods:
-  - GET
-  - OPTIONS
-  - POST
+  - '*'
 allowedHeaders:
   - '*'
