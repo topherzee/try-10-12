@@ -1,6 +1,6 @@
 !content-type:card
 name: cards-app
-label: Cards
+label: Cards 2
 
 #Optionally override any of the app configuration supplied by the content type.
 subApps:
