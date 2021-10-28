@@ -14,8 +14,11 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 
 import update from 'immutability-helper';
 
+const URL_DEV = "http://localhost:8080/magnoliaAuthor/.rest/delivery/tech";
+const URL_PROD = "https://author-k99mlzz0307dw3pr.saas.magnolia-cloud.com/.rest/environments/cards/delivery/tech"
+
 const client = axios.create({
-  baseURL: "http://localhost:8080/magnoliaAuthor/.rest/delivery/tech" 
+  baseURL: URL_PROD 
 });
 //https://www.freecodecamp.org/news/how-to-use-axios-with-react/#how-to-use-the-async-await-syntax-with-axios
 
