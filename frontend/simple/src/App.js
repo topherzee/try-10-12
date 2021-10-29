@@ -15,7 +15,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import update from 'immutability-helper';
 
 const URL_DEV = "http://localhost:8080/magnoliaAuthor/.rest/delivery/tech";
-const URL_PROD = "https://author-k99mlzz0307dw3pr.saas.magnolia-cloud.com/.rest/environments/cards/delivery/tech"
+const URL_PROD = "https://author-td8tdv78a6qyzt6p.saas.magnolia-cloud.com/.rest/environments/cards/delivery/tech"
 
 const client = axios.create({
   baseURL: URL_PROD 
