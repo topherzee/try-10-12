@@ -14,11 +14,12 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 
 import update from 'immutability-helper';
 
-const URL_DEV = "http://localhost:8080/magnoliaAuthor/.rest/delivery/tech";
-const URL_PROD = "https://author-td8tdv78a6qyzt6p.saas.magnolia-cloud.com/.rest/environments/cards/delivery/tech"
+// const URL_DEV = "http://localhost:8080/magnoliaAuthor/.rest/delivery/tech";
+// const URL_PROD = "https://author-td8tdv78a6qyzt6p.saas.magnolia-cloud.com/.rest/environments/cards/delivery/tech"
+const URL=process.env.REACT_APP_MAG_REST;
 
 const client = axios.create({
-  baseURL: URL_PROD 
+  baseURL: URL 
 });
 //https://www.freecodecamp.org/news/how-to-use-axios-with-react/#how-to-use-the-async-await-syntax-with-axios
 
@@ -200,7 +201,7 @@ const saveHand = (name, e) => {
     if (hand.includes(card['@id'])){
       selected = true;
     }
-    return <CardMini {...card} color="blue" key={card.title}  back={renderBack} selected={selected} toggleSelection={toggleSelection} />
+    return <CardMini key={card.name} {...card} color="blue" back={renderBack} selected={selected} toggleSelection={toggleSelection} />
     }
   );
 

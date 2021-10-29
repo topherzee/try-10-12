@@ -11,13 +11,14 @@ function CardMini(props){
 
   return(
 
-    <div onClick={(e)=> props.toggleSelection(props['@id'],props.name ,e)} key={props.name} className={`mini-card ${props.selected ? "mini-card-selected" : ""}`} >
+    
+    <div key={props.name} onClick={(e)=> props.toggleSelection(props['@id'],props.name ,e)}  className={`mini-card ${props.selected ? "mini-card-selected" : ""}`} >
       
-        <div class={" mini-card-category color-" + colMap[props.category] + " cat-" + props.category }>
+        <div className={" mini-card-category color-" + colMap[props.category] + " cat-" + props.category }>
           {props.category}
         </div>
 
-        <h3 class="mini-card-title">{props.name}</h3>
+        <h3 className="mini-card-title">{props.name}</h3>
     </div>
   )
 }
