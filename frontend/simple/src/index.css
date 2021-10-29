@@ -73,6 +73,12 @@ code {
       background-color: #333;
     }
 
+    .hand-name{
+      color:white;
+    }
+    .hand-description{
+      color:#ccc;
+    }
 
     div.save-button{
       height: 5mm;
@@ -83,6 +89,10 @@ code {
       cursor: pointer;
     }
 
+    span.filter-label{
+      color:white;
+      padding-left: 10px;
+    }
     div.category-filter{
       height: 5mm;
       background: white;

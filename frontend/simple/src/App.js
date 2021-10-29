@@ -27,9 +27,22 @@ function App() {
 
   //const [card, setCard] = React.useState(null);
   const [cards, setCards] = React.useState(null);
+  const [hands, setHands] = React.useState(null);
 
   const [hand, setHand] = React.useState([]);
   const [category, setCategory] = React.useState("All");
+  const [newHandName, setNewHandName] = React.useState("");
+
+  async function getHands() {
+    const URL_HANDS_DELIVERY = "http://localhost:8080/magnoliaAuthor/.rest/delivery/hands";
+
+    // const response = await client.get("?@ancestor=/tech/Experience");
+    const response = await axios.get(URL_HANDS_DELIVERY + "?@ancestor=/Topher&orderBy=name");
+    console.log("getHands")
+
+    setHands(response.data.results);
+  }
+  
 
   React.useEffect(() => {
     // async function getCard() {
@@ -50,12 +63,13 @@ function App() {
         return ((ac < bc) ? 1 : ((bc < ac) ? -1 : 0))
       })
 
-
       setCards(response.data.results);
     }
-    
+
+
     //getCard();
     getCards();
+    getHands();
 
     //setHand(['Personalization trait', 'Alert', 'UI language'])
 
@@ -148,39 +162,74 @@ const addNodeProp = (pName, pValue) => {
   }
   return p;
 }
-const putHandToMagnolia = (handName, hand) =>{
+const putHandToMagnolia = async (handName, hand) =>{
   var h = {};
 
   h.name = handName;
   h.type = "hand";
-  h.path = `Topher/${handName}`;
+  h.path = `/Topher/${handName}`;
   h.nodes = null;
 
-  h.properties = {}
+  h.properties = []
   h.properties.push(addNodeProp("name", handName))
   h.properties.push(addNodeProp("description", "sample description"))
-  var hObj = [
+  var hObj = 
     {
-        "name": "hand",
+        "name": "cards",
         "type": "String",
-        "multiple": false,
+        "multiple": true,
         "values": hand
-    }];
+    };
 
     h.properties.push(hObj)
+    console.log("Body... "+ JSON.stringify(h,null,2))
+    
+    try {
 
-    console.log("P "+ JSON.stringify(h,null,2))
-    debugger;
+      const URL_NODES = process.env.REACT_APP_MAG_REST_NODES;
+      const destination = URL_NODES + '/hands/Topher';  
+      console.log("destination: " + destination);
+      const response = await axios.put(destination, h, 
+          {
+              auth: {
+                  username: 'superuser',
+                  password: 'superuser'
+              },
+              headers: {'Content-Type': 'application/json'},
+          }
+      )
+      console.log(response);
+
+      // console.log(response.data.url);
+      // console.log('-');
+      // console.log(response.data.explanation);
+      getHands();
+    } catch (error) {
+      console.log(error.response.body);
+    } finally {
+        console.log("tried to put")
+    }
+  console.log("method end")
+
+
+    // const response = await client.get("?@ancestor=/tech&orderBy=name");
+    //   console.log("getCards")
+    //   var c = response.data.results;
 
   return h;
 }
 
-const saveHand = (name, e) => {
+const saveHand = (e) => {
   //e.preventDefault();
-  console.log('Save Hand. ' + name);
-  putHandToMagnolia(name, hand)
+  console.log('Save Hand. ' + newHandName);
+  putHandToMagnolia(newHandName, hand)
   //TODO
 }
+
+const onNameChange = (event) => {
+  setNewHandName(event.target.value);
+};
+
 
   // const cardElements = cards.map((card) =>
   // <CardMini {...card} color="blue" key={card.title}  back={renderBack} />
@@ -214,6 +263,28 @@ const saveHand = (name, e) => {
     }
   );
 
+  const HandSelector = () => {
+
+    const options = hands.map((hand, index) =>{
+      return (<option name="coolness" value={hand.cards}>{hand.name}</option>)
+    })
+
+    return (
+      <select className="hand-select" onChange={onHandChange}>
+        <option>Choose a hand</option>
+        {options}
+        </select>
+    )
+  };
+
+  
+  const onHandChange = (event) => {
+    //setNewHandName(event.target.value);
+    var handCards = event.target.value.split(',');
+    console.log("onHandChange= " + handCards)
+    setHand(handCards)
+  };
+
   // const handCards = hand.map((cardName, index) =>
   // {
   //   const card = getCardByName(cardName);
@@ -222,6 +293,7 @@ const saveHand = (name, e) => {
   //   return <CardTech {...card} color="blue" key={card.name} angle={angle}  back={renderBack} index={index} moveCard={moveCard} />
   //   }
   // );
+
 
   const style = {
     // width: 300,
@@ -235,25 +307,38 @@ const saveHand = (name, e) => {
 					<Container />
 				</DndProvider> */}
 
-      <DndProvider backend={HTML5Backend}>
-        {handCards}
-      </DndProvider>
-    <br/>
-    <div className="category-filter" category="All" key="All" onClick={(e)=> toggleCategory("All",e)}>All</div>
-    <div className="category-filter" category="UI" key="UI" onClick={(e)=> toggleCategory("UI",e)}>UI</div>
-    <div className="category-filter" category="Integration" key="Integration" onClick={(e)=> toggleCategory("Integration",e)}>Integration</div>
-    <div className="category-filter" category="Experience" key="Experience" onClick={(e)=> toggleCategory("Experience",e)}>Experience</div>
-    <div className="category-filter" category="Backend" key="Backend" onClick={(e)=> toggleCategory("Backend",e)}>Backend</div>
+        <div className="hand-cards">
+        <DndProvider backend={HTML5Backend}>
+          {handCards}
+        </DndProvider>
+        </div>
 
-    <div className="save-button" key="SaveButton" onClick={(e)=> saveHand("some text",e)}>Save Hand</div>
-      
-      <br/>
-      {miniCards}
+        <h2 className="hand-name">{hand.name}</h2>
+        <div className="hand-description">{hand.description}</div>
 
-      {/* <CardTech {...card} color="blue" key={card.title}  back={renderBack} />
-      <CardTech {...card} color="blue" key={card.title}  back={renderBack} /> */}
-      </header>
-    </div>
+        <div>
+          <div className="save-button" key="SaveButton" onClick={(e)=> saveHand("some-text",e)}>Save Hand</div>
+          <input id="hand-name-input" onChange={onNameChange} className="hand-name-input" type="text" placeholder="Name of hand"/>
+          
+          <span className="filter-label">Load Hand:</span>
+          <HandSelector/>
+        </div>
+
+        <span className="filter-label">Show:</span>
+        <div className="category-filter" category="All" key="All" onClick={(e)=> toggleCategory("All",e)}>All</div>
+        <div className="category-filter" category="UI" key="UI" onClick={(e)=> toggleCategory("UI",e)}>UI</div>
+        <div className="category-filter" category="Integration" key="Integration" onClick={(e)=> toggleCategory("Integration",e)}>Integration</div>
+        <div className="category-filter" category="Experience" key="Experience" onClick={(e)=> toggleCategory("Experience",e)}>Experience</div>
+        <div className="category-filter" category="Backend" key="Backend" onClick={(e)=> toggleCategory("Backend",e)}>Backend</div>
+
+
+        <br/>
+        {miniCards}
+
+        {/* <CardTech {...card} color="blue" key={card.title}  back={renderBack} />
+        <CardTech {...card} color="blue" key={card.title}  back={renderBack} /> */}
+        </header>
+      </div>
   );
 }
 
