@@ -6,4 +6,4 @@
 
 [context.production.environment]
 
-  environment = { REACT_APP_MAG_REST = "https://author-td8tdv78a6qyzt6p.saas.magnolia-cloud.com/.rest/environments/cards/delivery/tech" }
+  REACT_APP_MAG_REST = "https://author-td8tdv78a6qyzt6p.saas.magnolia-cloud.com/.rest/environments/cards/delivery/tech"
