@@ -144,8 +144,10 @@ drag(drop(ref));
 		// </div>
 
     <div class="cardgame-card-print-wrapper tech-card" key={props.id} ref={ref} style={{ ...style, opacity }} data-handler-id={handlerId}>
+      
       <div class="cardgame-card tech-card">
-
+      {/* <div className="card-remove" onclick={props.removeCard(props["@id"], props.name, null)}>REMOVE</div> */}
+       
         <div class="cardgame-card-print-bounds ">
           <div class="card-footer">
           </div>
@@ -173,6 +175,7 @@ drag(drop(ref));
         </div>
 
       </div>
+       
     </div>
   )
 }

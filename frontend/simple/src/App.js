@@ -29,7 +29,7 @@ function App() {
   const [cards, setCards] = React.useState(null);
   const [hands, setHands] = React.useState(null);
 
-  const [hand, setHand] = React.useState([]);
+  const [hand, setHand] = React.useState({cards:[]});
   const [category, setCategory] = React.useState("All");
   const [newHandName, setNewHandName] = React.useState("");
 
@@ -96,9 +96,18 @@ function App() {
   const toggleSelection = (cardId, cardName,  e) => {
     //e.preventDefault();
     console.log('You clicked a card. ' + cardName + ' ' + cardId);
-    var localHand = addOrRemove(hand, cardId)
-    //setHand([name])
-    console.log(localHand)
+    //var localHand = deepClone(hand)
+
+
+    var localHand = update(hand, {
+      cards: {$set: addOrRemove(hand.cards, cardId)}
+    });
+
+
+    //localHand.cards = 
+    
+    //console.log(JSON.stringify(localHand, null, 2))
+
     setHand(localHand)
   }
 
@@ -109,19 +118,22 @@ function App() {
   }
 
   const addOrRemove =(arrayInput, value) => {
-    var array = deepClone(arrayInput)
-    var index = array.indexOf(value);
+    //var array = deepClone(arrayInput)
+    var array;
+    var index = arrayInput.indexOf(value);
     if (index === -1) {
-        array.push(value);
+        //array.push(value);
+        array = update(arrayInput, {$push: [value]})
     } else {
-        array.splice(index, 1);
+        //array.splice(index, 1);
+        array = update(arrayInput, {$splice: [[index,1]]})
     }
     return array;
   }
 
-  function deepClone(array) {
-    return JSON.parse(JSON.stringify(array));
-  }
+  // function deepClone(object) {
+  //   return JSON.parse(JSON.stringify(object));
+  // }
 
 
   // const getCardByName = (cardName) => {
@@ -136,19 +148,30 @@ function App() {
     )
     return found;
   }
+
+  const getHandById = (handId) => {
+    const found = hands.find(hand => 
+      hand['@id'] === handId
+    )
+    return found;
+  }
 //https://www.youtube.com/watch?v=X-iSQQgOd1A
 
 
 
 const moveCard = useCallback((dragIndex, hoverIndex) => {
   console.log(`moveCard ${dragIndex} ${hoverIndex}`)
-  const dragCard = hand[dragIndex];
-  setHand(update(hand, {
+  const dragCard = hand.cards[dragIndex];
+  setHand(update(hand, { cards: {
       $splice: [
           [dragIndex, 1],
           [hoverIndex, 0, dragCard],
       ],
-  }));
+  }}));
+}, [hand]);
+
+const removeCard = useCallback((id, name) => {
+  console.log(`removeCard ${id} ${name}`)
 }, [hand]);
 
 const addNodeProp = (pName, pValue) => {
@@ -162,23 +185,26 @@ const addNodeProp = (pName, pValue) => {
   }
   return p;
 }
-const putHandToMagnolia = async (handName, hand) =>{
+
+
+
+const putHandToMagnolia = async (newHandName, hand) =>{
   var h = {};
 
-  h.name = handName;
+  h.name = newHandName;
   h.type = "hand";
-  h.path = `/Topher/${handName}`;
+  h.path = `/Topher/${newHandName}`;
   h.nodes = null;
 
   h.properties = []
-  h.properties.push(addNodeProp("name", handName))
+  h.properties.push(addNodeProp("name", newHandName))
   h.properties.push(addNodeProp("description", "sample description"))
   var hObj = 
     {
         "name": "cards",
         "type": "String",
         "multiple": true,
-        "values": hand
+        "values": hand.cards
     };
 
     h.properties.push(hObj)
@@ -230,6 +256,14 @@ const onNameChange = (event) => {
   setNewHandName(event.target.value);
 };
 
+// const removeCard = (cardId) => {
+//   //setNewHandName(event.target.value);o
+//   console.log("remove: " + cardId)
+//   toggleSelection(cardId, "")
+
+// };
+
+
 
   // const cardElements = cards.map((card) =>
   // <CardMini {...card} color="blue" key={card.title}  back={renderBack} />
@@ -247,26 +281,27 @@ const onNameChange = (event) => {
     }
 
     var selected = false;
-    if (hand.includes(card['@id'])){
+    //console.log(JSON.stringify(hand, null, 2))
+    if (hand.cards?.includes(card['@id'])){
       selected = true;
     }
     return <CardMini key={card.name} {...card} color="blue" back={renderBack} selected={selected} toggleSelection={toggleSelection} />
     }
   );
 
-  const handCards = hand.map((cardId, index) =>
+  const handCards = hand.cards?.map((cardId, index) =>
   {
     const card = getCardById(cardId);
     const a = Math.random() * 6;
     const angle = Math.round(a)-3;
-    return <CardTech {...card} color="blue" key={card.name} angle={angle}  back={renderBack} index={index} moveCard={moveCard} />
+    return <CardTech {...card} color="blue" key={card.name} angle={angle}  back={renderBack} index={index} moveCard={moveCard} removeCard={removeCard}/>
     }
   );
 
   const HandSelector = () => {
 
     const options = hands.map((hand, index) =>{
-      return (<option name="coolness" value={hand.cards}>{hand.name}</option>)
+      return (<option key={hand['@id']} value={hand['@id']}>{hand.name}</option>)
     })
 
     return (
@@ -280,9 +315,10 @@ const onNameChange = (event) => {
   
   const onHandChange = (event) => {
     //setNewHandName(event.target.value);
-    var handCards = event.target.value.split(',');
-    console.log("onHandChange= " + handCards)
-    setHand(handCards)
+    var handId = event.target.value;
+    var localHand = getHandById(handId)
+    console.log("onHandChange= " + handId)
+    setHand(localHand)
   };
 
   // const handCards = hand.map((cardName, index) =>
@@ -313,7 +349,7 @@ const onNameChange = (event) => {
         </DndProvider>
         </div>
 
-        <h2 className="hand-name">{hand.name}</h2>
+        <h1 className="hand-name">{hand.name}</h1>
         <div className="hand-description">{hand.description}</div>
 
         <div>
