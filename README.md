@@ -25,16 +25,19 @@ Status *****************************
 
 CODE THIS NEXT ********************************
 
-Refactor code a bit.
 
-Shrink cards a bit. borders etc.
-DX Cards.
+Styling. Shrink cards a bit. borders etc.
+Mobile Version.
 
+Add DX Cards.
 
+Make a board. (Miro style)
 
 CODE ACCOMPLISHED ******************
 
 2021-10-29
+
+Refactor code a bit.
 
 Got system running on SaaS + Netlify (But cannot save on SaaS, currently.)
 Save the hand to Magnolia Contenttype.
