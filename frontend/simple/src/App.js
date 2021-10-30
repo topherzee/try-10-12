@@ -4,6 +4,8 @@
 import CardTech from './components/CardTech.js';
 import CardMini from './components/CardMini.js';
 
+import {putHandToMagnolia} from './LoadAndSave.js'
+
 import axios from "axios";
 import React from "react";
 
@@ -11,6 +13,7 @@ import { useCallback } from 'react';
 
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
+
 
 import update from 'immutability-helper';
 
@@ -25,30 +28,21 @@ const client = axios.create({
 
 function App() {
 
-  //const [card, setCard] = React.useState(null);
   const [cards, setCards] = React.useState(null);
   const [hands, setHands] = React.useState(null);
-
   const [hand, setHand] = React.useState({cards:[]});
   const [category, setCategory] = React.useState("All");
   const [newHandName, setNewHandName] = React.useState("");
 
   async function getHands() {
     const URL_HANDS_DELIVERY = "http://localhost:8080/magnoliaAuthor/.rest/delivery/hands";
-
-    // const response = await client.get("?@ancestor=/tech/Experience");
     const response = await axios.get(URL_HANDS_DELIVERY + "?@ancestor=/Topher&orderBy=name");
     console.log("getHands")
 
     setHands(response.data.results);
   }
-  
 
   React.useEffect(() => {
-    // async function getCard() {
-    //   const response = await client.get("/tech/Experience/Page%20template");
-    //   setCard(response.data);
-    // }
     async function getCards() {
       // const response = await client.get("?@ancestor=/tech/Experience");
       const response = await client.get("?@ancestor=/tech&orderBy=name");
@@ -66,12 +60,8 @@ function App() {
       setCards(response.data.results);
     }
 
-
-    //getCard();
     getCards();
     getHands();
-
-    //setHand(['Personalization trait', 'Alert', 'UI language'])
 
   }, []);
 
@@ -91,31 +81,15 @@ function App() {
   //   "@nodes": []
   // }
 
-
-
   const toggleSelection = (cardId, cardName,  e) => {
     //e.preventDefault();
     console.log('You clicked a card. ' + cardName + ' ' + cardId);
-    //var localHand = deepClone(hand)
-
-
     var localHand = update(hand, {
       cards: {$set: addOrRemove(hand.cards, cardId)}
     });
-
-
-    //localHand.cards = 
-    
-    //console.log(JSON.stringify(localHand, null, 2))
-
     setHand(localHand)
   }
 
-  const toggleCategory = (name, e) => {
-    //e.preventDefault();
-    console.log('You clicked a Category. ' + name);
-    setCategory(name)
-  }
 
   const addOrRemove =(arrayInput, value) => {
     //var array = deepClone(arrayInput)
@@ -131,17 +105,12 @@ function App() {
     return array;
   }
 
-  // function deepClone(object) {
-  //   return JSON.parse(JSON.stringify(object));
-  // }
+  const toggleCategory = (name, e) => {
+    //e.preventDefault();
+    console.log('You clicked a Category. ' + name);
+    setCategory(name)
+  }
 
-
-  // const getCardByName = (cardName) => {
-  //   const found = cards.find(card => 
-  //     card.name === cardName
-  //   )
-  //   return found;
-  // }
   const getCardById = (cardId) => {
     const found = cards.find(card => 
       card['@id'] === cardId
@@ -157,8 +126,6 @@ function App() {
   }
 //https://www.youtube.com/watch?v=X-iSQQgOd1A
 
-
-
 const moveCard = useCallback((dragIndex, hoverIndex) => {
   console.log(`moveCard ${dragIndex} ${hoverIndex}`)
   const dragCard = hand.cards[dragIndex];
@@ -173,104 +140,24 @@ const moveCard = useCallback((dragIndex, hoverIndex) => {
 const removeCard = useCallback((id, name) => {
   console.log(`removeCard ${id} ${name}`)
 }, [hand]);
-
-const addNodeProp = (pName, pValue) => {
-  var p = {
-    "name": pName,
-    "type": "String",
-    "multiple": false,
-    "values": [
-        pValue
-    ]
-  }
-  return p;
-}
-
-
-
-const putHandToMagnolia = async (newHandName, hand) =>{
-  var h = {};
-
-  h.name = newHandName;
-  h.type = "hand";
-  h.path = `/Topher/${newHandName}`;
-  h.nodes = null;
-
-  h.properties = []
-  h.properties.push(addNodeProp("name", newHandName))
-  h.properties.push(addNodeProp("description", "sample description"))
-  var hObj = 
-    {
-        "name": "cards",
-        "type": "String",
-        "multiple": true,
-        "values": hand.cards
-    };
-
-    h.properties.push(hObj)
-    console.log("Body... "+ JSON.stringify(h,null,2))
-    
-    try {
-
-      const URL_NODES = process.env.REACT_APP_MAG_REST_NODES;
-      const destination = URL_NODES + '/hands/Topher';  
-      console.log("destination: " + destination);
-      const response = await axios.put(destination, h, 
-          {
-              auth: {
-                  username: 'superuser',
-                  password: 'superuser'
-              },
-              headers: {'Content-Type': 'application/json'},
-          }
-      )
-      console.log(response);
-
-      // console.log(response.data.url);
-      // console.log('-');
-      // console.log(response.data.explanation);
-      getHands();
-    } catch (error) {
-      console.log(error.response.body);
-    } finally {
-        console.log("tried to put")
-    }
-  console.log("method end")
-
-
-    // const response = await client.get("?@ancestor=/tech&orderBy=name");
-    //   console.log("getCards")
-    //   var c = response.data.results;
-
-  return h;
-}
+// const removeCard = (cardId) => {
+//   //setNewHandName(event.target.value);o
+//   console.log("remove: " + cardId)
+//   toggleSelection(cardId, "")
+// };
 
 const saveHand = (e) => {
   //e.preventDefault();
   console.log('Save Hand. ' + newHandName);
-  putHandToMagnolia(newHandName, hand)
-  //TODO
+  putHandToMagnolia(newHandName, hand, getHands)
 }
 
 const onNameChange = (event) => {
   setNewHandName(event.target.value);
 };
 
-// const removeCard = (cardId) => {
-//   //setNewHandName(event.target.value);o
-//   console.log("remove: " + cardId)
-//   toggleSelection(cardId, "")
 
-// };
-
-
-
-  // const cardElements = cards.map((card) =>
-  // <CardMini {...card} color="blue" key={card.title}  back={renderBack} />
-// );
-  //if (!card) return "No card!"
-  if (!cards) return "No card!"
-
+if (!cards) return "No card!"
 
   console.log("before miniCards")
 
@@ -298,6 +185,14 @@ const onNameChange = (event) => {
     }
   );
 
+  const onHandChange = (event) => {
+    //setNewHandName(event.target.value);
+    var handId = event.target.value;
+    var localHand = getHandById(handId)
+    console.log("onHandChange= " + handId)
+    setHand(localHand)
+  };
+
   const HandSelector = () => {
 
     const options = hands.map((hand, index) =>{
@@ -312,36 +207,14 @@ const onNameChange = (event) => {
     )
   };
 
-  
-  const onHandChange = (event) => {
-    //setNewHandName(event.target.value);
-    var handId = event.target.value;
-    var localHand = getHandById(handId)
-    console.log("onHandChange= " + handId)
-    setHand(localHand)
-  };
-
-  // const handCards = hand.map((cardName, index) =>
-  // {
-  //   const card = getCardByName(cardName);
-  //   const a = Math.random() * 6;
-  //   const angle = Math.round(a)-3;
-  //   return <CardTech {...card} color="blue" key={card.name} angle={angle}  back={renderBack} index={index} moveCard={moveCard} />
-  //   }
-  // );
-
-
   const style = {
     // width: 300,
-};
+  };
 
   return (
+
     <div className="App">
       <header className="App-header" style={style}>
-        
-      {/* <DndProvider backend={HTML5Backend}>
-					<Container />
-				</DndProvider> */}
 
         <div className="hand-cards">
         <DndProvider backend={HTML5Backend}>
@@ -367,12 +240,9 @@ const onNameChange = (event) => {
         <div className="category-filter" category="Experience" key="Experience" onClick={(e)=> toggleCategory("Experience",e)}>Experience</div>
         <div className="category-filter" category="Backend" key="Backend" onClick={(e)=> toggleCategory("Backend",e)}>Backend</div>
 
-
         <br/>
         {miniCards}
 
-        {/* <CardTech {...card} color="blue" key={card.title}  back={renderBack} />
-        <CardTech {...card} color="blue" key={card.title}  back={renderBack} /> */}
         </header>
       </div>
   );

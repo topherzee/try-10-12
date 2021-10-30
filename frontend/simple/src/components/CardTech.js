@@ -75,7 +75,7 @@ function CardTech(props){
         // When dragging downwards, only move when the cursor is below 50%
         // When dragging upwards, only move when the cursor is above 50%
         //console.log(`drag ${dragIndex} ${hoverIndex}`)
-        console.log(`drag ${hoverMiddleX} ${hoverClientX}`)
+        //console.log(`drag ${hoverMiddleX} ${hoverClientX}`)
 
         // Dragging downwards
         if (dragIndex < hoverIndex && hoverClientX < hoverMiddleX) {

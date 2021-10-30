@@ -25,8 +25,7 @@ Status *****************************
 
 CODE THIS NEXT ********************************
 
-Save the hand to Magnolia Contenttype.
-Each user has a folder. Each folder can store multiple hands.
+Refactor code a bit.
 
 Shrink cards a bit. borders etc.
 DX Cards.
@@ -34,6 +33,13 @@ DX Cards.
 
 
 CODE ACCOMPLISHED ******************
+
+2021-10-29
+
+Got system running on SaaS + Netlify (But cannot save on SaaS, currently.)
+Save the hand to Magnolia Contenttype.
+Each user has a folder. Each folder can store multiple hands.
+
 
 2021-10-26
 
