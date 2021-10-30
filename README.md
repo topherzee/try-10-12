@@ -25,8 +25,6 @@ Status *****************************
 
 CODE THIS NEXT ********************************
 
-
-Styling. Shrink cards a bit. borders etc.
 Mobile Version.
 
 Add DX Cards.
@@ -35,9 +33,15 @@ Make a board. (Miro style)
 
 CODE ACCOMPLISHED ******************
 
-2021-10-29
+2021-10-30
+
+Styling - Styling. Shrink cards a bit. borders etc.
 
 Refactor code a bit.
+
+2021-10-29
+
+
 
 Got system running on SaaS + Netlify (But cannot save on SaaS, currently.)
 Save the hand to Magnolia Contenttype.

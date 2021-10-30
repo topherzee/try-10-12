@@ -207,6 +207,31 @@ if (!cards) return "No card!"
     )
   };
 
+  var scale = 1.0;
+  var cardsStyle = {
+    transform:scale
+  }
+  // This is sort of working.. but it should update all thhe time.
+  // Now it is one step too slow as it calculates it BEFORE the elements are rendered and updated!
+
+
+  // if (document.getElementById("hand-cards")){
+  //   const containerWidth = document.getElementById("hand")?.offsetWidth;
+  //   console.log("conteriner w: " + containerWidth);
+    
+  //   const cardsWidth = document.getElementById("hand-cards")?.scrollWidth;
+  //   console.log("cards w: " + cardsWidth);
+    
+  //   scale = `scale(${containerWidth/cardsWidth})`
+    
+  //   cardsStyle = {
+  //     transform:scale
+  //   }
+  // }
+ 
+
+  // transform:scale(0.8)
+
   const style = {
     // width: 300,
   };
@@ -214,36 +239,41 @@ if (!cards) return "No card!"
   return (
 
     <div className="App">
-      <header className="App-header" style={style}>
+      <div id="hand" className="hand" >
 
-        <div className="hand-cards">
-        <DndProvider backend={HTML5Backend}>
-          {handCards}
-        </DndProvider>
+        <div id="hand-cards" className="hand-cards" style={cardsStyle}>
+        {/* <span id="hand-cards-inner" className="hand-cards-inner"  */}
+          <DndProvider backend={HTML5Backend}>
+            {handCards}
+          </DndProvider>
+          {/* </span> */}
         </div>
 
         <h1 className="hand-name">{hand.name}</h1>
         <div className="hand-description">{hand.description}</div>
-
+      </div>
+    
+      <div style={{marginBottom: "4mm"}}>
         <div>
-          <div className="save-button" key="SaveButton" onClick={(e)=> saveHand("some-text",e)}>Save Hand</div>
-          <input id="hand-name-input" onChange={onNameChange} className="hand-name-input" type="text" placeholder="Name of hand"/>
-          
           <span className="filter-label">Load Hand:</span>
           <HandSelector/>
         </div>
 
-        <span className="filter-label">Show:</span>
-        <div className="category-filter" category="All" key="All" onClick={(e)=> toggleCategory("All",e)}>All</div>
-        <div className="category-filter" category="UI" key="UI" onClick={(e)=> toggleCategory("UI",e)}>UI</div>
-        <div className="category-filter" category="Integration" key="Integration" onClick={(e)=> toggleCategory("Integration",e)}>Integration</div>
-        <div className="category-filter" category="Experience" key="Experience" onClick={(e)=> toggleCategory("Experience",e)}>Experience</div>
-        <div className="category-filter" category="Backend" key="Backend" onClick={(e)=> toggleCategory("Backend",e)}>Backend</div>
+        <div className="save-button" key="SaveButton" onClick={(e)=> saveHand("some-text",e)}>Save Hand</div>
+        <input id="hand-name-input" onChange={onNameChange} className="hand-name-input" type="text" placeholder="Name of hand"/>
+      </div>
 
-        <br/>
-        {miniCards}
+      <span className="filter-label">Show:</span>
+      <div className="category-filter" category="All" key="All" onClick={(e)=> toggleCategory("All",e)}>All</div>
+      <div className="category-filter" category="UI" key="UI" onClick={(e)=> toggleCategory("UI",e)}>UI</div>
+      <div className="category-filter" category="Integration" key="Integration" onClick={(e)=> toggleCategory("Integration",e)}>Integration</div>
+      <div className="category-filter" category="Experience" key="Experience" onClick={(e)=> toggleCategory("Experience",e)}>Experience</div>
+      <div className="category-filter" category="Backend" key="Backend" onClick={(e)=> toggleCategory("Backend",e)}>Backend</div>
 
-        </header>
+      <br/>
+      {miniCards}
+
+       
       </div>
   );
 }

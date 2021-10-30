@@ -5,10 +5,10 @@ import { useDrag, useDrop } from 'react-dnd';
 import { ItemTypes } from './../ItemTypes';
 
 const style = {
-  border: '1px dashed gray',
-  padding: '0.5rem 1rem',
-  marginBottom: '.5rem',
-  backgroundColor: 'white',
+  // border: '1px dashed gray',
+  // padding: '0.5rem 1rem',
+  // marginBottom: '.5rem',
+  
   cursor: 'move',
 };
 
@@ -133,12 +133,15 @@ drag(drop(ref));
   }else{
 
     // console.log("angle:" + props.angle)
-    // const rot = `rotate(${props.angle}deg)`
-    // var css = {
+    
+    var a = -0;
+    // // var a = props.angle
+    // const rot = `rotate(${a}deg)`
+    // var style = {
     //   transform:rot
     // }
 
-    //style={{transform:rotate('2deg')}
+    // style={{transform:rotate('2deg')}
 
   return(
 
@@ -146,9 +149,9 @@ drag(drop(ref));
 		// 	{props.name}
 		// </div>
 
-    <div class="cardgame-card-print-wrapper tech-card" key={props.id} ref={ref} style={{ ...style, opacity }} data-handler-id={handlerId}>
+    // <div class="cardgame-card-print-wrapper tech-card" key={props.id} ref={ref} style={{ ...style, opacity }} data-handler-id={handlerId}>
       
-      <div class="cardgame-card tech-card">
+      <div class="cardgame-card tech-card" key={props.id} ref={ref} style={{ ...style, opacity }} data-handler-id={handlerId}>
       {/* <div className="card-remove" onclick={props.removeCard(props["@id"], props.name, null)}>REMOVE</div> */}
        
         <div class="cardgame-card-print-bounds ">
@@ -162,8 +165,8 @@ drag(drop(ref));
           </div>
         </div>
 
-        <div class={"cardgame-category-bleed color-" + colMap[props.category] + " cat-" + props.category }>
-        </div>
+        {/* <div class={"cardgame-category-bleed color-" + colMap[props.category] + " cat-" + props.category }>
+        </div> */}
 
         <div class="cardgame-card-contents">
           <div class="textual">
@@ -179,7 +182,7 @@ drag(drop(ref));
 
       </div>
        
-    </div>
+    // </div>
   )
 }
 }
