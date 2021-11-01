@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { useRef } from 'react';
-import { useDrag, useDrop } from 'react-dnd';
-import { ItemTypes } from './../ItemTypes';
+import { ItemTypes } from '../ItemTypes';
 
 const style = {
   // border: '1px dashed gray',
@@ -12,7 +11,7 @@ const style = {
   cursor: 'move',
 };
 
-function CardTech(props){
+function CardTechBoard(props){
 
   var index = props.index;
   var id = props.id;
@@ -46,82 +45,7 @@ function CardTech(props){
 
 
 
-
-  const [{ handlerId }, drop] = useDrop({
-    accept: ItemTypes.CARD,
-    collect(monitor) {
-        return {
-            handlerId: monitor.getHandlerId(),
-        };
-    },
-    hover(item, monitor) {
-        if (!ref.current) {
-            return;
-        }
-        const dragIndex = item.index;
-        const hoverIndex = props.index;
-        // Don't replace items with themselves
-        if (dragIndex === hoverIndex) {
-            return;
-        }
-        // Determine rectangle on screen
-        const hoverBoundingRect = ref.current?.getBoundingClientRect();
-        // Get vertical middle
-        const hoverMiddleX = (hoverBoundingRect.right - hoverBoundingRect.left) / 2;
-        // Determine mouse position
-        const clientOffset = monitor.getClientOffset();
-        // Get pixels to the top
-        const hoverClientX = clientOffset.x - hoverBoundingRect.left;
-        // Only perform the move when the mouse has crossed half of the items height
-        // When dragging downwards, only move when the cursor is below 50%
-        // When dragging upwards, only move when the cursor is above 50%
-        //console.log(`drag ${dragIndex} ${hoverIndex}`)
-        //console.log(`drag ${hoverMiddleX} ${hoverClientX}`)
-
-        // Dragging downwards
-        if (dragIndex < hoverIndex && hoverClientX < hoverMiddleX) {
-            return;
-        }
-        // Dragging upwards
-        if (dragIndex > hoverIndex && hoverClientX > hoverMiddleX) {
-            return;
-        }
-        // Time to actually perform the action
-        props.moveCard(dragIndex, hoverIndex);
-        // Note: we're mutating the monitor item here!
-        // Generally it's better to avoid mutations,
-        // but it's good here for the sake of performance
-        // to avoid expensive index searches.
-        item.index = hoverIndex;
-    },
-});
-const [{ isDragging }, drag] = useDrag({
-    type: ItemTypes.CARD,
-    item: () => {
-        return { id, index };
-    },
-    collect: (monitor) => ({
-        isDragging: monitor.isDragging(),
-    }),
-});
-
-
-if (props.isDnD){
-
-
-const opacity = isDragging ? 0 : 1;
-drag(drop(ref));
-
-}
 const opacity = 1;
-
-
-
-
-
-
-
-
 
 
 
@@ -151,13 +75,9 @@ const opacity = 1;
 
   return(
 
-    // <div ref={ref} style={{ ...style, opacity }} data-handler-id={handlerId}>
-		// 	{props.name}
-		// </div>
-
-    // <div class="cardgame-card-print-wrapper tech-card" key={props.id} ref={ref} style={{ ...style, opacity }} data-handler-id={handlerId}>
+    <div class="resizer " key={props.id} ref={ref} style={{ ...style, opacity }} >
       
-      <div class="cardgame-card tech-card" key={props.id} ref={ref} style={{ ...style, opacity }} data-handler-id={handlerId}>
+      <div class="cardgame-card tech-card" >
       {/* <div className="card-remove" onclick={props.removeCard(props["@id"], props.name, null)}>REMOVE</div> */}
        
         <div class="cardgame-card-print-bounds ">
@@ -185,7 +105,7 @@ const opacity = 1;
 
       </div>
        
-    // </div>
+    </div>
   )
 }
 }
@@ -246,4 +166,4 @@ function Coin(props){
 }
 
 
-export default CardTech;
+export default CardTechBoard;

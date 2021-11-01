@@ -30,6 +30,13 @@ Mobile Version.
 Add DX Cards.
 
 Make a board. (Miro style)
+https://github.com/bokuweb/react-rnd
+
+https://github.com/beizhedenglong/reactablejs
+https://interactjs.io/
+https://www.npmjs.com/package/react-draggable
+
+(Interesting: https://github.com/tajo/react-movable)
 
 CODE ACCOMPLISHED ******************
 
