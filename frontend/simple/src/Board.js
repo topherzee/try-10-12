@@ -88,29 +88,53 @@ function Board() {
   //   "@nodes": []
   // }
 
-  const toggleSelection = (cardId, cardName,  e) => {
+  const addCardToHand = (cardId, cardName,  e) => {
     //e.preventDefault();
     console.log('You clicked a card. ' + cardName + ' ' + cardId);
+    
+    const array = update(hand.cards, {$push: [cardId]})
+
     var localHand = update(hand, {
-      cards: {$set: addOrRemove(hand.cards, cardId)}
+      cards: {$set: array}
     });
     setHand(localHand)
   }
 
 
-  const addOrRemove =(arrayInput, value) => {
-    //var array = deepClone(arrayInput)
-    var array;
-    var index = arrayInput.indexOf(value);
-    if (index === -1) {
-        //array.push(value);
-        array = update(arrayInput, {$push: [value]})
-    } else {
-        //array.splice(index, 1);
-        array = update(arrayInput, {$splice: [[index,1]]})
-    }
-    return array;
-  }
+const removeCardFromHand = useCallback((cardId, cardName) => {
+  console.log(`removeCard ${cardId} ${cardName}`)
+
+  // const array = update(hand.cards, {$splice: [cardId]})
+
+  var index = hand.cards.indexOf(cardId);
+  const array = update(hand.cards, {$splice: [[index,1]]})
+
+  var localHand = update(hand, {
+    cards: {$set: array}
+  });
+  setHand(localHand)
+
+}, [hand]);
+// const removeCard = (cardId) => {
+//   //setNewHandName(event.target.value);o
+//   console.log("remove: " + cardId)
+//   toggleSelection(cardId, "")
+// };
+
+
+  // const addOrRemove =(arrayInput, value) => {
+  //   //var array = deepClone(arrayInput)
+  //   var array;
+  //   var index = arrayInput.indexOf(value);
+  //   if (index === -1) {
+  //       //array.push(value);
+  //       array = update(arrayInput, {$push: [value]})
+  //   } else {
+  //       //array.splice(index, 1);
+  //       array = update(arrayInput, {$splice: [[index,1]]})
+  //   }
+  //   return array;
+  // }
 
   const toggleCategory = (name, e) => {
     //e.preventDefault();
@@ -144,14 +168,6 @@ const moveCard = useCallback((dragIndex, hoverIndex) => {
   }}));
 }, [hand]);
 
-const removeCard = useCallback((id, name) => {
-  console.log(`removeCard ${id} ${name}`)
-}, [hand]);
-// const removeCard = (cardId) => {
-//   //setNewHandName(event.target.value);o
-//   console.log("remove: " + cardId)
-//   toggleSelection(cardId, "")
-// };
 
 const saveHand = (e) => {
   //e.preventDefault();
@@ -179,7 +195,7 @@ if (!cards) return "No card!"
     if (hand.cards?.includes(card['@id'])){
       selected = true;
     }
-    return <CardMini key={card.name} {...card} color="blue" back={renderBack} selected={selected} toggleSelection={toggleSelection} />
+    return <CardMini key={card.name} {...card} color="blue" back={renderBack} selected={selected} toggleSelection={addCardToHand} />
     }
   );
 
@@ -189,13 +205,14 @@ if (!cards) return "No card!"
     const a = Math.random() * 6;
     const angle = Math.round(a)-3;
     const left = index * 140;
-    return <Rnd key={card.name} dragHandleClassName={'mini-card-category'}
-    default={{
-      x: left,
-      y: 100,
-    }
-  }><CardMid {...card} key={card.name} index={index} /></Rnd>
 
+    return <Rnd key={cardId} dragHandleClassName={'mini-card-category'} bounds='parent'
+      default={{
+        x: left,
+        y: 20,
+      }
+    }><CardMid {...card} index={index} removeCard={removeCardFromHand}/></Rnd>
+    // return <CardMid {...card} key={card.name} index={index} />
 
     
     }
@@ -254,46 +271,45 @@ if (!cards) return "No card!"
 
   return (
 
-    <div className="App">
+    <div className="App Board">
       
       <h1>Board</h1>
 
       <div id="hand" className="hand" >
-
         <div id="hand-cards" className="hand-cards" style={cardsStyle}>
-       
-          
             {handCards}
-          
-          
         </div>
-
-        <h1 className="hand-name">{hand.name}</h1>
-        <div className="hand-description">{hand.description}</div>
+        <div className="hand-info">
+          <h1 className="hand-name">{hand.name}</h1>
+          <div className="hand-description">{hand.description}</div>
+        </div>
       </div>
     
-      <div style={{marginBottom: "4mm"}}>
-        <div>
-          <span className="filter-label">Load Hand:</span>
-          <HandSelector/>
+      <div className="loadSave">
+        <div style={{marginBottom: "4mm"}}>
+          <div>
+            <span className="filter-label">Load Hand:</span>
+            <HandSelector/>
+          </div>
+
+          <div className="save-button" key="SaveButton" onClick={(e)=> saveHand("some-text",e)}>Save Hand</div>
+          <input id="hand-name-input" onChange={onNameChange} className="hand-name-input" type="text" placeholder="Name of hand"/>
         </div>
-
-        <div className="save-button" key="SaveButton" onClick={(e)=> saveHand("some-text",e)}>Save Hand</div>
-        <input id="hand-name-input" onChange={onNameChange} className="hand-name-input" type="text" placeholder="Name of hand"/>
       </div>
 
-      <span className="filter-label">Show:</span>
-      <div className="category-filter" category="All" key="All" onClick={(e)=> toggleCategory("All",e)}>All</div>
-      <div className="category-filter" category="UI" key="UI" onClick={(e)=> toggleCategory("UI",e)}>UI</div>
-      <div className="category-filter" category="Integration" key="Integration" onClick={(e)=> toggleCategory("Integration",e)}>Integration</div>
-      <div className="category-filter" category="Experience" key="Experience" onClick={(e)=> toggleCategory("Experience",e)}>Experience</div>
-      <div className="category-filter" category="Backend" key="Backend" onClick={(e)=> toggleCategory("Backend",e)}>Backend</div>
-
-      <br/>
-      {miniCards}
-
+      <div className="tools">
+        <span className="filter-label">Tech Deck. Show:</span>
+        <div className="category-filter" category="All" key="All" onClick={(e)=> toggleCategory("All",e)}>All</div>
+        <div className="category-filter" category="UI" key="UI" onClick={(e)=> toggleCategory("UI",e)}>UI</div>
+        <div className="category-filter" category="Integration" key="Integration" onClick={(e)=> toggleCategory("Integration",e)}>Integration</div>
+        <div className="category-filter" category="Experience" key="Experience" onClick={(e)=> toggleCategory("Experience",e)}>Experience</div>
+        <div className="category-filter" category="Backend" key="Backend" onClick={(e)=> toggleCategory("Backend",e)}>Backend</div>
+        <br/>
+        {miniCards}
+      </div>
        
-      </div>
+
+  </div>
   );
 }
 

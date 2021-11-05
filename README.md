@@ -25,6 +25,10 @@ Status *****************************
 
 CODE THIS NEXT ********************************
 
+Layout
+
+Add MULTIPLE cards of the same kind to board by click on tech deck.
+
 Mobile Version.
 
 Add DX Cards.
@@ -42,7 +46,7 @@ CODE ACCOMPLISHED ******************
 
 2021-10-30
 
-Styling - Styling. Shrink cards a bit. borders etc.
+Styling. Shrink cards a bit. borders etc.
 
 Refactor code a bit.
 

@@ -9,6 +9,10 @@ function CardMid(props){
     "Integration":"yellow"
   }
 
+  const test = (id, category, e) =>{
+    console.log("yep: " + id)
+  }
+
   return(
 
     
@@ -22,7 +26,7 @@ function CardMid(props){
           <h3 className="mini-card-title">{props.name}</h3>
 
           <div class="mid-image-wrapper">
-              <img  onClick={console.log('img clic.')} class={(props.screenshot==='x')?"screenshot":""} src={"./images/" + props.image_url} alt=""/>
+              <img  onClick={(e)=> props.removeCard(props['@id'],props.name ,e)} class={(props.screenshot==='x')?"screenshot":""} src={"./images/" + props.image_url} alt=""/>
             </div>
           </div>
     </div>
