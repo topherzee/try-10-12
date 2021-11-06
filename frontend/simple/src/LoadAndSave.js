@@ -20,9 +20,17 @@ export const putHandToMagnolia = async (newHandName, hand, getHands) =>{
     h.path = `/Topher/${newHandName}`;
     h.nodes = null;
   
+    //hand.
     h.properties = []
     h.properties.push(addNodeProp("name", newHandName))
     h.properties.push(addNodeProp("description", "sample description"))
+
+    //Check if cards are arrays.
+    if (Array.isArray(hand.cards[0])){
+      console.log("Need to strip off the keys before saving. Should be easy.")
+      return false
+    }
+    
     var hObj = 
       {
           "name": "cards",

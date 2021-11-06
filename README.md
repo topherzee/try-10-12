@@ -25,9 +25,7 @@ Status *****************************
 
 CODE THIS NEXT ********************************
 
-Layout
-
-Add MULTIPLE cards of the same kind to board by click on tech deck.
+Save a board (with card positions and notes)
 
 Mobile Version.
 
@@ -43,6 +41,13 @@ https://www.npmjs.com/package/react-draggable
 (Interesting: https://github.com/tajo/react-movable)
 
 CODE ACCOMPLISHED ******************
+
+2021-11-05
+
+Board Layout
+Add MULTIPLE cards of the same kind to board by click on tech deck.
+Remove a card from a board.
+Click on a card to see a full sized card.
 
 2021-10-30
 

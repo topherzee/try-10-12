@@ -4,6 +4,7 @@
 // import CardTechBoard from './components/CardTechBoard.js';
 import CardMid from './components/CardMid.js';
 import CardMini from './components/CardMini.js';
+import CardTechRaw from './components/CardTechRaw.js';
 
 import {putHandToMagnolia} from './LoadAndSave.js'
 
@@ -13,10 +14,6 @@ import { Rnd } from "react-rnd";
 // import Draggable from 'react-draggable'; 
 
 import { useCallback } from 'react';
-
-// import { DndProvider } from 'react-dnd'
-// import { HTML5Backend } from 'react-dnd-html5-backend'
-
 
 import update from 'immutability-helper';
 
@@ -36,13 +33,27 @@ function Board() {
   const [hand, setHand] = React.useState({cards:[]});
   const [category, setCategory] = React.useState("All");
   const [newHandName, setNewHandName] = React.useState("");
+  const [cardPreview, setCardPreview] = React.useState(null);
 
   async function getHands() {
     const URL_HANDS_DELIVERY = "http://localhost:8080/magnoliaAuthor/.rest/delivery/hands";
     const response = await axios.get(URL_HANDS_DELIVERY + "?@ancestor=/Topher&orderBy=name");
     console.log("getHands")
 
-    setHands(response.data.results);
+    var hands1 = response.data.results;
+    
+
+    // TODO - add keys to all cards. cardIdAndKey
+    hands1.forEach(hand =>{
+      
+      const newCards = hand.cards.map(card => {
+        const key = Math.floor(10000 + Math.random() * 90000)
+        return [card, key]
+      })
+      hand.cards = newCards;
+    })
+    
+    setHands(hands1);
   }
 
   React.useEffect(() => {
@@ -88,11 +99,14 @@ function Board() {
   //   "@nodes": []
   // }
 
+  //TODO
   const addCardToHand = (cardId, cardName,  e) => {
     //e.preventDefault();
     console.log('You clicked a card. ' + cardName + ' ' + cardId);
     
-    const array = update(hand.cards, {$push: [cardId]})
+    const key = Math.floor(10000 + Math.random() * 90000)
+    const array = update(hand.cards, {$push: [[cardId, key]]})
+
 
     var localHand = update(hand, {
       cards: {$set: array}
@@ -101,12 +115,14 @@ function Board() {
   }
 
 
-const removeCardFromHand = useCallback((cardId, cardName) => {
-  console.log(`removeCard ${cardId} ${cardName}`)
+const removeCardFromHandByKey = useCallback((cardKey, cardName) => {
+  console.log(`removeCardFromHandByKey ${cardKey} ${cardName}`)
 
   // const array = update(hand.cards, {$splice: [cardId]})
-
-  var index = hand.cards.indexOf(cardId);
+  const index = hand.cards.findIndex(card => 
+    card[1] === cardKey
+  )
+  //var index = hand.cards.indexOf(cardId);
   const array = update(hand.cards, {$splice: [[index,1]]})
 
   var localHand = update(hand, {
@@ -115,6 +131,19 @@ const removeCardFromHand = useCallback((cardId, cardName) => {
   setHand(localHand)
 
 }, [hand]);
+
+// const showFullCardOLD = (id, e) => {
+//   //e.preventDefault();
+//   console.log('ShowFullCard ' + id);
+//   setCardPreview(id)
+// }
+
+const showFullCard = useCallback((cardId) => {
+  console.log(`ShowFullCard ${cardId} `)
+  setCardPreview(cardId)
+}, [cardPreview]);
+
+
 // const removeCard = (cardId) => {
 //   //setNewHandName(event.target.value);o
 //   console.log("remove: " + cardId)
@@ -135,6 +164,9 @@ const removeCardFromHand = useCallback((cardId, cardName) => {
   //   }
   //   return array;
   // }
+
+
+
 
   const toggleCategory = (name, e) => {
     //e.preventDefault();
@@ -157,16 +189,16 @@ const removeCardFromHand = useCallback((cardId, cardName) => {
   }
 //https://www.youtube.com/watch?v=X-iSQQgOd1A
 
-const moveCard = useCallback((dragIndex, hoverIndex) => {
-  console.log(`moveCard ${dragIndex} ${hoverIndex}`)
-  const dragCard = hand.cards[dragIndex];
-  setHand(update(hand, { cards: {
-      $splice: [
-          [dragIndex, 1],
-          [hoverIndex, 0, dragCard],
-      ],
-  }}));
-}, [hand]);
+// const moveCard = useCallback((dragIndex, hoverIndex) => {
+//   console.log(`moveCard ${dragIndex} ${hoverIndex}`)
+//   const dragCard = hand.cards[dragIndex];
+//   setHand(update(hand, { cards: {
+//       $splice: [
+//           [dragIndex, 1],
+//           [hoverIndex, 0, dragCard],
+//       ],
+//   }}));
+// }, [hand]);
 
 
 const saveHand = (e) => {
@@ -199,19 +231,19 @@ if (!cards) return "No card!"
     }
   );
 
-  const handCards = hand.cards?.map((cardId, index) =>
+  const handCards = hand.cards?.map((cardIdAndKey, index) =>
   {
-    const card = getCardById(cardId);
+    const card = getCardById(cardIdAndKey[0]);
     const a = Math.random() * 6;
     const angle = Math.round(a)-3;
     const left = index * 140;
 
-    return <Rnd key={cardId} dragHandleClassName={'mini-card-category'} bounds='parent'
+    return <Rnd key={cardIdAndKey[1]} dragHandleClassName={'mini-card-category'} bounds='parent' enableResizing={{}}
       default={{
         x: left,
         y: 20,
       }
-    }><CardMid {...card} index={index} removeCard={removeCardFromHand}/></Rnd>
+    }><CardMid {...card} cardKey={cardIdAndKey[1]} index={index} removeCard={removeCardFromHandByKey} contentsClick={showFullCard}/></Rnd>
     // return <CardMid {...card} key={card.name} index={index} />
 
     
@@ -269,14 +301,20 @@ if (!cards) return "No card!"
     // width: 300,
   };
 
+  const clearCardPreview = () => {
+    setCardPreview(null)
+  }
+
   return (
 
     <div className="App Board">
       
       <h1>Board</h1>
-
+      
       <div id="hand" className="hand" >
         <div id="hand-cards" className="hand-cards" style={cardsStyle}>
+          {cardPreview && <div className="hand-card-preview" onClick={clearCardPreview}><CardTechRaw {...getCardById(cardPreview)}></CardTechRaw></div>}
+
             {handCards}
         </div>
         <div className="hand-info">

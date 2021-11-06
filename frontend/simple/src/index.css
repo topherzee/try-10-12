@@ -119,11 +119,28 @@ html, body, #root{
       position: absolute;
       bottom: 5mm;
       left: 5mm;
+      z-index: 1;
     }
 
     .hand-cards{
+      position:relative;
       height: 100%;
+      z-index:2;
     }
+
+    .hand-card-preview{
+      margin:auto;
+      z-index:3;
+      text-align:center;
+      position:relative;
+    }
+
+    .tech-card-raw{
+      cursor: pointer;
+      text-align: left;
+      box-shadow: 0 0 10mm 10mm black;
+    }
+
     .hand-cards-inner{
       overflow-x:hidden;
       background: blue;
@@ -198,6 +215,7 @@ html, body, #root{
       font-size: 8pt;
       color: white;
       padding: 0.5mm;
+      z-index:1;
       /* height: 5px; */
     }    
     h3.mini-card-title{
@@ -213,15 +231,39 @@ html, body, #root{
       margin: 2mm;
       vertical-align: top;
       position: relative;
+    
 
+    }
+
+    div.mid-close-button{
+      position:absolute;
+      bottom: 0;
+      right: 1mm;
+      z-index: 2;
+      cursor: pointer;
     }
 
     div.mid-cardgame-card-contents {
       position: absolute;
-      top: 6mm;
-      left: 3mm;
-      width: 28mm;
+      top: 4mm;
+      left: 0mm;
+      width: 30mm;
       height: 21mm;
+      /* outline:solid 1px blue; */
+    }
+
+    input.mid-note {
+      border: 0;
+      box-sizing: border-box;
+      position: absolute;
+      top: 25mm;
+      left: 0mm;
+      width: 30mm;
+      height: 6mm;
+      background:#444;
+      color: #fff;
+      font-size: 8pt;
+      padding: 0 2mm;
       /* outline:solid 1px blue; */
     }
 
