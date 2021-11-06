@@ -107,17 +107,10 @@ const [{ isDragging }, drag] = useDrag({
 
 
 if (props.isDnD){
-
-
-const opacity = isDragging ? 0 : 1;
-drag(drop(ref));
-
+  // const opacity = isDragging ? 0 : 1;
+  drag(drop(ref));
 }
-const opacity = 1;
-
-
-
-
+// const opacity = 1;
 
 
 
@@ -127,11 +120,11 @@ const opacity = 1;
 
   if (props.back){
     return(
-      <div class="cardgame-card-print-wrapper tech-card-back" >
-        <div class="rfp-card-center-point "></div>
-        <div class="cardgame-card rfp-card ">
-          <div class="cardgame-card-print-bounds ">
-            <img class="back-tech-deck-logo" src="./tech-deck-logo-white.png" alt=""/>
+      <div className="cardgame-card-print-wrapper tech-card-back" >
+        <div className="rfp-card-center-point "></div>
+        <div className="cardgame-card rfp-card ">
+          <div className="cardgame-card-print-bounds ">
+            <img className="back-tech-deck-logo" src="./tech-deck-logo-white.png" alt=""/>
           </div>
         </div>
       </div>
@@ -140,7 +133,7 @@ const opacity = 1;
 
     // console.log("angle:" + props.angle)
     
-    var a = -0;
+    // var a = -0;
     // // var a = props.angle
     // const rot = `rotate(${a}deg)`
     // var style = {
@@ -155,31 +148,31 @@ const opacity = 1;
 		// 	{props.name}
 		// </div>
 
-    // <div class="cardgame-card-print-wrapper tech-card" key={props.id} ref={ref} style={{ ...style, opacity }} data-handler-id={handlerId}>
+    // <div className="cardgame-card-print-wrapper tech-card" key={props.id} ref={ref} style={{ ...style, opacity }} data-handler-id={handlerId}>
       
-      <div class="cardgame-card tech-card" key={props.id} ref={ref} style={{ ...style, opacity }} data-handler-id={handlerId}>
+      <div className="cardgame-card tech-card" key={props.id} ref={ref} style={{ ...style }} data-handler-id={handlerId}>
       {/* <div className="card-remove" onclick={props.removeCard(props["@id"], props.name, null)}>REMOVE</div> */}
        
-        <div class="cardgame-card-print-bounds ">
-          <div class="card-footer">
+        <div className="cardgame-card-print-bounds ">
+          <div className="card-footer">
           </div>
         </div>
 
-        <div class={"cardgame-category color-" + colMap[props.category] + " cat-" + props.category }>
-          <div class="cardgame-category-text">
+        <div className={"cardgame-category color-" + colMap[props.category] + " cat-" + props.category }>
+          <div className="cardgame-category-text">
           {props.category}
           </div>
         </div>
 
-        <div class="cardgame-card-contents">
-          <div class="textual">
-            <h2 class="tech-deck-title">{props.name}</h2>
+        <div className="cardgame-card-contents">
+          <div className="textual">
+            <h2 className="tech-deck-title">{props.name}</h2>
             {costDisplay}
-            <p class="description">{props.description}</p>
+            <p className="description">{props.description}</p>
           </div>
 
-          <div class="image-wrapper">
-            <img class={(props.screenshot==='x')?"screenshot":""} src={"./images/" + props.image_url} alt=""/>
+          <div className="image-wrapper">
+            <img className={(props.screenshot==='x')?"screenshot":""} src={"./images/" + props.image_url} alt=""/>
           </div>
         </div>
 
@@ -194,8 +187,8 @@ const opacity = 1;
 
 function Coin1(props){
   return(
-    <div class="cost">
-      <div class="cost-coins">
+    <div className="cost">
+      <div className="cost-coins">
         <Coin/>
       </div>
     </div>
@@ -204,8 +197,8 @@ function Coin1(props){
 
 function Coin3(props){
   return(
-    <div class="cost">
-      <div class="cost-coins">
+    <div className="cost">
+      <div className="cost-coins">
         <Coin/><Coin/><Coin/>
       </div>
     </div>
@@ -214,19 +207,19 @@ function Coin3(props){
 
 function Coin13(props){
   return (
-    <div class="cost">
+    <div className="cost">
 
-      <div class="cost-label">
+      <div className="cost-label">
         Stock:
       </div>
-      <div class="cost-coins">
+      <div className="cost-coins">
         <Coin/>
       </div>
 
-      <div class="cost-label">
+      <div className="cost-label">
         Custom:
       </div>
-      <div class="cost-coins">
+      <div className="cost-coins">
         <Coin/><Coin/><Coin/>
       </div>
     </div>

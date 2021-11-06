@@ -12,11 +12,11 @@ const addNodeProp = (pName, pValue) => {
     return p;
   }
 
-export const putHandToMagnolia = async (newHandName, hand, getHands) =>{
+export const putHandToMagnolia = async (newHandName, hand, getHands, isBoard) =>{
     var h = {};
   
     h.name = newHandName;
-    h.type = "hand";
+    h.type = isBoard ? "board" : "hand";
     h.path = `/Topher/${newHandName}`;
     h.nodes = null;
   
@@ -30,23 +30,53 @@ export const putHandToMagnolia = async (newHandName, hand, getHands) =>{
       console.log("Need to strip off the keys before saving. Should be easy.")
       return false
     }
+
+    //Deal with cards **********
+    var hCardsObj;
     
-    var hObj = 
-      {
+    if (isBoard){
+
+      const cardsArray = hand.cards.map(card =>{
+        return card.cardId
+      })
+      hCardsObj = {
+          "name": "cards",
+          "type": "String",
+          "multiple": true,
+          "values": cardsArray
+      };
+      h.properties.push(hCardsObj)
+
+      var cardsDetails = JSON.stringify(hand.cards,null, 2);
+      //cardsDetails = "TEST"
+      h.properties.push(addNodeProp("cardsDetails", cardsDetails))
+
+
+    }else{
+
+      //simple
+      hCardsObj = {
           "name": "cards",
           "type": "String",
           "multiple": true,
           "values": hand.cards
       };
-  
-      h.properties.push(hObj)
+      h.properties.push(hCardsObj)
+    }
+    
       console.log("Body... "+ JSON.stringify(h,null,2))
       
+      // debugger;
+
+
+
+
       try {
   
         const URL_NODES = process.env.REACT_APP_MAG_REST_NODES;
-        const destination = URL_NODES + '/hands/Topher';  
+        const destination = isBoard ? (URL_NODES + '/boards/Topher'): (URL_NODES +  '/hands/Topher');  
         console.log("destination: " + destination);
+        //debugger;
         const response = await axios.put(destination, h, 
             {
                 auth: {

@@ -35,24 +35,55 @@ function Board() {
   const [newHandName, setNewHandName] = React.useState("");
   const [cardPreview, setCardPreview] = React.useState(null);
 
+  const randomCardAngle = () => {return Math.round(Math.random() * 6)-3};
+
   async function getHands() {
-    const URL_HANDS_DELIVERY = "http://localhost:8080/magnoliaAuthor/.rest/delivery/hands";
+    const URL_HANDS_DELIVERY = "http://localhost:8080/magnoliaAuthor/.rest/delivery/boards";
     const response = await axios.get(URL_HANDS_DELIVERY + "?@ancestor=/Topher&orderBy=name");
     console.log("getHands")
 
     var hands1 = response.data.results;
     
 
-    // TODO - add keys to all cards. cardIdAndKey
+
     hands1.forEach(hand =>{
-      
-      const newCards = hand.cards.map(card => {
-        const key = Math.floor(10000 + Math.random() * 90000)
-        return [card, key]
+      //debugger;
+      var cardsDetails = null;
+      try{
+        cardsDetails = JSON.parse(hand.cardsDetails);
+      }catch(e){
+        console.log("no cardDetails.")
+      }
+
+      const newCards = hand.cards.map((card, index) => {
+        if (cardsDetails){
+          const c = cardsDetails[index];
+          return {
+            cardId: card, 
+            key: c.key,
+            x: c.x,
+            y: c.y,
+            note: c.note,
+            angle: randomCardAngle()
+          }
+        }else{
+          const key = "K" + Math.floor(10000 + Math.random() * 90000)
+          return {
+            cardId: card, 
+            key: key,
+            x: (index * 100),
+            y: 40,
+            note: "no note yet!",
+            angle: randomCardAngle()
+          }
+        }
+        
+        
       })
       hand.cards = newCards;
     })
-    
+
+    //debugger;
     setHands(hands1);
   }
 
@@ -104,9 +135,16 @@ function Board() {
     //e.preventDefault();
     console.log('You clicked a card. ' + cardName + ' ' + cardId);
     
-    const key = Math.floor(10000 + Math.random() * 90000)
-    const array = update(hand.cards, {$push: [[cardId, key]]})
-
+    const key = "K" + Math.floor(10000 + Math.random() * 90000)
+    const newCardObj = {
+      cardId: cardId, 
+      key: key,
+      x: 20,
+      y: 20,
+      note: "added card",
+      angle: randomCardAngle()
+    }
+    const array = update(hand.cards, {$push: [newCardObj]})
 
     var localHand = update(hand, {
       cards: {$set: array}
@@ -114,20 +152,35 @@ function Board() {
     setHand(localHand)
   }
 
+  const setHandCardPosition = (e, d) => {
+    //e.preventDefault();
+    //console.log('You clicked a card. ' + cardName + ' ' + cardId);
+    console.log(`setHandCardPosition to ${d.x} ${d.y}`)
+    const cardkey = d.node.attributes.cardkey.value
+    console.log(`cardkey ${cardkey}`)
 
-const removeCardFromHandByKey = useCallback((cardKey, cardName) => {
-  console.log(`removeCardFromHandByKey ${cardKey} ${cardName}`)
+    const index = hand.cards.findIndex(card => 
+      card.key === cardkey
+    )
+
+    const localHand = update(hand, {cards: {[index]: {$merge: {x:d.x, y:d.y}}}})
+
+    setHand(localHand)
+  }
+
+const removeCardFromHandByKey = useCallback((cardkey, cardName) => {
+  console.log(`removeCardFromHandByKey ${cardkey} ${cardName}`)
 
   // const array = update(hand.cards, {$splice: [cardId]})
   const index = hand.cards.findIndex(card => 
-    card[1] === cardKey
+    card.key === cardkey
   )
   //var index = hand.cards.indexOf(cardId);
-  const array = update(hand.cards, {$splice: [[index,1]]})
+  const localHand = update(hand, {cards: {$splice: [[index,1]]}})
 
-  var localHand = update(hand, {
-    cards: {$set: array}
-  });
+  // var localHand = update(hand, {
+  //   cards: {$set: array}
+  // });
   setHand(localHand)
 
 }, [hand]);
@@ -141,7 +194,7 @@ const removeCardFromHandByKey = useCallback((cardKey, cardName) => {
 const showFullCard = useCallback((cardId) => {
   console.log(`ShowFullCard ${cardId} `)
   setCardPreview(cardId)
-}, [cardPreview]);
+}, []);
 
 
 // const removeCard = (cardId) => {
@@ -189,22 +242,10 @@ const showFullCard = useCallback((cardId) => {
   }
 //https://www.youtube.com/watch?v=X-iSQQgOd1A
 
-// const moveCard = useCallback((dragIndex, hoverIndex) => {
-//   console.log(`moveCard ${dragIndex} ${hoverIndex}`)
-//   const dragCard = hand.cards[dragIndex];
-//   setHand(update(hand, { cards: {
-//       $splice: [
-//           [dragIndex, 1],
-//           [hoverIndex, 0, dragCard],
-//       ],
-//   }}));
-// }, [hand]);
-
-
 const saveHand = (e) => {
   //e.preventDefault();
   console.log('Save Hand. ' + newHandName);
-  putHandToMagnolia(newHandName, hand, getHands)
+  putHandToMagnolia(newHandName, hand, getHands, true)
 }
 
 const onNameChange = (event) => {
@@ -231,19 +272,20 @@ if (!cards) return "No card!"
     }
   );
 
-  const handCards = hand.cards?.map((cardIdAndKey, index) =>
+  const handCards = hand.cards?.map((cardObj, index) =>
   {
-    const card = getCardById(cardIdAndKey[0]);
-    const a = Math.random() * 6;
-    const angle = Math.round(a)-3;
-    const left = index * 140;
+    const techCard = getCardById(cardObj.cardId);
 
-    return <Rnd key={cardIdAndKey[1]} dragHandleClassName={'mini-card-category'} bounds='parent' enableResizing={{}}
+    // const left = index * 140;
+
+    return <Rnd key={cardObj.key}  cardkey={cardObj.key} dragHandleClassName={'mini-card-category'} bounds='parent' enableResizing={{}}
       default={{
-        x: left,
-        y: 20,
-      }
-    }><CardMid {...card} cardKey={cardIdAndKey[1]} index={index} removeCard={removeCardFromHandByKey} contentsClick={showFullCard}/></Rnd>
+        x: cardObj.x,
+        y: cardObj.y,
+      }}
+      onDragStop={setHandCardPosition}
+
+    ><CardMid {...techCard} cardkey={cardObj.key} index={index} removeCard={removeCardFromHandByKey} contentsClick={showFullCard}/></Rnd>
     // return <CardMid {...card} key={card.name} index={index} />
 
     
@@ -276,30 +318,13 @@ if (!cards) return "No card!"
   var cardsStyle = {
     transform:scale
   }
-  // This is sort of working.. but it should update all thhe time.
-  // Now it is one step too slow as it calculates it BEFORE the elements are rendered and updated!
-
-
-  // if (document.getElementById("hand-cards")){
-  //   const containerWidth = document.getElementById("hand")?.offsetWidth;
-  //   console.log("conteriner w: " + containerWidth);
-    
-  //   const cardsWidth = document.getElementById("hand-cards")?.scrollWidth;
-  //   console.log("cards w: " + cardsWidth);
-    
-  //   scale = `scale(${containerWidth/cardsWidth})`
-    
-  //   cardsStyle = {
-  //     transform:scale
-  //   }
-  // }
  
 
   // transform:scale(0.8)
 
-  const style = {
-    // width: 300,
-  };
+  // const style = {
+  //   // width: 300,
+  // };
 
   const clearCardPreview = () => {
     setCardPreview(null)

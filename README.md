@@ -25,7 +25,8 @@ Status *****************************
 
 CODE THIS NEXT ********************************
 
-Save a board (with card positions and notes)
+Load a board with positions
+Save and Load Notes
 
 Mobile Version.
 
@@ -41,6 +42,8 @@ https://www.npmjs.com/package/react-draggable
 (Interesting: https://github.com/tajo/react-movable)
 
 CODE ACCOMPLISHED ******************
+
+Save a board (with card positions)
 
 2021-11-05
 
