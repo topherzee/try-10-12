@@ -39,8 +39,9 @@ function Board() {
 
   async function getHands() {
     const URL_HANDS_DELIVERY = "http://localhost:8080/magnoliaAuthor/.rest/delivery/boards";
-    const response = await axios.get(URL_HANDS_DELIVERY + "?@ancestor=/Topher&orderBy=name");
-    console.log("getHands")
+    const url = URL_HANDS_DELIVERY + "?@ancestor=/Topher&orderBy=name"
+    const response = await axios.get(url);
+    console.log("getHands: " + url)
 
     var hands1 = response.data.results;
     
@@ -53,6 +54,11 @@ function Board() {
         cardsDetails = JSON.parse(hand.cardsDetails);
       }catch(e){
         console.log("no cardDetails.")
+      }
+
+      //need to handle deleted but unpublished items. :(
+      if (!hand.cards){
+        return null; //neds improvement!
       }
 
       const newCards = hand.cards.map((card, index) => {
@@ -73,7 +79,7 @@ function Board() {
             key: key,
             x: (index * 100),
             y: 40,
-            note: "no note yet!",
+            note: "",
             angle: randomCardAngle()
           }
         }
@@ -141,7 +147,7 @@ function Board() {
       key: key,
       x: 20,
       y: 20,
-      note: "added card",
+      note: "",
       angle: randomCardAngle()
     }
     const array = update(hand.cards, {$push: [newCardObj]})
@@ -181,6 +187,21 @@ const removeCardFromHandByKey = useCallback((cardkey, cardName) => {
   // var localHand = update(hand, {
   //   cards: {$set: array}
   // });
+  setHand(localHand)
+
+}, [hand]);
+
+const handleNoteChange = useCallback((cardkey, cardName, e) => {
+  
+  const newNote = e.target.value;
+  console.log(`handleNoteChange ${cardkey} ${cardName} note: ${newNote}`)
+
+  const index = hand.cards.findIndex(card => 
+    card.key === cardkey
+  )
+
+  const localHand = update(hand, {cards: {[index]: {$merge: {note:newNote}}}})
+
   setHand(localHand)
 
 }, [hand]);
@@ -277,7 +298,7 @@ if (!cards) return "No card!"
     const techCard = getCardById(cardObj.cardId);
 
     // const left = index * 140;
-
+    console.log(cardObj.note)
     return <Rnd key={cardObj.key}  cardkey={cardObj.key} dragHandleClassName={'mini-card-category'} bounds='parent' enableResizing={{}}
       default={{
         x: cardObj.x,
@@ -285,10 +306,9 @@ if (!cards) return "No card!"
       }}
       onDragStop={setHandCardPosition}
 
-    ><CardMid {...techCard} cardkey={cardObj.key} index={index} removeCard={removeCardFromHandByKey} contentsClick={showFullCard}/></Rnd>
-    // return <CardMid {...card} key={card.name} index={index} />
+    ><CardMid {...techCard} cardkey={cardObj.key} note={cardObj.note} index={index} removeCard={removeCardFromHandByKey} handleNoteChange={handleNoteChange} contentsClick={showFullCard}/>
+    </Rnd>
 
-    
     }
   );
 
@@ -297,6 +317,7 @@ if (!cards) return "No card!"
     var handId = event.target.value;
     var localHand = getHandById(handId)
     console.log("onHandChange= " + handId)
+    // setHand(null)
     setHand(localHand)
   };
 

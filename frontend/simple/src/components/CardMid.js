@@ -25,7 +25,7 @@ function CardMid(props){
             <img className={(props.screenshot==='x')?"screenshot":""} src={"./images/" + props.image_url} alt=""/>
           </div>
         </div>
-        <input className="mid-note" type="text"></input>
+        <input className="mid-note" type="text" value={props.note} onChange={(e)=> props.handleNoteChange(props.cardkey,props.name ,e)}></input>
     </div>
   )
 }

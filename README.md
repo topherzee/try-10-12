@@ -25,8 +25,7 @@ Status *****************************
 
 CODE THIS NEXT ********************************
 
-Load a board with positions
-Save and Load Notes
+Fix Positioning - if you load a new hand it does not update the positions - I think it thinks its the same old items there. Buggy.
 
 Mobile Version.
 
@@ -43,7 +42,6 @@ https://www.npmjs.com/package/react-draggable
 
 CODE ACCOMPLISHED ******************
 
-Save a board (with card positions)
 
 2021-11-05
 
@@ -51,6 +49,12 @@ Board Layout
 Add MULTIPLE cards of the same kind to board by click on tech deck.
 Remove a card from a board.
 Click on a card to see a full sized card.
+
+Save a board (with card positions)
+
+Load a board with positions
+Save and Load Notes
+
 
 2021-10-30
 
