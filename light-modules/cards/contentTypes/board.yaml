@@ -1,0 +1,28 @@
+datasource:
+  workspace: boards
+  autoCreate: true
+
+model:
+  nodeType: board
+
+  properties:
+  
+    name:
+      label: Name
+      required: true
+
+    cards:
+      label: Cards
+      type: reference:Card
+      multiple: true
+    
+    cardsDetails:
+      label: Details for the cards
+      type: text
+      multiple: false
+
+    description:
+      label: Description
+
+    image_url:
+      label: Image URL
