@@ -3,6 +3,7 @@
 
 // import HandBuilder from './HandBuilder.js';
 import Board from './Board.js';
+// import FBase from './Firebase1.js';
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
   return (
 
     <Board />
+    // <FBase />
   );
 }
 

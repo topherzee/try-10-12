@@ -6,7 +6,7 @@ import CardMid from './components/CardMid.js';
 import CardMini from './components/CardMini.js';
 import CardTechRaw from './components/CardTechRaw.js';
 
-import {putBoardToMagnolia} from './LoadAndSave.js'
+import {putHandToMagnolia} from './LoadAndSave.js'
 
 import axios from "axios";
 import React from "react";
@@ -22,7 +22,7 @@ import updateIH from 'immutability-helper';
 
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, get, set, child, update, onValue } from "firebase/database";
+import { getDatabase, ref, set,update, onValue } from "firebase/database";
 const firebaseConfig = {
   apiKey: "AIzaSyAAz4Gnutgu_ifM6sHZMAoseJ6DSt2ZRuQ",
   authDomain: "magnolia-cards.firebaseapp.com",
@@ -49,44 +49,69 @@ const client = axios.create({
 function Board() {
 
   const [cards, setCards] = React.useState(null);
-  const [boards, setBoards] = React.useState(null);
-  // const [board, setBoard] = useStateWithCallbackLazy({cards:[]});
-  const [board, setBoard] = React.useState({cards:[]});
+  const [hands, setHands] = React.useState(null);
+  const [hand, setHand] = useStateWithCallbackLazy({cards:[]});
   const [category, setCategory] = React.useState("All");
-  const [newBoardName, setNewBoardName] = React.useState("");
-  const [boardName, setBoardName] = React.useState("");
+  const [newHandName, setNewHandName] = React.useState("");
   const [cardPreview, setCardPreview] = React.useState(null);
 
   const randomCardAngle = () => {return Math.round(Math.random() * 6)-3};
 
+  async function getHands() {
+    const URL_HANDS_DELIVERY = "http://localhost:8080/magnoliaAuthor/.rest/delivery/boards";
+    const url = URL_HANDS_DELIVERY + "?@ancestor=/Topher&orderBy=name"
+    const response = await axios.get(url);
+    console.log("getHands: " + url)
 
-
-
-
-  async function getBoards() {
-
-    const dbRef = ref(db);
-    const snapshot = await get(child(dbRef, `boards`))
-    const response = snapshot.val()
-  
-    var boards1 = response;//response.data.results;
+    var hands1 = response.data.results;
     
-    var cardsDetails = null;
+    hands1.forEach(hand =>{
+      //debugger;
+      var cardsDetails = null;
+      try{
+        cardsDetails = JSON.parse(hand.cardsDetails);
+      }catch(e){
+        console.log("no cardDetails.")
+      }
 
-    for (const property in boards1) {
-      const board = boards1[property]
-      console.log(`${property}: ${boards1[property]}`);
-      // if (!board.cards){
-      //   return null; //neds improvement!
-      // }
-    }
+      //need to handle deleted but unpublished items. :(
+      if (!hand.cards){
+        return null; //neds improvement!
+      }
 
-    setBoards(boards1);
+      const newCards = hand.cards.map((card, index) => {
+        if (cardsDetails){
+          const c = cardsDetails[index];
+          return {
+            cardId: card, 
+            key: c.key,
+            x: c.x,
+            y: c.y,
+            note: c.note,
+            angle: randomCardAngle()
+          }
+        }else{
+          const key = "K" + Math.floor(10000 + Math.random() * 90000)
+          return {
+            cardId: card, 
+            key: key,
+            x: (index * 100),
+            y: 40,
+            note: "",
+            angle: randomCardAngle()
+          }
+        }
+        
+      })
+      hand.cards = newCards;
+    })
 
-    console.log('getBoards() done')
-    //INITIALISE A HAND.
-    // var localBoard = getBoardById(boards1[0]["@id"])
-    // setBoard(localBoard)
+    //debugger;
+    setHands(hands1);
+
+    // //INITIALISE A HAND.
+    // var localHand = getHandById(hands1[0]["@id"])
+    // setHand(localHand)
   }
 
   React.useEffect(() => {
@@ -108,101 +133,90 @@ function Board() {
     }
 
     getCards();
-    getBoards();
+    getHands();
+
+    
+
 
           //INIT FOR TESTING
-  // onBoardChange(
+  // onHandChange(
   //   {
   //     target:{
   //       value: "11258bad-2443-4872-ad31-8e1cca471f1e"
   //     }
   //   }
   // )
+
+ 
+
   }, []);
 
 
-  React.useEffect(() => {
-    if (boards){
-      console.log(`useEffect.boards is updated:${Object.entries(boards).length}`)
-    }else{
-      console.log(`useEffect.boards null`)
-    }
 
-  },[boards])
+  const onHandChange = (event) => {
+    //setNewHandName(event.target.value);
+    var handId = event.target.value;
+    var localHand = getHandById(handId)
+    console.log("onHandChange= " + handId)
+    // setHand(null)
+    setHand(localHand, (localHand) => {
 
-
-
-  const onBoardChange = async(event) => {
-    //setNewBoardName(event.target.value);
-    // var boardId = event.target.value;
-    var boardName = event.target.value;
-    
-    //var localBoard = getBoardById(boardId)
-    console.log("onBoardChange= " + boardName)
-
-    const dbRef = ref(db);
-    const snapshot = await get(child(dbRef, `boards/${boardName}`))
-    const response = snapshot.val()
-
-    var localBoard = response;
-    // debugger;
-
-    setBoardName(boardName)
-    // setBoard(null)
-    
-    //setBoard(localBoard)
-
-    const fbpath = `boards/${boardName}`;
-    const starCountRef = ref(db, fbpath);
-    onValue(starCountRef, (snapshot) => {
-        const data = snapshot.val();
-        console.log(`Realtime. BOARD onValue: ${JSON.stringify(data, null, 2)}`)
-
-        
-        setBoard(data)
+  // debugger;
+      //Send to Firebase..
+      // const db = getDatabase();
+      console.log(`Realtime.Update board ${localHand.name}`)
+      set(ref(db, `boards/${localHand.name}`), {
+        "cards":localHand.cards
       });
 
+      // FIREBASE - react to card position and note changes
+      localHand.cards.forEach((card, index) =>{
+        const fbpath = `boards/${localHand.name}/cards/${index}`;
+        const starCountRef = ref(db, fbpath);
+        onValue(starCountRef, (snapshot) => {
+          const data = snapshot.val();
+          console.log(`Realtime. note onValue: ${JSON.stringify(data, null, 2)}`)
+          const techCard = getCardById(data.cardId);
 
-  //   setBoard(localBoard, (localBoard) => {
+          handleNoteChange(data.key, techCard.name,null,data.note)
+        });
+      })
+    })
 
-  // // debugger;
-  //     //Send to Firebase..
-  //     // const db = getDatabase();
-
-  //     // console.log(`Realtime.Update board ${localBoard.name}`)
-  //     // set(ref(db, `boards/${localBoard.name}`), {
-  //     //   "cards":localBoard.cards
-  //     // });
-
-
-
-  //   })
-
-          // FIREBASE - react to card position and note changes
-      //DOES NOT WORK.
-    // localBoard.cards.forEach((card, index) =>{
-    //   const fbpath = `boards/${boardName}/cards/${index}`;
-    //   const starCountRef = ref(db, fbpath);
-    //   onValue(starCountRef, (snapshot) => {
-    //     const data = snapshot.val();
-    //     console.log(`Realtime. card onValue: ${JSON.stringify(data, null, 2)}`)
-    //     //const techCard = getCardById(data.cardId);
-
-    //     // handleNoteChange(data.key, techCard.name,null,data.note)
-    //     //debugger;
-    //     updateNoteOnLocalCard(index, data.note)
-    //   });
-    // })
-
+    
   };
 
 
   React.useEffect(() => {
 
-    console.log(`board is updated:${board.cards.length}`)
-    console.log(`board is updated:${JSON.stringify(board.cards,null, 2)}`)
+
+    //CLZ ALERT nogt actually working yet!
+
+    //load a starting hand - for testing:
+    // if (hands){
+    //   // var localHand = getHandById(hands[0]["@id"])
+    //   // setHand(localHand)
+    //     onHandChange(
+    //       {
+    //         target:{
+    //           value: hands[0]["@id"]
+    //         }
+    //       }
+    //     )
+    //   // }
+    //   if (document.getElementById("hand-select")){
+    //     document.getElementById("hand-select").val=hands[0]["@id"]
+    //   }
+      
+  // }
     
-  },[board])
+  },[hands])
+
+  React.useEffect(() => {
+
+    console.log(`hand is updated:${hand.cards.length}`)
+    
+  },[hand])
 
   let renderBack = false
 
@@ -221,7 +235,7 @@ function Board() {
   // }
 
   //TODO
-  const addCardToBoard = (cardId, cardName,  e) => {
+  const addCardToHand = (cardId, cardName,  e) => {
     //e.preventDefault();
     console.log('You clicked a card. ' + cardName + ' ' + cardId);
     
@@ -234,31 +248,31 @@ function Board() {
       note: "",
       angle: randomCardAngle()
     }
-    const array = updateIH(board.cards, {$push: [newCardObj]})
+    const array = updateIH(hand.cards, {$push: [newCardObj]})
 
-    var localBoard = updateIH(board, {
+    var localHand = updateIH(hand, {
       cards: {$set: array}
     });
-    setBoard(localBoard)
+    setHand(localHand)
   }
 
-  const setBoardCardPosition = (e, d) => {
+  const setHandCardPosition = (e, d) => {
     //e.preventDefault();
     //console.log('You clicked a card. ' + cardName + ' ' + cardId);
-    console.log(`setBoardCardPosition to ${d.x} ${d.y}`)
+    console.log(`setHandCardPosition to ${d.x} ${d.y}`)
     const cardkey = d.node.attributes.cardkey.value
     console.log(`cardkey ${cardkey}`)
 
-    const index = board.cards.findIndex(card => 
+    const index = hand.cards.findIndex(card => 
       card.key === cardkey
     )
 
-    const localBoard = updateIH(board, {cards: {[index]: {$merge: {x:d.x, y:d.y}}}})
+    const localHand = updateIH(hand, {cards: {[index]: {$merge: {x:d.x, y:d.y}}}})
 
-    setBoard(localBoard)
+    setHand(localHand)
 
     //Send to firebase
-    const dbpath = `boards/${boardName}/cards/${index}`;
+    const dbpath = `boards/${localHand.name}/cards/${index}`;
     console.log(`Realtime.Update position ${dbpath} x:${d.x}`)
     update(ref(db, dbpath), {
       "x":d.x,
@@ -267,56 +281,49 @@ function Board() {
 
   }
 
-const removeCardFromBoardByKey = useCallback((cardkey, cardName) => {
-  console.log(`removeCardFromBoardByKey ${cardkey} ${cardName}`)
+const removeCardFromHandByKey = useCallback((cardkey, cardName) => {
+  console.log(`removeCardFromHandByKey ${cardkey} ${cardName}`)
 
-  // const array = update(board.cards, {$splice: [cardId]})
-  const index = board.cards.findIndex(card => 
+  // const array = update(hand.cards, {$splice: [cardId]})
+  const index = hand.cards.findIndex(card => 
     card.key === cardkey
   )
-  //var index = board.cards.indexOf(cardId);
-  const localBoard = updateIH(board, {cards: {$splice: [[index,1]]}})
+  //var index = hand.cards.indexOf(cardId);
+  const localHand = updateIH(hand, {cards: {$splice: [[index,1]]}})
 
-  // var localBoard = update(board, {
+  // var localHand = update(hand, {
   //   cards: {$set: array}
   // });
-  setBoard(localBoard)
+  setHand(localHand)
 
-}, [board]);
+}, [hand]);
 
 const handleNoteChange = useCallback((cardkey, cardName, e, newNoteParam) => {
   
   const newNote = e ? e.target.value : newNoteParam;
   console.log(`handleNoteChange key:${cardkey} name:'${cardName}' note:'${newNote}'`)
 
-  const index = board.cards.findIndex(card => 
+  const index = hand.cards.findIndex(card => 
     card.key === cardkey
   )
   console.log(`handleNoteChange index:${index}`)
- 
+  // debugger;
   if (index>-1){
-    const localBoard = updateIH(board, {cards: {[index]: {$merge: {note:newNote}}}})
+    const localHand = updateIH(hand, {cards: {[index]: {$merge: {note:newNote}}}})
 
-    setBoard(localBoard)
+    setHand(localHand)
   
     //Send to firebase
-    const dbpath = `boards/${boardName}/cards/${index}`;
+    const dbpath = `boards/${localHand.name}/cards/${index}`;
     console.log(`Realtime.Update note ${dbpath} :${newNote}`)
     update(ref(db, dbpath), {
       "note":newNote,
     })
   }
   
-}, [board]);
 
-const updateNoteOnLocalCard =(index, newNote) => {
-  console.log(`updateNoteOnLocalCard. index ${index}`)
-  if (index>-1 && board.cards.length > 0){
-    const localBoard = updateIH(board, {cards: {[index]: {$merge: {note:newNote}}}})
 
-    setBoard(localBoard)
-  }
-}
+}, [hand]);
 
 // const showFullCardOLD = (id, e) => {
 //   //e.preventDefault();
@@ -331,7 +338,7 @@ const showFullCard = useCallback((cardId) => {
 
 
 // const removeCard = (cardId) => {
-//   //setNewBoardName(event.target.value);o
+//   //setNewHandName(event.target.value);o
 //   console.log("remove: " + cardId)
 //   toggleSelection(cardId, "")
 // };
@@ -367,22 +374,22 @@ const showFullCard = useCallback((cardId) => {
     return found;
   }
 
-  const getBoardById = (boardId) => {
-    const found = boards.find(board => 
-      board['@id'] === boardId
+  const getHandById = (handId) => {
+    const found = hands.find(hand => 
+      hand['@id'] === handId
     )
     return found;
   }
 //https://www.youtube.com/watch?v=X-iSQQgOd1A
 
-const saveBoard = (e) => {
+const saveHand = (e) => {
   //e.preventDefault();
-  console.log('Save Board. ' + newBoardName);
-  putBoardToMagnolia(newBoardName, board, getBoards, true)
+  console.log('Save Hand. ' + newHandName);
+  putHandToMagnolia(newHandName, hand, getHands, true)
 }
 
 const onNameChange = (event) => {
-  setNewBoardName(event.target.value);
+  setNewHandName(event.target.value);
 };
 
 
@@ -397,74 +404,35 @@ if (!cards) return "No card!"
     }
 
     var selected = false;
-    //console.log(JSON.stringify(board, null, 2))
-    if (board.cards?.includes(card['@id'])){
+    //console.log(JSON.stringify(hand, null, 2))
+    if (hand.cards?.includes(card['@id'])){
       selected = true;
     }
-    return <CardMini key={card.name} {...card} color="blue" back={renderBack} selected={selected} toggleSelection={addCardToBoard} />
+    return <CardMini key={card.name} {...card} color="blue" back={renderBack} selected={selected} toggleSelection={addCardToHand} />
     }
   );
 
-  function WithFirebase(WrappedComponent){
-    return function WithFirebaseComponent({...props}){
-      
-      const [note2, setNote2] = React.useState(props.note);
-
-      React.useEffect(() => {
-        console.log("RUN AGAIN.")
-        //handle firebase changes.
-        const fbpath = `boards/${props.boardName}/cards/${props.index}`;
-        const starCountRef = ref(db, fbpath);
-        // onValue(starCountRef, (snapshot) => {
-        //   const data = snapshot.val();
-        //   console.log(`Realtime. note onValue: ${JSON.stringify(data, null, 2)}`)
-        //   //const techCard = getCardById(data.cardId);
-  
-        //   //handleNoteChange(data.key, props.techCard.name,null,data.note)
-        //   //setNote2(data.note)
-        // });
-      })
-
-
-
-        return (
-            <div className="FB">
-                <WrappedComponent {...props } note={note2} />
-            </div>
-        );
-      }
-  } 
-
-
-  const boardCards = board.cards?.map((cardObj, index) =>
+  const handCards = hand.cards?.map((cardObj, index) =>
   {
     const techCard = getCardById(cardObj.cardId);
 
-    const KOOL = WithFirebase(CardMid)
     // const left = index * 140;
     //console.log(cardObj.note)
     return <Rnd key={cardObj.key}  cardkey={cardObj.key} dragHandleClassName={'mini-card-category'} bounds='parent' enableResizing={{}}
-      // default={{
-      //   x: cardObj.x,
-      //   y: cardObj.y,
-      // }}
-      position={{ x: cardObj.x, y: cardObj.y }}
+      default={{
+        x: cardObj.x,
+        y: cardObj.y,
+      }}
+      onDragStop={setHandCardPosition}
 
-      // onDragStop={setBoardCardPosition}
-      onDrag={setBoardCardPosition}
-
-    >
-      
-      <CardMid {...techCard} boardName={board.name} cardkey={cardObj.key} note={cardObj.note} index={index} removeCard={removeCardFromBoardByKey} handleNoteChange={handleNoteChange} contentsClick={showFullCard}/>
-      {/* <KOOL {...techCard} boardName={board.name} cardkey={cardObj.key} note={cardObj.note} index={index} removeCard={removeCardFromBoardByKey} handleNoteChange={handleNoteChange} contentsClick={showFullCard}/> */}
-      
+    ><CardMid {...techCard} handName={hand.name} cardkey={cardObj.key} note={cardObj.note} index={index} removeCard={removeCardFromHandByKey} handleNoteChange={handleNoteChange} contentsClick={showFullCard}/>
     </Rnd>
 
     }
   );
 
   //INIT FOR TESTING
-  // onBoardChange(
+  // onHandChange(
   //   {
   //     target:{
   //       value: "11258bad-2443-4872-ad31-8e1cca471f1e"
@@ -476,22 +444,15 @@ if (!cards) return "No card!"
   
 
 
-  const BoardSelector = () => {
+  const HandSelector = () => {
 
-    if (!boards){
-      return <h2>No boards loaded.</h2>;
-    }
-
-    //const boardsArray = ;
-    // debugger;
-    const options = Object.entries(boards).map(([key, board], index) =>{
-      return (<option key={key} value={key}>{key}</option>)
-      // return (<option key={board['@id']} value={board['@id']}>{key}</option>)
+    const options = hands.map((hand, index) =>{
+      return (<option key={hand['@id']} value={hand['@id']}>{hand.name}</option>)
     })
 
     return (
-      <select id="hand-select" className="hand-select" onChange={onBoardChange}>
-        <option key="choose">Choose a board</option>
+      <select id="hand-select" className="hand-select" onChange={onHandChange}>
+        <option>Choose a hand</option>
         {options}
         </select>
     )
@@ -523,23 +484,23 @@ if (!cards) return "No card!"
         <div id="hand-cards" className="hand-cards" style={cardsStyle}>
           {cardPreview && <div className="hand-card-preview" onClick={clearCardPreview}><CardTechRaw {...getCardById(cardPreview)}></CardTechRaw></div>}
 
-            {boardCards}
+            {handCards}
         </div>
         <div className="hand-info">
-          <h1 className="hand-name">{board.name}</h1>
-          <div className="hand-description">{board.description}</div>
+          <h1 className="hand-name">{hand.name}</h1>
+          <div className="hand-description">{hand.description}</div>
         </div>
       </div>
     
       <div className="loadSave">
         <div style={{marginBottom: "4mm"}}>
           <div>
-            <span className="filter-label">Load Board:</span>
-            <BoardSelector/>
+            <span className="filter-label">Load Hand:</span>
+            <HandSelector/>
           </div>
 
-          <div className="save-button" key="SaveButton" onClick={(e)=> saveBoard("some-text",e)}>Save Board</div>
-          <input id="board-name-input" onChange={onNameChange} className="hand-name-input" type="text" placeholder="Name of board"/>
+          <div className="save-button" key="SaveButton" onClick={(e)=> saveHand("some-text",e)}>Save Hand</div>
+          <input id="hand-name-input" onChange={onNameChange} className="hand-name-input" type="text" placeholder="Name of hand"/>
         </div>
       </div>
 

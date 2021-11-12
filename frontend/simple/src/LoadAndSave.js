@@ -12,6 +12,11 @@ const addNodeProp = (pName, pValue) => {
     return p;
   }
 
+  export const putBoardToMagnolia = async (newHandName, hand, getHands, isBoard) =>{
+    putHandToMagnolia(newHandName, hand, getHands, isBoard)
+  }
+
+
 export const putHandToMagnolia = async (newHandName, hand, getHands, isBoard) =>{
     var h = {};
   
