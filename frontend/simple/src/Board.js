@@ -22,7 +22,7 @@ import updateIH from 'immutability-helper';
 
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, get, set, push, child, update, onValue } from "firebase/database";
+import { getDatabase, ref, get, set, off, child, update, onValue } from "firebase/database";
 const firebaseConfig = {
   apiKey: "AIzaSyAAz4Gnutgu_ifM6sHZMAoseJ6DSt2ZRuQ",
   authDomain: "magnolia-cards.firebaseapp.com",
@@ -135,24 +135,28 @@ function Board() {
   const onBoardChange = async(event) => {
     //setNewBoardName(event.target.value);
     // var boardId = event.target.value;
-    var boardName = event.target.value;
+    var boardNameSelected = event.target.value;
     
     //var localBoard = getBoardById(boardId)
-    console.log("onBoardChange= " + boardName)
+    console.log("onBoardChange= " + boardNameSelected)
 
+    const fbpathOff = `boards/${boardName}`;
+    //const refOff = ref(db, fbpathOff);
+    
+    off(ref(db, fbpathOff))
     const dbRef = ref(db);
-    const snapshot = await get(child(dbRef, `boards/${boardName}`))
+    const snapshot = await get(child(dbRef, `boards/${boardNameSelected}`))
     const response = snapshot.val()
 
     var localBoard = response;
     // debugger;
 
-    setBoardName(boardName)
+    setBoardName(boardNameSelected)
     // setBoard(null)
     
     //setBoard(localBoard)
 
-    const fbpath = `boards/${boardName}`;
+    const fbpath = `boards/${boardNameSelected}`;
     const starCountRef = ref(db, fbpath);
     onValue(starCountRef, (snapshot) => {
         const data = snapshot.val();
