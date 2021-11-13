@@ -22,7 +22,7 @@ import updateIH from 'immutability-helper';
 
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, get, set, child, update, onValue } from "firebase/database";
+import { getDatabase, ref, get, set, push, child, update, onValue } from "firebase/database";
 const firebaseConfig = {
   apiKey: "AIzaSyAAz4Gnutgu_ifM6sHZMAoseJ6DSt2ZRuQ",
   authDomain: "magnolia-cards.firebaseapp.com",
@@ -158,41 +158,8 @@ function Board() {
         const data = snapshot.val();
         console.log(`Realtime. BOARD onValue: ${JSON.stringify(data, null, 2)}`)
 
-        
         setBoard(data)
       });
-
-
-  //   setBoard(localBoard, (localBoard) => {
-
-  // // debugger;
-  //     //Send to Firebase..
-  //     // const db = getDatabase();
-
-  //     // console.log(`Realtime.Update board ${localBoard.name}`)
-  //     // set(ref(db, `boards/${localBoard.name}`), {
-  //     //   "cards":localBoard.cards
-  //     // });
-
-
-
-  //   })
-
-          // FIREBASE - react to card position and note changes
-      //DOES NOT WORK.
-    // localBoard.cards.forEach((card, index) =>{
-    //   const fbpath = `boards/${boardName}/cards/${index}`;
-    //   const starCountRef = ref(db, fbpath);
-    //   onValue(starCountRef, (snapshot) => {
-    //     const data = snapshot.val();
-    //     console.log(`Realtime. card onValue: ${JSON.stringify(data, null, 2)}`)
-    //     //const techCard = getCardById(data.cardId);
-
-    //     // handleNoteChange(data.key, techCard.name,null,data.note)
-    //     //debugger;
-    //     updateNoteOnLocalCard(index, data.note)
-    //   });
-    // })
 
   };
 
@@ -240,6 +207,11 @@ function Board() {
       cards: {$set: array}
     });
     setBoard(localBoard)
+
+    //Send to firebase
+    const dbpath = `boards/${boardName}/cards/${board.cards.length}`;
+    console.log(`Realtime push card: ${dbpath}`)
+    set(ref(db, dbpath), newCardObj)
   }
 
   const setBoardCardPosition = (e, d) => {
@@ -270,17 +242,18 @@ function Board() {
 const removeCardFromBoardByKey = useCallback((cardkey, cardName) => {
   console.log(`removeCardFromBoardByKey ${cardkey} ${cardName}`)
 
-  // const array = update(board.cards, {$splice: [cardId]})
   const index = board.cards.findIndex(card => 
     card.key === cardkey
   )
-  //var index = board.cards.indexOf(cardId);
   const localBoard = updateIH(board, {cards: {$splice: [[index,1]]}})
-
-  // var localBoard = update(board, {
-  //   cards: {$set: array}
-  // });
   setBoard(localBoard)
+
+  //Send to firebase
+  //Special care is needed because we want to keep it an array
+  //https://firebase.googleblog.com/2014/04/best-practices-arrays-in-firebase.html
+  const dbpath = `boards/${boardName}/cards`;
+  console.log(`Realtime. Remove card ${dbpath} :${localBoard.cards}`)
+  set(ref(db, dbpath), localBoard.cards)
 
 }, [board]);
 
@@ -397,7 +370,8 @@ if (!cards) return "No card!"
     }
 
     var selected = false;
-    //console.log(JSON.stringify(board, null, 2))
+    //console.log("Board.cards:" + JSON.stringify(board.cards, null, 2))
+    //debugger;
     if (board.cards?.includes(card['@id'])){
       selected = true;
     }
@@ -405,61 +379,19 @@ if (!cards) return "No card!"
     }
   );
 
-  function WithFirebase(WrappedComponent){
-    return function WithFirebaseComponent({...props}){
-      
-      const [note2, setNote2] = React.useState(props.note);
-
-      React.useEffect(() => {
-        console.log("RUN AGAIN.")
-        //handle firebase changes.
-        const fbpath = `boards/${props.boardName}/cards/${props.index}`;
-        const starCountRef = ref(db, fbpath);
-        // onValue(starCountRef, (snapshot) => {
-        //   const data = snapshot.val();
-        //   console.log(`Realtime. note onValue: ${JSON.stringify(data, null, 2)}`)
-        //   //const techCard = getCardById(data.cardId);
-  
-        //   //handleNoteChange(data.key, props.techCard.name,null,data.note)
-        //   //setNote2(data.note)
-        // });
-      })
-
-
-
-        return (
-            <div className="FB">
-                <WrappedComponent {...props } note={note2} />
-            </div>
-        );
-      }
-  } 
 
 
   const boardCards = board.cards?.map((cardObj, index) =>
   {
     const techCard = getCardById(cardObj.cardId);
 
-    const KOOL = WithFirebase(CardMid)
-    // const left = index * 140;
-    //console.log(cardObj.note)
     return <Rnd key={cardObj.key}  cardkey={cardObj.key} dragHandleClassName={'mini-card-category'} bounds='parent' enableResizing={{}}
-      // default={{
-      //   x: cardObj.x,
-      //   y: cardObj.y,
-      // }}
       position={{ x: cardObj.x, y: cardObj.y }}
-
       // onDragStop={setBoardCardPosition}
       onDrag={setBoardCardPosition}
-
     >
-      
       <CardMid {...techCard} boardName={board.name} cardkey={cardObj.key} note={cardObj.note} index={index} removeCard={removeCardFromBoardByKey} handleNoteChange={handleNoteChange} contentsClick={showFullCard}/>
-      {/* <KOOL {...techCard} boardName={board.name} cardkey={cardObj.key} note={cardObj.note} index={index} removeCard={removeCardFromBoardByKey} handleNoteChange={handleNoteChange} contentsClick={showFullCard}/> */}
-      
     </Rnd>
-
     }
   );
 
