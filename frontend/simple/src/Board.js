@@ -6,15 +6,10 @@ import CardMid from './components/CardMid.js';
 import CardMini from './components/CardMini.js';
 import CardTechRaw from './components/CardTechRaw.js';
 
-import {putBoardToMagnolia} from './LoadAndSave.js'
-
 import axios from "axios";
 import React from "react";
-import { useStateWithCallbackLazy } from 'use-state-with-callback';
-
 
 import { Rnd } from "react-rnd";
-// import Draggable from 'react-draggable'; 
 
 import { useCallback } from 'react';
 
@@ -50,7 +45,6 @@ function Board() {
 
   const [cards, setCards] = React.useState(null);
   const [boards, setBoards] = React.useState(null);
-  // const [board, setBoard] = useStateWithCallbackLazy({cards:[]});
   const [board, setBoard] = React.useState({cards:[]});
   const [category, setCategory] = React.useState("All");
   const [newBoardName, setNewBoardName] = React.useState("");
@@ -76,17 +70,11 @@ function Board() {
     for (const property in boards1) {
       const board = boards1[property]
       console.log(`${property}: ${boards1[property]}`);
-      // if (!board.cards){
-      //   return null; //neds improvement!
-      // }
     }
 
     setBoards(boards1);
 
     console.log('getBoards() done')
-    //INITIALISE A HAND.
-    // var localBoard = getBoardById(boards1[0]["@id"])
-    // setBoard(localBoard)
   }
 
   React.useEffect(() => {
@@ -110,14 +98,6 @@ function Board() {
     getCards();
     getBoards();
 
-          //INIT FOR TESTING
-  // onBoardChange(
-  //   {
-  //     target:{
-  //       value: "11258bad-2443-4872-ad31-8e1cca471f1e"
-  //     }
-  //   }
-  // )
   }, []);
 
 
@@ -127,44 +107,34 @@ function Board() {
     }else{
       console.log(`useEffect.boards null`)
     }
-
   },[boards])
 
 
-
   const onBoardChange = async(event) => {
-    //setNewBoardName(event.target.value);
-    // var boardId = event.target.value;
+
     var boardNameSelected = event.target.value;
     
-    //var localBoard = getBoardById(boardId)
     console.log("onBoardChange= " + boardNameSelected)
 
     const fbpathOff = `boards/${boardName}`;
-    //const refOff = ref(db, fbpathOff);
-    
+
     off(ref(db, fbpathOff))
     const dbRef = ref(db);
     const snapshot = await get(child(dbRef, `boards/${boardNameSelected}`))
     const response = snapshot.val()
 
-    var localBoard = response;
+    //var localBoard = response;
     // debugger;
 
     setBoardName(boardNameSelected)
-    // setBoard(null)
-    
-    //setBoard(localBoard)
 
     const fbpath = `boards/${boardNameSelected}`;
-    const starCountRef = ref(db, fbpath);
-    onValue(starCountRef, (snapshot) => {
+    onValue(ref(db, fbpath), (snapshot) => {
         const data = snapshot.val();
         console.log(`Realtime. BOARD onValue: ${JSON.stringify(data, null, 2)}`)
 
         setBoard(data)
       });
-
   };
 
 
@@ -243,6 +213,7 @@ function Board() {
 
   }
 
+
 const removeCardFromBoardByKey = useCallback((cardkey, cardName) => {
   console.log(`removeCardFromBoardByKey ${cardkey} ${cardName}`)
 
@@ -260,6 +231,7 @@ const removeCardFromBoardByKey = useCallback((cardkey, cardName) => {
   set(ref(db, dbpath), localBoard.cards)
 
 }, [board]);
+
 
 const handleNoteChange = useCallback((cardkey, cardName, e, newNoteParam) => {
   
@@ -286,50 +258,10 @@ const handleNoteChange = useCallback((cardkey, cardName, e, newNoteParam) => {
   
 }, [board]);
 
-const updateNoteOnLocalCard =(index, newNote) => {
-  console.log(`updateNoteOnLocalCard. index ${index}`)
-  if (index>-1 && board.cards.length > 0){
-    const localBoard = updateIH(board, {cards: {[index]: {$merge: {note:newNote}}}})
-
-    setBoard(localBoard)
-  }
-}
-
-// const showFullCardOLD = (id, e) => {
-//   //e.preventDefault();
-//   console.log('ShowFullCard ' + id);
-//   setCardPreview(id)
-// }
-
 const showFullCard = useCallback((cardId) => {
   console.log(`ShowFullCard ${cardId} `)
   setCardPreview(cardId)
 }, []);
-
-
-// const removeCard = (cardId) => {
-//   //setNewBoardName(event.target.value);o
-//   console.log("remove: " + cardId)
-//   toggleSelection(cardId, "")
-// };
-
-
-  // const addOrRemove =(arrayInput, value) => {
-  //   //var array = deepClone(arrayInput)
-  //   var array;
-  //   var index = arrayInput.indexOf(value);
-  //   if (index === -1) {
-  //       //array.push(value);
-  //       array = update(arrayInput, {$push: [value]})
-  //   } else {
-  //       //array.splice(index, 1);
-  //       array = update(arrayInput, {$splice: [[index,1]]})
-  //   }
-  //   return array;
-  // }
-
-
-
 
   const toggleCategory = (name, e) => {
     //e.preventDefault();
@@ -344,12 +276,12 @@ const showFullCard = useCallback((cardId) => {
     return found;
   }
 
-  const getBoardById = (boardId) => {
-    const found = boards.find(board => 
-      board['@id'] === boardId
-    )
-    return found;
-  }
+  // const getBoardById = (boardId) => {
+  //   const found = boards.find(board => 
+  //     board['@id'] === boardId
+  //   )
+  //   return found;
+  // }
 //https://www.youtube.com/watch?v=X-iSQQgOd1A
 
 const saveBoard = async(param, e) => {
@@ -369,8 +301,7 @@ const saveBoard = async(param, e) => {
 
   const el = document.getElementById("board-name-input")
   el.value = ''
-  
-  //e.target.value=''
+
   getBoards()
 }
 
@@ -400,7 +331,6 @@ if (!cards) return "No card!"
   );
 
 
-
   const boardCards = board.cards?.map((cardObj, index) =>
   {
     const techCard = getCardById(cardObj.cardId);
@@ -415,18 +345,6 @@ if (!cards) return "No card!"
     }
   );
 
-  //INIT FOR TESTING
-  // onBoardChange(
-  //   {
-  //     target:{
-  //       value: "11258bad-2443-4872-ad31-8e1cca471f1e"
-  //     }
-  //   }
-  // )
-
-
-  
-
 
   const BoardSelector = () => {
 
@@ -437,7 +355,6 @@ if (!cards) return "No card!"
     //const boardsArray = ;
     // debugger;
     const options = Object.entries(boards).map(([key, board], index) =>{
-      const sel = (key==boardName) ? "selected" : "";
       return (<option key={key} value={key} >{key}</option>)
       // return (<option key={board['@id']} value={board['@id']}>{key}</option>)
     })
@@ -450,12 +367,11 @@ if (!cards) return "No card!"
     )
   };
 
+  
   var scale = 1.0;
   var cardsStyle = {
     transform:scale
   }
- 
-
   // transform:scale(0.8)
 
   // const style = {
