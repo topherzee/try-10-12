@@ -27,16 +27,14 @@ CODE THIS NEXT ********************************
 
 Lean up code.
 Use off more on firebase
-Add title and description.
-Create new boards.
+
 See mouse move.
 
 Content: Actually build an interesting board.
 
 Test on phone or tablet.
 
-
-
+When adding board - refresh other active clients with new board.
 
 ----
 Mobile Version.
@@ -53,6 +51,13 @@ https://www.npmjs.com/package/react-draggable
 (Interesting: https://github.com/tajo/react-movable)
 
 CODE ACCOMPLISHED ******************
+
+2021-11-14
+
+Create new boards.
+Add title and description.
+Dropdown shows current board.
+
 
 2021-11-13
 

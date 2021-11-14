@@ -352,17 +352,26 @@ const showFullCard = useCallback((cardId) => {
   }
 //https://www.youtube.com/watch?v=X-iSQQgOd1A
 
-const saveBoard = (e) => {
+const saveBoard = async(param, e) => {
   //e.preventDefault();
   console.log('Save Board. ' + newBoardName);
   //Disable saving to Magnolia for now. - Using Firebase instead..
   //putBoardToMagnolia(newBoardName, board, getBoards, true)
 
+  var localBoard = updateIH(board, {
+    name: {$set: newBoardName}
+  });
+
   //Send to firebase
   const dbpath = `boards/${newBoardName}`;
   console.log(`FIRE add board: ${dbpath}`)
-  set(ref(db, dbpath), board)
+  await set(ref(db, dbpath), localBoard)
 
+  const el = document.getElementById("board-name-input")
+  el.value = ''
+  
+  //e.target.value=''
+  getBoards()
 }
 
 const onNameChange = (event) => {
@@ -428,12 +437,13 @@ if (!cards) return "No card!"
     //const boardsArray = ;
     // debugger;
     const options = Object.entries(boards).map(([key, board], index) =>{
-      return (<option key={key} value={key}>{key}</option>)
+      const sel = (key==boardName) ? "selected" : "";
+      return (<option key={key} value={key} >{key}</option>)
       // return (<option key={board['@id']} value={board['@id']}>{key}</option>)
     })
 
     return (
-      <select id="hand-select" className="hand-select" onChange={onBoardChange}>
+      <select id="hand-select" className="hand-select" value={boardName} onChange={onBoardChange}>
         <option key="choose">Choose a board</option>
         {options}
         </select>
@@ -460,7 +470,7 @@ if (!cards) return "No card!"
 
     <div className="App Board">
       
-      <h1>Board</h1>
+      <h1 className="app-title">Board</h1>
       
       <div id="hand" className="hand" >
         <div id="hand-cards" className="hand-cards" style={cardsStyle}>
@@ -481,7 +491,7 @@ if (!cards) return "No card!"
             <BoardSelector/>
           </div>
 
-          <div className="save-button" key="SaveButton" onClick={(e)=> saveBoard("some-text",e)}>Save Board</div>
+          <div className="save-button" key="SaveButton" onClick={(e)=> saveBoard("some-text",e)}>Create Board</div>
           <input id="board-name-input" onChange={onNameChange} className="hand-name-input" type="text" placeholder="Name of board"/>
         </div>
       </div>

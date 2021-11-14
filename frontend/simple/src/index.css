@@ -67,6 +67,10 @@ html, body, #root{
   /* padding: 10mm; */
 }
 
+h1.app-title{
+  color: white;
+}
+
 .Board{
   display:flex;
   flex-direction: column;
@@ -161,7 +165,7 @@ html, body, #root{
       padding: 1mm 5mm;
       margin: 1mm;
       cursor: pointer;
-      width: 20mm;
+      width: 30mm;
     }
     .hand-name-input{
       width: 47.8mm;
@@ -177,7 +181,7 @@ html, body, #root{
       color:white;
       padding: 1mm 5mm;
       margin: 1mm;
-      width: 20mm;
+      width: 30mm;
     }
 
     div.category-filter{
