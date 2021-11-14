@@ -226,6 +226,10 @@ h1.app-title{
       font-size: 10pt;
       margin-top: 0mm;
       padding: 1mm;
+
+      white-space: pre-line;
+      position: relative;
+      z-index: 200;
     }
 
     div.mid-card{
@@ -450,6 +454,9 @@ border: dashed 1px #aaa;
       left: 0mm;
       right: 0mm;
     }
+    div.image-wrapper > img {
+      user-select: none;
+    }
 
 
 
@@ -488,6 +495,7 @@ div.cardgame-card-contents img.screenshot{
     h2.tech-deck-title{
       /*margin-bottom: 3mm;*/
       margin-top: 1mm;
+      white-space: pre-line;
     }
 
     .spine-title-wrapper{

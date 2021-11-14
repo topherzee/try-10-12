@@ -2,6 +2,14 @@ import React from 'react';
 
 function CardMid(props){
 
+  const style = {
+    // border: '1px dashed gray',
+    // padding: '0.5rem 1rem',
+    // marginBottom: '.5rem',
+    
+    cursor: 'move',
+  };
+
   const colMap = {
     "UI":"blue",
     "Experience":"red",
@@ -21,7 +29,7 @@ function CardMid(props){
    
     <div key={props.name} className={`mid-card`} >
       
-        <div className={" mini-card-category color-" + colMap[props.category] + " cat-" + props.category }>
+        <div className={" mini-card-category color-" + colMap[props.category] + " cat-" + props.category } style={{ ...style}}>
           {props.category}
         </div>
         <div className="mid-close-button" title="Remove card" onClick={(e)=> props.removeCard(props.cardkey,props.name ,e)}>X</div>
