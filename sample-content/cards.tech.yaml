@@ -1,0 +1,1009 @@
+'tech':
+  'jcr:primaryType': 'mgnl:folder'
+  'jcr:uuid': '9632bfa4-573a-48ad-b28d-ff3f1b0a2a42'
+  'mgnl:created': 2021-10-19T21:28:37.499+02:00
+  'mgnl:createdBy': 'superuser'
+  'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+  'mgnl:lastModifiedBy': 'superuser'
+  'name': 'tech'
+  'UI':
+    'jcr:primaryType': 'mgnl:folder'
+    'jcr:uuid': '342379e1-8f54-49ef-9362-1dd0c30520df'
+    'mgnl:created': 2021-10-19T21:28:37.499+02:00
+    'mgnl:createdBy': 'superuser'
+    'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+    'mgnl:lastModifiedBy': 'superuser'
+    'name': 'UI'
+    'Content type':
+      'category': 'UI'
+      'description': 'Declare the content model of your project with content types,
+        and the relationships between them.  Quickly provision apps, REST endpoints
+        and templates based on them.'
+      'image_url': 'content-types-markus-spiske-752466-unsplash.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '22264d0f-9842-44f8-bcbf-255711343d91'
+      'mgnl:created': 2021-10-19T21:46:25.964+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Content type'
+      'tags_text': 'ui, model, interoperability'
+    'Content app':
+      'category': 'UI'
+      'description': 'Manage structured content efficiently in a form. Can operate
+        on external content. Provision content apps for each key type of content.'
+      'image_url': 'screen-content-app-form.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'fce5d73c-9fb6-4242-b1fa-66ee4938013a'
+      'mgnl:created': 2021-10-19T21:47:03.680+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Content app'
+      'tags_text': 'ui, app, interoperability'
+    'Pages app':
+      'category': 'UI'
+      'cost': '1/3'
+      'description': 'Manage the page hierarchy of websites. Pages are edited in WYSIWYG
+        style.  Editors choose from provisioned page templates and assemble pages
+        with component templates.'
+      'image_url': 'screen-pages-app.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '911d3cde-40d5-403c-a2e3-aca8b0ec5f29'
+      'mgnl:created': 2021-10-19T21:50:28.599+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Pages app'
+      'tags_text': 'ui, app, experience'
+    'Stories app':
+      'category': 'UI'
+      'cost': '1/3'
+      'description': 'Manage content items that include both structured content (a
+        form) and a free list of content blocks. Ideal for articles, landing pages
+        & curation.'
+      'image_url': 'screen-stories-app.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '52e3cd10-6755-4140-a9b8-ea59d0d95440'
+      'mgnl:created': 2021-10-19T21:50:30.294+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Stories app'
+      'tags_text': 'ui, app, experience'
+    'Tools app':
+      'category': 'UI'
+      'cost': '1/3'
+      'description': 'A simple app to display form fields and action buttons.  Good
+        for a UI to configure a custom feature, or trigger actions like flushing cache
+        or running a report.'
+      'image_url': 'screen-tools-app.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '6a9bd191-7d8a-4e6a-83de-aece622c312a'
+      'mgnl:created': 2021-10-19T21:51:19.285+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Tools app'
+      'tags_text': 'ui, app'
+    'Custom app':
+      'category': 'UI'
+      'cost': '3'
+      'description': 'Apps can supply a completely customized UI. UI can be created
+        in Java or supplied by front end technologies, for example via an IFRAME.'
+      'image_url': 'screen-custom-app.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '67048c14-d3b3-44e3-b340-dfb7d8e17c92'
+      'mgnl:created': 2021-10-19T21:51:20.174+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Custom app'
+      'tags_text': 'ui, app, interoperability'
+    'UI language':
+      'category': 'UI'
+      'cost': '1'
+      'description': 'UI supports full translation to any language. Five languages
+        are available out-of-the-box.'
+      'image_url': 'ui-language-art-ball-shaped-blur-326036.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'bd7cc4fb-5c07-49cd-bccb-98222a035d24'
+      'mgnl:created': 2021-10-19T21:51:21.145+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'UI language'
+      'tags_text': 'ui, language'
+    'Content locale':
+      'category': 'UI'
+      'cost': '1'
+      'description': 'Manage content in multiple languages. For a website, either
+        create one content tree per language, use a single tree and translate each
+        page, or mix the two approaches.'
+      'image_url': 'screen-content-language.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '8b2eb93d-3fdf-4cdd-a7a0-d590725d9780'
+      'mgnl:created': 2021-10-19T21:51:22.033+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Content locale'
+      'tags_text': 'ui, language'
+    'Personalization trait':
+      'category': 'UI'
+      'cost': '1/3'
+      'description': 'Provide a custom trait, based on request headers, user behaviour,
+        contextual factors, or external systems. Authors can then create variants
+        of content to be shown based on the trait values.'
+      'image_url': 'personalization-trait-ben-weber-788982-unsplash.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'a1aff2dd-b116-4eaa-b3ad-a685282adacc'
+      'mgnl:created': 2021-10-19T21:51:22.784+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Personalization trait'
+      'tags_text': 'marketing, experience, interoperability'
+    'Categorization':
+      'category': 'UI'
+      'cost': '1'
+      'description': 'Provide a custom hierarchy of categories. Categories are useful
+        for creating dynamic lists of content and providing personalized content.'
+      'image_url': 'categorization.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '02fc0bcc-385c-444a-a4b5-a4f87b39a5f5'
+      'mgnl:created': 2021-10-19T21:51:24.414+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Categorization'
+      'tags_text': 'ui, taxonomy'
+    'Tags':
+      'category': 'UI'
+      'cost': '1'
+      'description': 'Provision ad-hoc tagging on an app. Tags make finding and reusing
+        content easier, and are useful for providing personalized content. The Assets
+        app auto-tags images based on image recognition.'
+      'image_url': 'tags.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'f00a81ac-1218-4c9c-a76f-c2a44ddf215f'
+      'mgnl:created': 2021-10-19T21:51:25.268+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Tags'
+      'tags_text': 'ui, taxonomy'
+    'Find bar':
+      'category': 'UI'
+      'cost': '1/3'
+      'description': 'Add custom search results by configuring a REST endpoint, or
+        custom code. Or add a new listener and run any command or code in response
+        to input.'
+      'image_url': 'screen-find-bar.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '5a1e3afe-8c46-4899-858e-be8bdd9e11cb'
+      'mgnl:created': 2021-10-19T21:51:29.706+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Find bar'
+      'tags_text': 'ui, search'
+    'App launcher':
+      'category': 'UI'
+      'cost': '1'
+      'description': 'Configure which apps are displayed in which groups, their order,
+        and which users can see and access them.'
+      'image_url': 'screen-app-launcher.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'ef752d30-b228-45d7-88a2-783d25ca61ba'
+      'mgnl:created': 2021-10-19T21:51:31.823+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'App launcher'
+      'tags_text': 'ui, app'
+    'Form':
+      'category': 'UI'
+      'cost': '1'
+      'description': 'Collect structured content with a set of fields in one or more
+        tabs. Forms are most often used in detail subApps and in template dialogs.'
+      'image_url': 'screen-form.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'dcbe11aa-4aa1-4e95-96e3-80df7b888e66'
+      'mgnl:created': 2021-10-19T21:51:33.789+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Form'
+      'tags_text': 'ui, forms'
+    'Subapp':
+      'category': 'UI'
+      'cost': '1/3'
+      'description': 'Apps have 1 or more subapps. SubApps can be permanent like the
+        Browser SubApp of a content app. Or they can be temporary, like the detail
+        SubApp that opens when you edit an item.'
+      'image_url': 'screen-sub-app.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '580780c2-a372-4d15-b435-ab0ba6ed905a'
+      'mgnl:created': 2021-10-19T21:51:53.669+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Subapp'
+      'tags_text': 'ui, app'
+    'Choose dialog':
+      'category': 'UI'
+      'cost': '1/3'
+      'description': 'A dialog to choose an item from a content app, or external content
+        source.  Typically used to create a reference from one item to another, for
+        example to reference an asset from a DAM.'
+      'image_url': 'screen-choose-dialog.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '4c21edd9-10c1-49a3-b0a4-9eb13dc1e6f4'
+      'mgnl:created': 2021-10-19T21:51:54.485+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Choose dialog'
+      'tags_text': 'ui, forms,  interoperability'
+    'Alert':
+      'category': 'UI'
+      'cost': '1'
+      'description': 'Provide a small notification or an alert dialog in the UI. Can
+        have level ''info'', ''warning'', or ''error''.'
+      'image_url': 'screen-alert.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'dbd9f0ba-15c3-4a79-bd74-f8cf73e0150d'
+      'mgnl:created': 2021-10-19T21:52:08.672+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Alert'
+      'tags_text': 'ui, notification'
+    'Light dialog':
+      'category': 'UI'
+      'cost': '1'
+      'description': 'Provide a dialog in the UI to collect simple information.'
+      'image_url': 'screen-light-dialog.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '649ac8ef-0812-4f2d-92a5-42ff4b520067'
+      'mgnl:created': 2021-10-19T21:52:09.543+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Light dialog'
+      'tags_text': 'ui, notification'
+    'Message':
+      'category': 'UI'
+      'cost': '1'
+      'description': 'Provide a message (info, warn, error) in the UI to inform the
+        user. Detailed message info is available in the Messages app.'
+      'image_url': 'screen-messages.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'a89d5c48-bf8b-45e4-a66a-4d571cedef00'
+      'mgnl:created': 2021-10-19T21:52:10.377+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Message'
+      'tags_text': 'ui, notification, interoperability'
+    'Column formatter':
+      'category': 'UI'
+      'cost': '1/3'
+      'description': 'Customize how content is displayed in a column row, for example
+        a mini-graph, icon or related content from an external system.'
+      'image_url': 'screen-column-formatter.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'dffbf4c2-e367-456a-8a1a-a6de5704d8a8'
+      'mgnl:created': 2021-10-22T15:17:56.998+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Column formatter'
+      'tags_text': 'ui, interoperability'
+    'Field type':
+      'category': 'UI'
+      'cost': '1/3'
+      'description': 'Provide a custom UI widget to collect user input and store a
+        simple or complex value. Often used to allow selection of an item from an
+        external system, or to provide complex interrelated fields.'
+      'image_url': 'screen-field-type.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '658fa4bb-5497-44d6-b0ec-cd38a47e389f'
+      'mgnl:created': 2021-10-22T15:19:01.881+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Field type'
+      'tags_text': 'ui, forms, interoperability'
+    'Workbench view':
+      'category': 'UI'
+      'cost': '1/3'
+      'description': 'Provide a custom view on the contents of an app, and allow selection
+        of content items, for example a calendar view. List, Tree & Thumbnail views
+        are available out-of-the-box.'
+      'image_url': 'screen-workbench-view.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '82f8d521-5eb2-41ca-b925-738dd0b15afa'
+      'mgnl:created': 2021-10-22T15:19:08.591+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Workbench view'
+      'tags_text': 'ui, app'
+    'Browser action':
+      'category': 'UI'
+      'cost': '1/3'
+      'description': 'Provide a custom action to the action bar in a Browser SubApp.
+        It will typically operate on the selected items in the workbench view.'
+      'image_url': 'screen-browser-action.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '940217c2-d582-4d27-bd92-3182a7871abc'
+      'mgnl:created': 2021-10-22T15:19:09.545+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Browser action'
+      'tags_text': 'ui, interoperability'
+    'Dialog action':
+      'category': 'UI'
+      'cost': '1/3'
+      'description': 'Provide a custom action at the bottom of a dialog (form), it
+        will typically operate on, or relate to the open item.'
+      'image_url': 'screen-dialog-action.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '48ab197b-2cc5-4b69-94ba-5fed0cd55d51'
+      'mgnl:created': 2021-10-22T15:19:09.872+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Dialog action'
+      'tags_text': 'ui, forms, interoperability'
+    'Task':
+      'category': 'UI'
+      'cost': '1/3'
+      'description': 'Send a task to a user or a group to inform them of a job and
+        to provide them with actions, such as to approve or reject a content publication
+        request.'
+      'image_url': 'screen-task-detail.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '74685fbd-c484-4856-b033-435ee48f5680'
+      'mgnl:created': 2021-10-22T15:19:11.206+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Task'
+      'tags_text': 'ui, notification, workflow, interoperability'
+    'Custom UI component':
+      'category': 'UI'
+      'cost': '3'
+      'description': 'Provide your own completely custom UI component, and embed it
+        in any app. For example to display some information from an external system.'
+      'image_url': 'screen-custom-component.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '487a605f-f108-466d-816f-5e3bc0b0bc43'
+      'mgnl:created': 2021-10-22T15:19:11.531+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Custom UI component'
+      'tags_text': 'ui, interoperability'
+  'Experience':
+    'jcr:primaryType': 'mgnl:folder'
+    'jcr:uuid': '942b9c28-66d5-4873-bb10-55f5de540440'
+    'mgnl:created': 2021-10-19T21:28:37.499+02:00
+    'mgnl:createdBy': 'superuser'
+    'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+    'mgnl:lastModifiedBy': 'superuser'
+    'name': 'Experience'
+    'Site (Multisite)':
+      'category': 'Experience'
+      'cost': '1'
+      'description': 'Manage all top level concerns on the site definition, such as
+        languages, domains & mappings.   Run multiple sites on one instance, and share
+        content, config & code between them as desired.'
+      'image_url': 'site.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '912c843a-4b97-4014-8e28-381c8cbe823c'
+      'mgnl:created': 2021-10-19T21:52:13.027+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Site (Multisite)'
+      'tags_text': 'templating'
+    'Theme':
+      'category': 'Experience'
+      'cost': '1'
+      'description': 'Package a collection of resource files that gives a site its
+        visual identity through the use of styles, colors, typography, scripts and
+        imaging variants. '
+      'image_url': 'theme-7241307726_8f569062fe_o.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '5cd368ca-12bd-43ae-9f27-a703fec7e9e0'
+      'mgnl:created': 2021-10-19T21:52:39.390+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Theme'
+      'tags_text': 'templating, style'
+    'Imaging variant':
+      'category': 'Experience'
+      'cost': '1'
+      'description': 'Configure the image sizes and resizing behaviour your project
+        needs. The imaging system performs the appropriate operations when an image
+        is requested.'
+      'image_url': 'imaging-variants-hector-j-rivas-626618-unsplash.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '533963eb-0b91-4c91-8e2b-f3477416435d'
+      'mgnl:created': 2021-10-19T21:52:53.701+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Imaging variant'
+      'tags_text': 'templating, style, imaging'
+    'Page template prototype':
+      'category': 'Experience'
+      'cost': '1'
+      'description': 'Provide a prototype for a page template, which all page templates
+        in the site will automatically inherit from. This makes it easy to provide
+        and maintain defaults for pages.'
+      'image_url': 'page-template-prototype-standard-graph-stencil.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '6ab12c1d-123c-444a-9f47-bf0f277524c6'
+      'mgnl:created': 2021-10-19T21:52:54.016+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Page template prototype'
+      'tags_text': 'templating'
+    'Page template':
+      'category': 'Experience'
+      'cost': '1'
+      'description': 'Provide a template for a page type, for example ''home'', or
+        ''section'' or ''faq''. Authors can then choose which template to use when
+        they create a page on the site.'
+      'image_url': 'screen-page-template.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '8a8f61b7-05bf-4d58-a72f-a7d1f611c0b7'
+      'mgnl:created': 2021-10-19T21:52:54.336+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Page template'
+      'tags_text': 'templating'
+    'Component template':
+      'category': 'Experience'
+      'cost': '1'
+      'description': 'Provide a template for a component, for example ''hero'', ''teaser'',
+        ''email signup'' or ''3d map''. Authors can then add components to areas on
+        pages and supply their content.'
+      'image_url': 'screen-component-template.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '1c1edef9-aa29-4092-93cf-25b9ca76e4d1'
+      'mgnl:created': 2021-10-19T21:52:54.714+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Component template'
+      'tags_text': 'templating, interoperability'
+    'Block template':
+      'category': 'Experience'
+      'cost': '1'
+      'description': 'Provide a template for a block type, for example ''tweet'',
+        ''360 image'' or ''ad banner''. Authors can then add blocks to stories in
+        the Stories app and supply their content.'
+      'image_url': 'screen-block-template.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '9273e950-319d-401c-90e0-c2b3e42fc6d7'
+      'mgnl:created': 2021-10-19T21:52:55.030+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Block template'
+      'tags_text': 'templating, interoperability'
+    'Templating functions':
+      'category': 'Experience'
+      'cost': '1/3'
+      'description': 'Provide a library of functions usable in all template scripts.
+        The stock libraries get content, generate links to assets, help with search,
+        and more. '
+      'image_url': 'templating-functions.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'bbeab0e6-1758-4d17-aa8e-609d21f99f97'
+      'mgnl:created': 2021-10-19T21:52:55.341+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Templating functions'
+      'tags_text': 'templating, business logic'
+    'Template model':
+      'category': 'Experience'
+      'cost': '1/3'
+      'description': 'Provide code to a specific template, for example to simplify
+        the template script or to process a form post.'
+      'image_url': 'template-model-hotrod-rktkn-77442-unsplash.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '46de7704-3efe-4140-8593-1beceb8eeed0'
+      'mgnl:created': 2021-10-19T21:52:55.655+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Template model'
+      'tags_text': 'templating, business logic, forms'
+    'Resource file':
+      'category': 'Experience'
+      'cost': '1'
+      'description': 'Provide web resources like css, images, fonts, javascript, json. '
+      'image_url': 'resource-files.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '751f0ad3-2ad8-4ef5-8104-2a6972ba8324'
+      'mgnl:created': 2021-10-19T21:52:55.997+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Resource file'
+      'tags_text': 'frontend, style'
+    'Marketing tag':
+      'category': 'Experience'
+      'cost': '1'
+      'description': 'Enable authors to add javascripts from marketing services (aka
+        marketing tags) to groups of pages.'
+      'image_url': 'marketing-tag.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'ba90cf14-62bd-4449-9fe9-3a8836c3536b'
+      'mgnl:created': 2021-10-19T21:52:56.314+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Marketing tag'
+      'tags_text': 'frontend, marketing, interoperability'
+    'Public form':
+      'category': 'Experience'
+      'cost': '1/3'
+      'description': 'Process form submissions with custom and stock form processors.
+        Enable authors to create custom forms.'
+      'image_url': 'screen-exp-form.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '0cac448f-12c6-49e0-817a-d029bab0b0df'
+      'mgnl:created': 2021-10-19T21:52:56.973+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Public form'
+      'tags_text': 'frontend, forms, business logic, marketing'
+    'Search':
+      'category': 'Experience'
+      'cost': '1/3'
+      'description': 'Provide website search, based on JCR, or with an indexing server
+        like SOLR or ElasticSearch.'
+      'image_url': 'search-bar.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'a3c306db-a926-4231-92f8-8bedc6d5bf9a'
+      'mgnl:created': 2021-10-19T21:52:57.282+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Search'
+      'tags_text': 'frontend, search'
+    'Public user registration':
+      'category': 'Experience'
+      'cost': '1'
+      'description': 'Authors can enable visitors to register on the website. Includes
+        email confirmation and password recovery. Content can be restricted to registered
+        users.'
+      'image_url': 'screen-exp-public-user-registration.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '111a35df-1e0a-41ce-b3ee-44a198cfb5eb'
+      'mgnl:created': 2021-10-19T21:52:57.591+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Public user registration'
+      'tags_text': 'frontend, security, forms'
+    'CLI generators':
+      'category': 'Experience'
+      'cost': '1'
+      'description': 'Standardize or accelerate development across a team by creating
+        and sharing custom blueprints for mgnl CLI commands, like create-component
+        and create-page. '
+      'image_url': 'cli.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '28e320a8-edb3-4e01-9786-94fc29c3c3d9'
+      'mgnl:created': 2021-10-19T21:52:57.900+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'CLI generators'
+      'tags_text': 'automation'
+  'Backend':
+    'jcr:primaryType': 'mgnl:folder'
+    'jcr:uuid': 'ab3a66c8-cfd2-4e05-bcac-2c361dd56130'
+    'mgnl:created': 2021-10-19T21:28:37.499+02:00
+    'mgnl:createdBy': 'superuser'
+    'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+    'mgnl:lastModifiedBy': 'superuser'
+    'name': 'Backend'
+    'Bootstrap file':
+      'category': 'Backend'
+      'cost': '1'
+      'description': 'Store JCR content in a file. Bootstraps can be manually exported
+        and imported. Modules load bootstrap files at installation and during updates
+        to ''bootstrap'' content and configuration.'
+      'image_url': 'bootstrap.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '3856ed6c-50c6-4ea3-9895-932bb5bb6eca'
+      'mgnl:created': 2021-10-19T21:52:58.208+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Bootstrap file'
+      'tags_text': 'lifecycle'
+    'Version handler':
+      'category': 'Backend'
+      'cost': '1/3'
+      'description': 'A module can run update tasks at install and upon upgrading
+        the version, primarily to load and change configuration in the JCR repository.'
+      'image_url': 'version-handler.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '1c784af4-dc82-4fda-91df-7c989c793544'
+      'mgnl:created': 2021-10-19T21:52:58.510+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Version handler'
+      'tags_text': 'lifecycle'
+    'Module':
+      'category': 'Backend'
+      'cost': '1'
+      'description': 'The core system, extensions, and projects are composed of Magnolia
+        modules. Light modules can supply definitions, scripts and resource files.
+        Maven modules can do the same plus supply compiled Java.'
+      'image_url': 'module.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'bf58c8c1-e436-41d5-bac9-824ccf1deb3c'
+      'mgnl:created': 2021-10-19T21:52:58.820+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Module'
+      'tags_text': 'lifecycle'
+    'Scheduled task':
+      'category': 'Backend'
+      'cost': '1'
+      'description': 'Schedule a command to be executed on a recurring basis using
+        cron syntax.'
+      'image_url': 'scheduled-task-clock.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '04c34157-caea-4247-88bd-f56c56ad9618'
+      'mgnl:created': 2021-10-19T21:52:59.127+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Scheduled task'
+      'tags_text': 'lifecycle, business logic, automation, interoperability'
+    'Cloud environment':
+      'category': 'Backend'
+      'cost': '1'
+      'description': 'Magnolia Cloud provides three environments out-of-the-box for
+        continuous delivery: Integration, UAT & Live'
+      'image_url': 'clouds-dark.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'd53342eb-4d3b-4988-9d68-66e2fc25319f'
+      'mgnl:created': 2021-10-19T21:52:59.440+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Cloud environment'
+      'tags_text': 'lifecycle, marketing'
+    'Permission':
+      'category': 'Backend'
+      'cost': '1/3'
+      'description': 'Provision roles, groups & users. Tailor access rules based on
+        URI''s and JCR workspaces. Configure exactly which apps, which content, and
+        which actions are available to which users.'
+      'image_url': 'permission-thumbs-down.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '96f30ebc-99b1-421f-94f2-573e7ecb23c4'
+      'mgnl:created': 2021-10-19T21:52:59.743+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Permission'
+      'tags_text': 'security'
+    'Workspace observation':
+      'category': 'Backend'
+      'cost': '3'
+      'description': 'Listen to events in the repository and trigger a reaction. For
+        example, send an email when a comment is added.'
+      'image_url': 'observation-scope.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '0a4d691f-0d65-4e12-a622-27e00348e619'
+      'mgnl:created': 2021-10-19T21:53:00.676+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Workspace observation'
+      'tags_text': 'business logic'
+    'Cache strategy':
+      'category': 'Backend'
+      'cost': '1'
+      'description': 'Configure caching to optimize web site performance. Cache page
+        fragments to support personalization scenarios.'
+      'image_url': 'cache-squirrel.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '05b85bcd-4859-4ebf-b66c-ee7912691e91'
+      'mgnl:created': 2021-10-19T21:53:00.984+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Cache strategy'
+      'tags_text': 'performance'
+    'Registry':
+      'category': 'Backend'
+      'cost': '1/3'
+      'description': 'Registries provide global access to all definitions. The Definitions
+        app displays registered items, and any problems. Definitions support inherit
+        and decoration features. Apps, Dialogs, Templates & RestEndpoints are some
+        of the stock registries.'
+      'image_url': 'registry-card-catalog-sanwal-deen-93466-unsplash.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '2e002308-fc88-4eb4-9f9d-3ad794f8eb41'
+      'mgnl:created': 2021-10-19T21:53:02.497+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Registry'
+      'tags_text': ''
+    'Request Filter':
+      'category': 'Backend'
+      'cost': '3'
+      'description': 'Provide a filter to process incoming requests.  A filter can
+        transform the request, set a state value for later use, etc. Security, trait
+        detection & redirects are examples of stock filters. '
+      'image_url': 'filter-lense.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'f4766e79-ff12-4eea-9cf6-aeb116693d32'
+      'mgnl:created': 2021-10-22T15:19:18.750+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Request Filter'
+      'tags_text': 'security, business logic, interoperability'
+    'DI component':
+      'category': 'Backend'
+      'cost': '3'
+      'description': 'Provide a custom Java class with your own implementation for
+        one of the many supported interfaces in Magnolia. '
+      'image_url': 'di-cartridges.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'c40a215e-efec-4d46-829b-70e9bf0ab580'
+      'mgnl:created': 2021-10-22T15:19:19.069+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'DI component'
+      'tags_text': 'business logic'
+    'Command':
+      'category': 'Backend'
+      'cost': '1/3'
+      'description': 'Encapsulate Java operations in a command. Trigger the command
+        via an action button, the commands REST endpoint, a scheduled task, workspace
+        observation, or a workflow task.'
+      'image_url': 'command.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'ec8ebd9c-f435-4b82-9344-5192082ee455'
+      'mgnl:created': 2021-10-22T15:19:19.986+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Command'
+      'tags_text': 'business logic'
+    'Workflow':
+      'category': 'Backend'
+      'cost': '1/3'
+      'description': 'Provide custom 6-eye or 8-eye publishing workflows, or even
+        different workflows for different users or sections of content. Use any registered
+        workflow tasks.'
+      'image_url': 'workflow-arrows.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '7aa87c9a-9ab2-4bba-b21a-2c3ba8c8b0ce'
+      'mgnl:created': 2021-10-22T15:19:20.292+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Workflow'
+      'tags_text': 'business logic, interoperability'
+    'Workflow task':
+      'category': 'Backend'
+      'cost': '1/3'
+      'description': 'Provide a task to interact with a person, perform an activity
+        in Magnolia or to interact with an external system, for example to send an
+        sms.'
+      'image_url': 'workflow-task-marcello-gennari-768083-unsplash.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '372a4e5f-7aa3-4159-813a-92526941dd72'
+      'mgnl:created': 2021-10-22T15:19:20.599+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Workflow task'
+      'tags_text': 'business logic, interoperability'
+  'Integration':
+    'jcr:primaryType': 'mgnl:folder'
+    'jcr:uuid': '46108cf9-249e-4a35-9f57-32f355332ee0'
+    'mgnl:created': 2021-10-19T21:28:37.499+02:00
+    'mgnl:createdBy': 'superuser'
+    'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+    'mgnl:lastModifiedBy': 'superuser'
+    'name': 'Integration'
+    'Custom endpoint':
+      'category': 'Integration'
+      'cost': '3'
+      'description': 'Provide completely custom endpoints with the help of the included
+        Java REST framework.'
+      'image_url': 'custom-java-pexels-action-automotive-car-1091466.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '88a8bf9e-083e-4f64-8d25-5d0c47960949'
+      'mgnl:created': 2021-10-19T21:53:03.105+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Custom endpoint'
+      'tags_text': 'REST, business logic'
+    'Commands endpoint':
+      'category': 'Integration'
+      'cost': '1'
+      'description': 'Trigger any command with this out-of-the-box endpoint. Ideal
+        for webhooks.'
+      'image_url': 'commands-endpoint-network.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'ce788dbe-90b4-42ee-808a-d124de73cf28'
+      'mgnl:created': 2021-10-19T21:53:03.739+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Commands endpoint'
+      'tags_text': 'REST, business logic, automation'
+    'External content':
+      'category': 'Integration'
+      'cost': '3'
+      'description': 'Provide a Datasource, or Content Connector to display content
+        from external systems in content apps, choose dialogs and templates. Editors
+        can mix external content and local JCR content. '
+      'image_url': 'external-content-mixer-adi-goldstein-796588-unsplash.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'dbc4b34c-6481-408f-9bce-27dcd1c3fd64'
+      'mgnl:created': 2021-10-19T21:53:04.058+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'External content'
+      'tags_text': 'REST, marketing'
+    'External personalization traits':
+      'category': 'Integration'
+      'cost': '1/3'
+      'description': 'Provide personalization traits based on content in an external
+        system, such as a CRM.'
+      'image_url': 'external-personalization-traitsnathan-lindahl-205491-unsplash.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'a7ca5b40-bb05-499d-a9b9-f8f84d3d5d90'
+      'mgnl:created': 2021-10-19T21:53:04.994+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'External personalization traits'
+      'tags_text': 'marketing, interoperability'
+    'External image recognizer':
+      'category': 'Integration'
+      'cost': '1/3'
+      'description': 'Provide an external image recognition service to automatically
+        tag images in the DAM.'
+      'image_url': 'external-image-recognizer-rock-n-roll-monkey-681546-unsplash.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '6f66e0d9-94c6-4881-adfd-70649a8f40c5'
+      'mgnl:created': 2021-10-19T21:53:06.211+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'External image recognizer'
+      'tags_text': 'imaging, interoperability'
+    'Delivery endpoint':
+      'category': 'Integration'
+      'cost': '1'
+      'description': 'Quickly configure endpoints to deliver content from Magnolia.
+        Developers can use the Node syntax to retrieve the content hierarchy, and
+        the Query syntax to retrieve filtered and sorted items.'
+      'image_url': 'delivery-drew-beamer-457831-unsplash.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '88c24329-60b1-4af5-96f1-b5d42e8362ec'
+      'mgnl:created': 2021-10-22T15:19:21.510+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Delivery endpoint'
+      'tags_text': 'REST'
+    'Nodes endpoint':
+      'category': 'Integration'
+      'cost': '1'
+      'description': 'GET, PUT, POST & DELETE any Magnolia content or configuration
+        with this out-of-the-box endpoint.'
+      'image_url': 'nodes-endpoint-dhruv-weaver-618958-unsplash.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '883c9b1a-ecf6-4c71-ba60-95863af1c871'
+      'mgnl:created': 2021-10-22T15:19:22.127+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Nodes endpoint'
+      'tags_text': 'REST'
+    'REST client':
+      'category': 'Integration'
+      'cost': '3'
+      'description': 'Hit REST endpoints of external systems from within Magnolia
+        code and templates.'
+      'image_url': 'rest-client-dmitri-popov-297585-unsplash.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'ade4ba8a-5c78-47bb-a806-37ae52db93c0'
+      'mgnl:created': 2021-10-22T15:19:23.646+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'REST client'
+      'tags_text': 'REST'
+    'External forms':
+      'category': 'Integration'
+      'cost': '1/3'
+      'description': 'Enable authors to place forms on the website that are configured
+        in an external system, such as a CRM or MAT.'
+      'image_url': 'screen-exp-external-form.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '0c80f3d2-17bc-4446-8267-8bf4b2963240'
+      'mgnl:created': 2021-10-22T15:19:24.551+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'External forms'
+      'tags_text': 'marketing,interoperability'
+    'External DAM':
+      'category': 'Integration'
+      'cost': '1/3'
+      'description': 'Enable authors to reference assets stored in an external DAM
+        system.'
+      'image_url': 'screen-external-dam.png'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': 'bac6b417-2e64-43e0-aaea-a543e756d76e'
+      'mgnl:created': 2021-10-22T15:19:24.860+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'External DAM'
+      'tags_text': 'marketing, imaging, interoperability'
+    'External user system - SSO':
+      'category': 'Integration'
+      'cost': '1/3'
+      'description': 'Enable users to log in to the public website or AdminCentral,
+        based on accounts in an external user management system such as Active Directory.
+        Single sign on.'
+      'image_url': 'external-user-system.jpeg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '99efdff8-8e25-4cc8-b797-d4b18461ff38'
+      'mgnl:created': 2021-10-22T15:52:28.988+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'External user system - SSO'
+      'tags_text': 'security'
+    'Spring - Blossom':
+      'category': 'Integration'
+      'cost': '3'
+      'description': 'Connect Magnolia templates to Spring controllers. Build dialogs
+        dynamically with code.'
+      'image_url': 'blossom-magnolia.jpg'
+      'jcr:primaryType': 'card'
+      'jcr:uuid': '561797ce-7acc-4bed-85b4-2c965e3426bf'
+      'mgnl:created': 2021-10-22T15:53:31.977+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastModified': 2021-10-22T15:57:22.269+02:00
+      'mgnl:lastModifiedBy': 'superuser'
+      'name': 'Spring - Blossom'
+      'tags_text': 'business logic, interoperability'

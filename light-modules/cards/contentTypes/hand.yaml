@@ -1,0 +1,23 @@
+datasource:
+  workspace: hands
+  autoCreate: true
+
+model:
+  nodeType: hand
+
+  properties:
+  
+    name:
+      label: Name
+      required: true
+
+    cards:
+      label: Cards
+      type: reference:Card
+      multiple: true
+
+    description:
+      label: Description
+
+    image_url:
+      label: Image URL

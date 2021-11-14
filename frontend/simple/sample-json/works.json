@@ -1,0 +1,44 @@
+{
+    "name": "test4",
+    "type": "hand",
+    "path": "/Topher/test4",
+
+    "properties": [
+
+        {
+            "name": "name",
+            "type": "String",
+            "multiple": false,
+            "values": [
+                "test4"
+            ]
+        },
+        {
+        "name": "cards",
+        "type": "String",
+        "multiple": true,
+        "values": [
+          "940217c2-d582-4d27-bd92-3182a7871abc",
+          "02fc0bcc-385c-444a-a4b5-a4f87b39a5f5"
+        ]
+      },
+        {
+            "name": "description",
+            "type": "String",
+            "multiple": false,
+            "values": [
+                "Desc2"
+            ]
+        },
+ 
+        {
+            "name": "image_url",
+            "type": "String",
+            "multiple": false,
+            "values": [
+                "URL2"
+            ]
+        }
+    ],
+    "nodes": null
+}

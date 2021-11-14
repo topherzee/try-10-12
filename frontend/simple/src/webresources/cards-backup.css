@@ -1,0 +1,349 @@
+/* then for WOFF-capable browsers */
+
+
+@font-face {
+  font-family: DINWebPro-Bold;
+  src: url("./fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: DINWebPro-Medium;
+  src: url("./fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: DINWebPro;
+  src: url("./fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: DINWebPro-Light;
+  src: url("./fonts/Roboto/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: DINCompPro-Bold;
+  src: url("./fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: DINCompPro-Medium;
+  src: url("./fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: DINCompPro;
+  src: url("./fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: DINCompPro-Light;
+  src: url("./fonts/Roboto_Condensed/RobotoCondensed-Light.ttf") format("truetype");
+}
+
+
+body{
+  width: 210mm;
+
+  background: white;
+  margin: 0;
+  padding: 0;
+
+  color: black;
+  font-family: 'DINCompPro','DINWebPro', sans-serif;
+  background-color: white;
+  /*width: 65mm;*/
+}
+
+
+div.cardgame-card-print-wrapper{
+
+    display: inline-block; /* must be BLOCK for PDF */
+
+    width: 65mm;
+    height: 97mm;/*Have to do 96 instead of 97 to prevent PDF issues. */
+
+    /*width: 2.6in;
+    height: 3.82in;
+*/
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+
+    background-color: #aaaaaa;
+}
+
+
+/*
+@media print {
+
+ div.cardgame-card-print-wrapper{
+   background-color: white;
+   display: block;
+
+  page-break-after: always;
+ }
+
+}
+*/
+
+
+
+div.cardgame-card{
+  display: block;
+  width: 59mm;
+  height: 91mm;
+
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  overflow-y: hidden;
+  position: absolute;
+  top: 3mm;
+  left: 3mm;
+
+  border: solid 0px #999;
+  background-color: white;
+}
+
+div.rfp-card-center-point{
+  display: none;
+  width: 29.5mm;
+  height: 45.5mm;
+
+  margin: 0;
+  padding: 0;
+  border: solid 1px #999;
+  vertical-align: top;
+  overflow-y: hidden;
+  position: absolute;
+  top: 3mm;
+  left: 3mm;
+}
+
+
+
+div.cardgame-card-print-bounds{
+  position: absolute;
+  /*border: dashed 1px #aaa;*/
+
+  width: 51mm;
+  height: 83mm;
+
+  top: 4mm;
+  left: 4mm;
+  z-index: 200;
+  margin: 0;
+  padding: 0;
+}
+
+div.cardgame-card-contents{
+  position: absolute;
+  top: 9mm;
+  left: 4mm;
+  right: 4mm;
+  bottom: 9mm;
+  overflow: hidden;
+}
+
+div.cardgame-card-contents img{
+  position: absolute;
+
+  bottom: 5mm;
+  max-width: 50mm;
+  max-height: 35mm;
+}
+
+h2{
+  font-size: 15pt;
+  line-height: 16pt;
+  color: black;
+  font-family: 'DINCompPro-Light','DINWebPro-Light';
+  font-weight: lighter;
+  /*margin-bottom: 0.2em;*/
+  /*text-transform: capitalize;*/
+}
+
+p.description{
+  white-space: pre-wrap;
+  margin-top: 5mm;
+
+  font-size: 8pt;
+  line-height: 10pt;
+
+}
+
+div.cardgame-category{
+  font-family: 'DINCompPro-Bold','DINWebPro-Bold';
+  font-size: 7pt;
+  position: absolute;
+  top: 4mm;
+  left: 15mm;
+  right: 15mm;
+
+  height: 3.3mm;
+  margin-top: -1mm;
+  text-align: center;
+  margin: auto;
+  color: white;
+  font-weight: normal;
+  text-transform: uppercase;
+
+  z-index: 100;
+}
+
+.color-m-green{
+  background-color: #689600 !important;
+}
+.color-blue{
+  background-color: #4b8e9e !important;
+}
+.color-light-blue{
+    /*background-color: #CC333F;*/
+  background-color: #93bbc4 !important;
+}
+.color-light-green{
+  background-color: #aabf2f !important;
+}
+.color-yellow{
+  background-color: #ffbf2f !important;
+}
+.color-dark-green{
+  background-color: #2a3d00 !important;
+}
+.color-red{
+  background-color: #9a3332 !important;
+}
+
+.color-white{
+  background-color: #FFFFFF !important;
+}
+
+.color-blue-foreground{
+  color: #4b8e9e;
+}
+
+.color-light-green-foreground{
+  color: #aabf2f;
+}
+.color-m-green-foreground{
+  color: #689600;
+}
+
+
+div.card-type{
+  font-family: 'DINCompPro-Medium', 'DINWebPro-Medium',sans-serif;
+  text-transform: uppercase;
+  font-size: 5pt;
+  position: absolute;
+  bottom: 0.5mm;
+  left: 0;
+}
+
+div.card-footer{
+  position: absolute;
+  bottom: 0mm;
+  left: 0;
+  right: 0;
+  font-size: 8pt;
+}
+
+div.cost{
+
+}
+div.tags{
+  position: absolute;
+  left: 15mm;
+  right: 0mm;
+  bottom: 0mm;
+  text-align: right;
+  display: none;
+}
+
+div.cost-label{
+  display: inline-block;
+  width: 10mm;
+  display: none;
+}
+
+div.cost-label-custom{
+  display: inline-block;
+  width: 10mm;
+}
+div.cost-coins{
+  display:inline-block;
+}
+
+img.magnolia-logo-bottom{
+  position: absolute;
+  bottom: 0mm;
+  left: 0;
+  height: 16px;
+}
+img.magnolia-logo-bottom-rfp{
+  position: absolute;
+  bottom: 0mm;
+  left: 50%;
+  margin-left: -30px;
+  height: 16px;
+}
+
+/* RFP CARDS */
+
+
+div.rfp-category{
+  color:black;
+}
+div.rfp-card{
+  text-align: left;
+}
+
+h2.rfp-title{
+  display: block;
+  position: absolute;
+  bottom: 40mm;
+  vertical-align: bottom;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'DINCompPro','DINWebPro';
+}
+
+
+
+
+p.rfp-description{
+  position: absolute;
+  display:block;
+  top: 38mm;
+  font-size: 10pt;
+  line-height: 12pt;
+  width: 100%
+}
+
+h2.rfp-back{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    color: white;
+    text-transform: lowercase;
+    text-align: center;
+    font-size: 7mm;
+    margin: 0;
+    margin-top:-3.5mm;
+}
+
+img.magnolia-logo-back{
+  position: absolute;
+  height: 8mm;
+  width: 32mm;
+  left: 50%;
+  margin-left: -16mm;
+  margin-top: -4mm;
+  top: 50%;
+}
+
+div.cardgame-version{
+  position: absolute;
+  bottom: 3mm;
+
+  width: 100%;
+  text-align: center;
+  color: black;
+  font-size: 6pt;
+}

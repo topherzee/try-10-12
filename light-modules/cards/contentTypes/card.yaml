@@ -1,0 +1,36 @@
+datasource:
+  workspace: cards
+  autoCreate: true
+
+model:
+  nodeType: card
+
+  properties:
+  
+    name:
+      label: Name
+      i18n: true
+      required: true
+
+    cost:
+      label: Cost
+      required: false
+
+    category:
+      label: Category
+      required: false
+
+    description:
+      label: Description
+      i18n: true
+      required: false
+
+    image_url:
+      label: Image URL
+      required: false
+
+    tags_text:
+      label: Tags
+      required: false
+
+

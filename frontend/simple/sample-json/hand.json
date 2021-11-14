@@ -1,0 +1,54 @@
+{
+    "name": "Test1",
+    "type": "hand",
+    "path": "/Topher/Test1",
+    "identifier": "4fffc704-bff6-4cad-a807-5ab773820dbf",
+    "properties": [
+        {
+            "name": "description",
+            "type": "String",
+            "multiple": false,
+            "values": [
+                "Very fancy."
+            ]
+        },
+        {
+            "name": "name",
+            "type": "String",
+            "multiple": false,
+            "values": [
+                "Test1"
+            ]
+        },
+        {
+            "name": "cards",
+            "type": "String",
+            "multiple": true,
+            "values": [
+                "fce5d73c-9fb6-4242-b1fa-66ee4938013a",
+                "1c784af4-dc82-4fda-91df-7c989c793544"
+            ]
+        }
+    ],
+    "nodes": null
+}
+
+
+
+{
+    "results": [
+      {
+        "@name": "Test1",
+        "@path": "/Topher/Test1",
+        "@id": "4fffc704-bff6-4cad-a807-5ab773820dbf",
+        "@nodeType": "hand",
+        "description": "Very fancy.",
+        "name": "Test1",
+        "cards": [
+          "fce5d73c-9fb6-4242-b1fa-66ee4938013a",
+          "1c784af4-dc82-4fda-91df-7c989c793544"
+        ],
+        "@nodes": []
+      }
+    ]
+  }

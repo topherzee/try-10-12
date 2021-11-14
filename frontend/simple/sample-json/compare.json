@@ -1,0 +1,33 @@
+{
+    "name": "some-text",
+    "type": "hand",
+    "path": "Topher/some-text",
+    "nodes": null,
+    "properties": [
+      {
+        "name": "name",
+        "type": "String",
+        "multiple": false,
+        "values": [
+          "some-text"
+        ]
+      },
+      {
+        "name": "description",
+        "type": "String",
+        "multiple": false,
+        "values": [
+          "sample description"
+        ]
+      },
+      {
+        "name": "cards",
+        "type": "String",
+        "multiple": true,
+        "values": [
+          "dbd9f0ba-15c3-4a79-bd74-f8cf73e0150d",
+          "ef752d30-b228-45d7-88a2-783d25ca61ba"
+        ]
+      }
+    ]
+  }

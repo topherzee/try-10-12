@@ -1,0 +1,23 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+workspace: cards
+depth: 3
+limit: 100
+# personalized: true
+bypassWorkspaceAcls: true
+systemProperties:
+
+
+nodeTypes:
+  # - mgnl:folder
+  - mgnl:content
+
+# childNodeTypes:
+#   - mgnl:area
+#   - mgnl:component
+#   - mgnl:contentNode
+
+# references:
+#   - name: assetReference
+#     propertyName: image
+#     referenceResolver:
+#       class: info.magnolia.rest.reference.dam.AssetReferenceResolverDefinition

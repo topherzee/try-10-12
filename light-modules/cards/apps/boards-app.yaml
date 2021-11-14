@@ -1,0 +1,15 @@
+!content-type:board
+name: boards-app
+label: Boards
+
+#Optionally override any of the app configuration supplied by the content type.
+subApps:
+  detail:
+    label: Board
+    
+    form:
+      properties:
+        description:
+          rows: 8
+        cardsDetails:
+          rows: 4
