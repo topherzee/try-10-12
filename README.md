@@ -25,18 +25,17 @@ Status *****************************
 
 CODE THIS NEXT ********************************
 
-Firebase / online synced cards.
-Working on Firebase1 - write content when cards move.
-Read content.
+Lean up code.
+Use off more on firebase
+Add title and description.
+Create new boards.
+See mouse move.
 
-Fix Positioning - if you load a new hand it does not update the positions - I think it thinks its the same old items there. Buggy.
+Content: Actually build an interesting board.
 
------FIREBASE.
-1. Only load list of boards, not the boards themselves.
-2. Loard Boards from Firebase
-3. Cards are responsible for Firebase syncing and state.
+Test on phone or tablet.
 
-3. Save button still saves to Magnolia.
+
 
 
 ----
@@ -54,6 +53,18 @@ https://www.npmjs.com/package/react-draggable
 (Interesting: https://github.com/tajo/react-movable)
 
 CODE ACCOMPLISHED ******************
+
+2021-11-13
+
+Firebase / online synced cards.
+Working on Firebase1 - write content when cards move.
+Read content.
+
+Fix Positioning - if you load a new hand it does not update the positions - I think it thinks its the same old items there. Buggy.
+
+-----FIREBASE.
+1. Only load list of boards, not the boards themselves.
+2. Loard Boards from Firebase
 
 
 2021-11-05

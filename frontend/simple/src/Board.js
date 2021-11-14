@@ -355,7 +355,14 @@ const showFullCard = useCallback((cardId) => {
 const saveBoard = (e) => {
   //e.preventDefault();
   console.log('Save Board. ' + newBoardName);
-  putBoardToMagnolia(newBoardName, board, getBoards, true)
+  //Disable saving to Magnolia for now. - Using Firebase instead..
+  //putBoardToMagnolia(newBoardName, board, getBoards, true)
+
+  //Send to firebase
+  const dbpath = `boards/${newBoardName}`;
+  console.log(`FIRE add board: ${dbpath}`)
+  set(ref(db, dbpath), board)
+
 }
 
 const onNameChange = (event) => {
