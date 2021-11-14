@@ -30,6 +30,7 @@ Use off more on firebase
 
 See mouse move.
 
+When creating board - Go to that board.
 Content: Actually build an interesting board.
 
 Test on phone or tablet.

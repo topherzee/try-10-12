@@ -1,21 +1,5 @@
 import React from 'react';
 
-// https://firebase.google.com/docs/web/setup#available-libraries
-import { initializeApp } from "firebase/app";
-import { getDatabase, ref, set,update, onValue } from "firebase/database";
-const firebaseConfig = {
-  apiKey: "AIzaSyAAz4Gnutgu_ifM6sHZMAoseJ6DSt2ZRuQ",
-  authDomain: "magnolia-cards.firebaseapp.com",
-  projectId: "magnolia-cards",
-  storageBucket: "magnolia-cards.appspot.com",
-  messagingSenderId: "595996533452",
-  appId: "1:595996533452:web:26300d2b423ea64ac3d869",
-  databaseURL: "https://magnolia-cards-default-rtdb.europe-west1.firebasedatabase.app",
-};
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-
-
 function CardMid(props){
 
   const colMap = {

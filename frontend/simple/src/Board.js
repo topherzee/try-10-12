@@ -30,7 +30,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-var clientId=(Math.random()*10000000000000000).toFixed(0);
+// var clientId=(Math.random()*10000000000000000).toFixed(0);
 
 // const URL_DEV = "http://localhost:8080/magnoliaAuthor/.rest/delivery/tech";
 // const URL_PROD = "https://author-td8tdv78a6qyzt6p.saas.magnolia-cloud.com/.rest/environments/cards/delivery/tech"
@@ -64,11 +64,8 @@ function Board() {
     const response = snapshot.val()
   
     var boards1 = response;//response.data.results;
-    
-    var cardsDetails = null;
 
     for (const property in boards1) {
-      const board = boards1[property]
       console.log(`${property}: ${boards1[property]}`);
     }
 
@@ -119,9 +116,10 @@ function Board() {
     const fbpathOff = `boards/${boardName}`;
 
     off(ref(db, fbpathOff))
-    const dbRef = ref(db);
-    const snapshot = await get(child(dbRef, `boards/${boardNameSelected}`))
-    const response = snapshot.val()
+
+    // const dbRef = ref(db);
+    // const snapshot = await get(child(dbRef, `boards/${boardNameSelected}`))
+    // const response = snapshot.val()
 
     //var localBoard = response;
     // debugger;
@@ -131,7 +129,7 @@ function Board() {
     const fbpath = `boards/${boardNameSelected}`;
     onValue(ref(db, fbpath), (snapshot) => {
         const data = snapshot.val();
-        console.log(`Realtime. BOARD onValue: ${JSON.stringify(data, null, 2)}`)
+        console.log(`FBASE. BOARD onValue: ${JSON.stringify(data, null, 2)}`)
 
         setBoard(data)
       });
@@ -230,7 +228,7 @@ const removeCardFromBoardByKey = useCallback((cardkey, cardName) => {
   console.log(`Realtime. Remove card ${dbpath} :${localBoard.cards}`)
   set(ref(db, dbpath), localBoard.cards)
 
-}, [board]);
+}, [board, boardName]);
 
 
 const handleNoteChange = useCallback((cardkey, cardName, e, newNoteParam) => {
@@ -256,7 +254,7 @@ const handleNoteChange = useCallback((cardkey, cardName, e, newNoteParam) => {
     })
   }
   
-}, [board]);
+}, [board, boardName]);
 
 const showFullCard = useCallback((cardId) => {
   console.log(`ShowFullCard ${cardId} `)
@@ -367,7 +365,7 @@ if (!cards) return "No card!"
     )
   };
 
-  
+
   var scale = 1.0;
   var cardsStyle = {
     transform:scale
