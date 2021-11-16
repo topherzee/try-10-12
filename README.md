@@ -19,8 +19,6 @@ Epic Win game
 * Multiplayer.
 * Store results for later AI.
 
-
-
 Status *****************************
 
 CODE THIS NEXT ********************************
@@ -53,6 +51,10 @@ https://www.npmjs.com/package/react-draggable
 (Interesting: https://github.com/tajo/react-movable)
 
 CODE ACCOMPLISHED ******************
+
+2021-11-16
+
+Home page with links to "Boards" and "Hands"
 
 2021-11-14
 

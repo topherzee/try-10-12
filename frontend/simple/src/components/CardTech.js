@@ -105,12 +105,12 @@ const [{ isDragging }, drag] = useDrag({
     }),
 });
 
-
+var opacity =1
 if (props.isDnD){
-  // const opacity = isDragging ? 0 : 1;
+  opacity = isDragging ? 0 : 1;
   drag(drop(ref));
 }
-// const opacity = 1;
+
 
 
 
@@ -150,7 +150,7 @@ if (props.isDnD){
 
     // <div className="cardgame-card-print-wrapper tech-card" key={props.id} ref={ref} style={{ ...style, opacity }} data-handler-id={handlerId}>
       
-      <div className="cardgame-card tech-card" key={props.id} ref={ref} style={{ ...style }} data-handler-id={handlerId}>
+      <div className="cardgame-card tech-card" key={props.id} ref={ref} style={{ ...style, opacity }} data-handler-id={handlerId}>
       {/* <div className="card-remove" onclick={props.removeCard(props["@id"], props.name, null)}>REMOVE</div> */}
        
         <div className="cardgame-card-print-bounds ">
