@@ -39,6 +39,53 @@ code {
     monospace;
 }
 
+.home{
+  color: white;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+nav li {
+  float: left;
+}
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+nav li a:hover {
+  background-color: #111111;
+}
+
+.home{
+  margin: 10mm;
+}
+
+.home h2{
+  color: white;
+}
+
+.home-card{
+  margin-top: 5mm;
+  padding: 5mm;
+  outline: 1px solid grey;
+}
+
+.home a {
+  display: block;
+  color: #ccc;
+}
+.home a:hover {
+  color: #fff;
+}
+
 
 /* CARDS CSS */
 
@@ -60,7 +107,7 @@ h1{
   margin-top: 2mm;
   margin-bottom: 2mm
 }
-html, body, #root{
+html, body, #root, .App{
   height: 100%;
 }
 #root{

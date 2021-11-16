@@ -35,7 +35,9 @@ function HandBuilder() {
   const [newHandName, setNewHandName] = React.useState("");
 
   async function getHands() {
-    const URL_HANDS_DELIVERY = "http://localhost:8080/magnoliaAuthor/.rest/delivery/hands";
+    
+    const URL_HANDS_DELIVERY = process.env.REACT_APP_MAG_REST_HANDS;
+    // const URL_HANDS_DELIVERY = "http://localhost:8080/magnoliaAuthor/.rest/delivery/hands";
     const response = await axios.get(URL_HANDS_DELIVERY + "?@ancestor=/Topher&orderBy=name");
     console.log("getHands")
 
@@ -181,7 +183,7 @@ if (!cards) return "No card!"
     const card = getCardById(cardId);
     const a = Math.random() * 6;
     const angle = Math.round(a)-3;
-    return <CardTech {...card} color="blue" key={card.name} angle={angle}  back={renderBack} index={index} moveCard={moveCard} removeCard={removeCard}/>
+    return <CardTech {...card} isDnD={true} color="blue" key={card.name} angle={angle}  back={renderBack} index={index} moveCard={moveCard} removeCard={removeCard}/>
     }
   );
 

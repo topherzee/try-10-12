@@ -25,6 +25,7 @@ Status *****************************
 
 CODE THIS NEXT ********************************
 
+Bug: after creating a board - sync does not instantly work.
 Lean up code.
 Use off more on firebase
 
