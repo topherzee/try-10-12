@@ -1,0 +1,3 @@
+# Required for hosting on Netlify. Otherwise only the root page of the app renders, all sub pages return 'Page not found'.
+
+/* /index.html 200
