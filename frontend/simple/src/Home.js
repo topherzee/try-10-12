@@ -6,7 +6,7 @@ export default function Home(props){
 
     return(
         <div className="home">
-        <h1>-Magnolia Cards-</h1>
+        <h1>--Magnolia Cards--</h1>
 
         <section>
             Craft, communinicate, teach and learn about Magnolia projects with Cards. 
