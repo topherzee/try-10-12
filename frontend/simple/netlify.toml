@@ -1,0 +1,9 @@
+[build]
+  # Directory to change to before starting a build.
+  # This is where we will look for package.json/.nvmrc/etc.
+  # If not set, defaults to the root directory.
+ 
+  #base = "/"
+
+  #For root project, don't build anythhing in /frontend. Other sites will build that.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF"
