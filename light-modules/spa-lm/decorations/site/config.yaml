@@ -13,8 +13,8 @@ site:
       allowedHeaders:
         all: '*'
 
-  theme:
-    name: travel-demo-theme
+  # theme:
+  #   name: travel-demo-theme
 
   i18n:
     class: info.magnolia.cms.i18n.DefaultI18nContentSupport

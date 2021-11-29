@@ -26,19 +26,19 @@ sites:
         allowedHeaders:
           all: '*'
 
-    theme:
-      name: travel-demo-theme
+    # theme:
+    #   name: travel-demo-theme
 
-    i18n:
-      class: info.magnolia.cms.i18n.DefaultI18nContentSupport
-      enabled: true
-      fallbackLocale: en
-      locales:
-        en:
-          country: ''
-          enabled: true
-          language: en
-        de:
-          country: ''
-          enabled: true
-          language: de
+    # i18n:
+    #   class: info.magnolia.cms.i18n.DefaultI18nContentSupport
+    #   enabled: true
+    #   fallbackLocale: en
+    #   locales:
+    #     en:
+    #       country: ''
+    #       enabled: true
+    #       language: en
+    #     de:
+    #       country: ''
+    #       enabled: true
+    #       language: de

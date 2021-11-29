@@ -1,0 +1,26 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+workspace: website
+limit: 100
+systemProperties:
+  - mgnl:createdBy
+  - mgnl:template
+depth: 10
+nodeTypes:
+  - mgnl:page
+  - mgnl:area
+childNodeTypes:
+  - mgnl:area
+  - mgnl:component
+referenceDepth: 10
+references:
+  - name: imageReference
+    propertyName: image
+    referenceResolver:
+      class: info.magnolia.rest.reference.dam.AssetReferenceResolverDefinition
+      assetRenditions:
+        - 320x240
+  - name: tourTypeReference
+    propertyName: tourTypes
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: category
