@@ -1,8 +1,9 @@
 title: 'React: Basic'
-baseUrl: http://localhost:3000
-routeTemplate: '{{@path}}'
+# baseUrl: http://localhost:3000
+# routeTemplate: '{{@path}}'
 
-# url: http://localhost:3000
+url: http://localhost:3000
+
 # url: https://mag-pm.netlify.app/
 dialog: spa-lm:pages/basic
 
