@@ -1,8 +1,0 @@
-class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
-workspace: website
-limit: 100
-depth: 10
-nodeTypes:
-  - mgnl:page
-childNodeTypes:
-  - mgnl:page
