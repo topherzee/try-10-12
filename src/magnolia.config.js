@@ -13,6 +13,7 @@ const config = {
         'react-minimal-lm:pages/contact': Contact,
     
         'spa-lm:components/headline': Headline,
+        'spa-lm:components/combotest': Headline,
         'spa-lm:components/image': Image,
         'spa-lm:components/paragraph': Paragraph,
         'spa-lm:components/expander': Expander,

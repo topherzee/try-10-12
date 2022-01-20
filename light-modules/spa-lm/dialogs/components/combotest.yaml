@@ -1,6 +1,7 @@
-label: Headline
+label: Combobox Test
 form:
   properties:
+
     text:
       label: Headline Text
       $type: textField

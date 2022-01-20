@@ -24,6 +24,8 @@ areas:
         id: spa-lm:components/expander
       List:
         id: spa-lm:components/list
+      Combotest:
+        id: spa-lm:components/combotest
 
   extras:
     title: Extras Area
