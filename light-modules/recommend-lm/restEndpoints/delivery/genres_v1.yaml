@@ -1,0 +1,6 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+workspace: genres
+depth: 1
+limit: 30
+nodeTypes:
+  - mgnl:genre
