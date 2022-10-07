@@ -11,6 +11,8 @@ import {
 import HandBuilder from './HandBuilder.js';
 import Board from './Board.js';
 import Home from './Home.js';
+import Game from './Game.js';
+
 // import FBase from './Firebase1.js';
 
 function App() {
@@ -31,6 +33,9 @@ function App() {
             <li>
               <Link to="/hands">Hands</Link>
             </li>
+            <li>
+              <Link to="/game">Game</Link>
+            </li>
           </ul>
         </nav>
 
@@ -42,6 +47,9 @@ function App() {
           </Route>
           <Route path="/boards">
             <Board />
+          </Route>
+          <Route path="/game">
+            <Game />
           </Route>
           <Route path="/">
             <Home />
