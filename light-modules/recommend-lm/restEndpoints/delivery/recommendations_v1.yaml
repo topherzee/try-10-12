@@ -26,3 +26,4 @@ references:
   #   referenceResolver:
   #     class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
   #     targetWorkspace: comments
+  
