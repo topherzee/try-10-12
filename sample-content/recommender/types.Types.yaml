@@ -1,0 +1,163 @@
+'Types':
+  'jcr:mixinTypes': ['mgnl:hasVersion']
+  'jcr:primaryType': 'mgnl:folder'
+  'jcr:uuid': '5665beec-c9bb-42ee-b4bc-08c069b8a477'
+  'mgnl:activationStatus': true
+  'mgnl:created': 2022-10-07T14:01:38.829Z
+  'mgnl:createdBy': 'christopher.zimmermann@magnolia-cms.com'
+  'mgnl:lastActivated': 2022-10-07T14:08:17.529Z
+  'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'mgnl:lastActivatedVersion': '1.2'
+  'mgnl:lastActivatedVersionCreated': 2022-10-07T14:08:15.644Z
+  'mgnl:lastModified': 2022-10-07T14:02:58.976Z
+  'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'name': 'Types'
+  'All':
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:type'
+    'jcr:uuid': '5482a215-e316-4930-a270-f8ea8b86e1d0'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-11T11:20:26.375Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:08:18.453Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.2'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:08:15.752Z
+    'mgnl:lastModified': 2022-10-07T14:07:37.182Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'All'
+  'TV-Series':
+    'icon': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/icons/fa-tv-solid.svg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:type'
+    'jcr:uuid': 'f9334c32-fa92-4973-8be8-c1d83c27381a'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-07T13:52:20.896Z
+    'mgnl:createdBy': 'jaroslav.simak@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:08:18.372Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.4'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:08:15.876Z
+    'mgnl:lastModified': 2022-10-07T14:08:01.544Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'TV Series'
+  'Movie':
+    'icon': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/icons/fa-film-solid.svg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:type'
+    'jcr:uuid': '2dce6e0a-406e-45be-9f45-915416f523c6'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-07T13:17:00.912Z
+    'mgnl:createdBy': 'superuser'
+    'mgnl:lastActivated': 2022-10-07T14:08:18.151Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.2'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:08:16.426Z
+    'mgnl:lastModified': 2022-10-07T14:07:13.093Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Movie'
+  'Book':
+    'icon': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/icons/fa-book-solid.svg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:type'
+    'jcr:uuid': 'b45e1c41-38a4-4fc8-9b73-0597cd15105e'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-07T13:51:26.379Z
+    'mgnl:createdBy': 'javier.benito@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:08:18.032Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.2'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:08:16.567Z
+    'mgnl:lastModified': 2022-10-07T14:07:13.132Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Book'
+  'Video-Game':
+    'icon': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/icons/fa-gamepad-solid.svg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:type'
+    'jcr:uuid': 'd278f35a-2c5b-438c-a981-302a43780c25'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-07T13:56:15.568Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:08:17.957Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.2'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:08:16.694Z
+    'mgnl:lastModified': 2022-10-07T14:07:13.161Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Video Game'
+  'Comic---Graphic-Novel':
+    'icon': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/icons/fa-comment-solid.svg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:type'
+    'jcr:uuid': '085da34d-d2be-484b-abcf-b70b38d632fc'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-08T07:26:48.774Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:08:17.888Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.2'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:08:16.825Z
+    'mgnl:lastModified': 2022-10-07T14:07:13.190Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Comic / Graphic Novel'
+  'VR-Experience':
+    'icon': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/icons/fa-vr-cardboard-solid.svg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:type'
+    'jcr:uuid': '12eeffa8-ae87-461d-b368-5d6a3d94d703'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-08T18:21:19.094Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:08:17.825Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:08:16.943Z
+    'mgnl:lastModified': 2022-10-07T14:07:13.224Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'VR Experience'
+  'Music-Album':
+    'icon': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/icons/fa-record-vinyl-solid.svg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:type'
+    'jcr:uuid': 'fc234450-5ed7-42ee-a483-c58478212f90'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-08T18:30:00.181Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:08:17.762Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:08:17.077Z
+    'mgnl:lastModified': 2022-10-07T14:07:13.258Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Music Album'
+  'Place---Restaurant':
+    'icon': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/icons/fa-location-dot-solid.svg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:type'
+    'jcr:uuid': 'dce779c9-f8c5-4aea-ac06-1791fba59d95'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-09T18:18:48.529Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:08:17.697Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:08:17.207Z
+    'mgnl:lastModified': 2022-10-07T14:07:13.289Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Place / Restaurant'
+  'Test':
+    'icon': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/icons/sq1.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:type'
+    'jcr:uuid': 'c4e03efd-4e33-49e9-a97a-46fcea1ae9e7'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-28T10:15:27.186Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:08:17.628Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:08:17.331Z
+    'mgnl:lastModified': 2022-10-07T14:07:13.326Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Test'

@@ -1,0 +1,1190 @@
+'recommendations':
+  'jcr:mixinTypes': ['mgnl:hasVersion']
+  'jcr:primaryType': 'mgnl:folder'
+  'jcr:uuid': '2c186b7d-cd34-43af-95b1-68049ee59636'
+  'mgnl:activationStatus': true
+  'mgnl:created': 2022-10-07T14:12:12.535Z
+  'mgnl:createdBy': 'christopher.zimmermann@magnolia-cms.com'
+  'mgnl:lastActivated': 2022-10-07T14:15:00.428Z
+  'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'mgnl:lastActivatedVersion': '1.0'
+  'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:53.151Z
+  'mgnl:lastModified': 2022-10-07T14:12:33.608Z
+  'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'name': 'recommendations'
+  'Lauch-(Basel-Restaurant)':
+    'description': '<p>&nbsp;</p>
+
+
+      <p>Restaurant in Basel City, next to Kaserne.&nbsp;</p>
+
+
+      <p>Vegetarian and vegan food, using only local, sustainable products from the
+      region. There are also regional natural wines &amp; more.</p>
+
+
+      <p><br />
+
+      Price: $$$$$</p>
+
+      '
+    'genres': ['65c1d5d4-f263-4b3f-bd3f-43278f525ee4']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/lauch-interiour.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': '4ccd16ff-a37f-4922-b5c3-04af2a0b403a'
+    'link': 'https://lauch-basel.ch'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-10T11:52:58.051Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:08.586Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:53.333Z
+    'mgnl:lastModified': 2022-10-07T14:13:17.180Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Lauch (Basel Restaurant)'
+    'rating': 5
+    'type': 'dce779c9-f8c5-4aea-ac06-1791fba59d95'
+    'user': 'Kim Ha'
+    'comments':
+      'jcr:uuid': 'c0ff6d6b-e63f-48af-a5cb-aa3b37f6753d'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-10T11:52:58.093Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:08.587Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:17.180Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Dead-Cells':
+    'description': '<p>Dead Cells is a captivating retro-inspired indie game available
+      on multiple platforms. It&rsquo;s brilliantly designed&ndash;in terms of graphics
+      as well as game meachnics.&nbsp;</p>
+
+
+      <p>Your have to pave your way through murky dungeons, filthy sewers and other
+      spooky places of a bewitched island. Dozens of different weapons can be found
+      or bought in the rambling biomes. You need them badly to fight off the many
+      evil creatures that wait for you.</p>
+
+
+      <p>But don&#39;t worry; your opponents may be numerous and nefarious, but they&#39;re
+      also kind of cute.&nbsp;</p>
+
+
+      <p>Because of it&rsquo;s pixelated design and lovely sound-effects the game
+      feels far from brutal, even though you burn, slice, sting, and smash your enemies
+      in every thinkable way.</p>
+
+
+      <p>If you were fond of the action-platformers of earler days you should try
+      out this game.&nbsp;</p>
+
+      '
+    'genres': ['fc102098-6bc1-4734-b914-8563d574fb31']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/dead-cells-wallpaper-5.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': '7ff7b5a1-4bf8-4034-aa98-17a7ead12bd9'
+    'link': 'https://dead-cells.com'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-10T11:55:28.982Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:07.861Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:53.527Z
+    'mgnl:lastModified': 2022-10-07T14:13:17.213Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Dead Cells'
+    'rating': 5
+    'type': 'd278f35a-2c5b-438c-a981-302a43780c25'
+    'user': 'Luzi'
+    'comments':
+      'jcr:uuid': '5c514248-601a-48ca-88cd-6623c23374dc'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-10T11:55:29.000Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:07.861Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:17.213Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Power-vs-Force.-The-Hidden-Determinants-of-the-Human-Behavior':
+    'description': '<p>Power vs Force is one of David R. Hawkins&rsquo;s popular books
+      that address human consciousness. It comes with a scale to calibrate and describe
+      levels of consciousness, all the way from Shame, Grief, or Apathy, to Courage,
+      Willingness, or Unconditional Love.</p>
+
+
+      <p>It also comes with a method to assess what is life-supporting and what is
+      inhibiting life&rsquo;s energy. These offer a perspective to understanding why
+      people behave the way they do.</p>
+
+      '
+    'genres': ['a0265800-0e9f-4646-b370-c6e889488ef1']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/power-vs-force.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': '2c66ebd9-430b-4c7c-81a5-d4adad9b23d5'
+    'link': 'https://www.amazon.com/Power-vs-Force-David-Hawkins-ebook/dp/B00EJBABS2'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-10T12:48:38.463Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:07.526Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:53.718Z
+    'mgnl:lastModified': 2022-10-07T14:13:17.241Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Power vs Force. The Hidden Determinants of the Human Behavior'
+    'rating': 5
+    'type': 'b45e1c41-38a4-4fc8-9b73-0597cd15105e'
+    'user': 'Sorina'
+    'comments':
+      'jcr:uuid': '49bdce62-f408-48de-b812-2e4d76bb119c'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-10T12:48:38.479Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:07.526Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:17.241Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Cobra-Kai':
+    'description': '<p>Thirty years after their final confrontation at the 1984 All
+      Valley Karate Tournament, Johnny Lawrence is at rock-bottom as an unemployed
+      handyman haunted by his wasted life. However, when Johnny rescues a bullied
+      kid, Miguel, from bullies, he is inspired to restart the notorious Cobra Kai
+      dojo.</p>
+
+      '
+    'genre': ['00758a13-0f4d-409a-8bab-72581afb12bf']
+    'genres': ['445145e3-5975-410c-82df-0a7c0f085dd9', '65c1d5d4-f263-4b3f-bd3f-43278f525ee4']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/cobra-kai.jpeg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': '0ffe4582-5139-4bca-88c7-1803c1d68689'
+    'link': 'https://www.netflix.com/es/title/81002370'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-07T13:58:07.070Z
+    'mgnl:createdBy': 'javier.benito@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:07.179Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.3'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:53.937Z
+    'mgnl:lastModified': 2022-10-07T14:14:04.634Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Cobra Kai'
+    'rating': 4.5
+    'type': 'f9334c32-fa92-4973-8be8-c1d83c27381a'
+    'user': 'Javier Benito'
+    'comments':
+      'jcr:uuid': 'adcd55bc-7476-490d-b379-a11442072a09'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-08T19:25:47.144Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:07.179Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:47.467Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Arcane--League-of-Legends':
+    'description': '<p>Set in utopian Piltover and the oppressed underground of Zaun,
+      the story follows the origins of two iconic League champions-and the power that
+      will tear them apart.</p>
+
+      '
+    'genre': ['7e338b4b-7985-4d67-871f-da1dbef7733b', '00758a13-0f4d-409a-8bab-72581afb12bf',
+      'b3b03341-c4b8-4513-acc9-2d2bb9199726']
+    'genres': ['b069691b-c7b6-4ce4-9e4d-3aaeb9fa8f90', '7e338b4b-7985-4d67-871f-da1dbef7733b']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/165846698_8b4a8e.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': '115f60ae-acee-4c0b-9b2e-7102fb54632c'
+    'link': 'https://arcane.com/'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-07T13:56:29.602Z
+    'mgnl:createdBy': 'jaroslav.simak@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:06.798Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.4'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:54.322Z
+    'mgnl:lastModified': 2022-10-07T14:14:04.607Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Arcane: League of Legends'
+    'rating': 5
+    'type': 'f9334c32-fa92-4973-8be8-c1d83c27381a'
+    'user': 'Jarda'
+    'comments':
+      'jcr:uuid': 'a0256b2c-9502-40c6-8ef5-67e39afaceaa'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-07T16:12:41.468Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:06.798Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:47.441Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Sapiens--A-Brief-History-of-Humankind':
+    'description': '<p>Yuval Noah Harari&#39;s book, &#39;Sapiens,&#39; traces the
+      origins, mechanisms, and effects of what we think of as &ldquo;human progress&rdquo;
+      from small bands of hunter gatherers 100,000 years ago to the present-day global
+      network through which our species has come to dominate the entire Earth.</p>
+
+      '
+    'genres': ['4e408f33-b6ae-4479-97ec-205cb27507c4', '480f2b3a-443e-40a2-b188-96c14a3f5510']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/Sapiens.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': '96e516f7-f311-4755-ab99-b28c7c035d76'
+    'link': 'https://www.goodreads.com/book/show/23692271-sapiens'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-10T13:14:42.312Z
+    'mgnl:createdBy': 'javier.benito@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:06.443Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:54.814Z
+    'mgnl:lastModified': 2022-10-07T14:13:17.265Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Sapiens: A Brief History of Humankind'
+    'rating': 5
+    'type': 'b45e1c41-38a4-4fc8-9b73-0597cd15105e'
+    'user': 'Javier Benito'
+    'comments':
+      'jcr:uuid': '7378b926-fff9-456a-86ce-a18b6f45a916'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-10T13:14:42.331Z
+      'mgnl:createdBy': 'javier.benito@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:06.444Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:17.265Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'The-Black-Swan--The-Impact-of-the-Highly-Improbable':
+    'description': '<p>The Black Swan: The Impact of the Highly Improbable is a 2007
+      book by author and former options trader Nassim Nicholas Taleb. The book <strong>focuses
+      on the extreme impact of rare and unpredictable outlier events&mdash;and the
+      human tendency to find simplistic explanations for these events, retrospectively</strong>.</p>
+
+      '
+    'genres': ['4e408f33-b6ae-4479-97ec-205cb27507c4', 'c69fe4fe-6d10-4242-8666-b66a0056f9af']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/Black-Swan.jpeg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': 'ac6fc724-78f0-40c2-855d-03c03f1ebc79'
+    'link': 'https://www.goodreads.com/book/show/242472.The_Black_Swan'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-10T13:20:21.089Z
+    'mgnl:createdBy': 'javier.benito@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:06.090Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:55.094Z
+    'mgnl:lastModified': 2022-10-07T14:13:17.289Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'The Black Swan: The Impact of the Highly Improbable'
+    'rating': 4.5
+    'type': 'b45e1c41-38a4-4fc8-9b73-0597cd15105e'
+    'user': 'Javier Benito'
+    'comments':
+      'jcr:uuid': 'd9c8eb15-c404-4038-a256-9df6f50dc146'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-10T13:20:21.105Z
+      'mgnl:createdBy': 'javier.benito@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:06.090Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:17.289Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Rebecka-Martinsson---Book-Series':
+    'description': '<p>The Rebecka Martinson series is a series of detective fiction,
+      mystery, and crime fiction series written by the extremely popular Swedish novelist
+      named Asa Larsson. This series is comprised of a total of 5 books that were
+      released between the years 2006 and 2013. Each and every book in the series
+      features the lead character as Rebecka Martinson, who is introduced by author
+      Asa as a tax lawyer from Stockholm.</p>
+
+      '
+    'genres': ['00758a13-0f4d-409a-8bab-72581afb12bf', 'b3b03341-c4b8-4513-acc9-2d2bb9199726',
+      'ba4e90a3-d536-4c8f-9402-eaaf5871f712', '65c1d5d4-f263-4b3f-bd3f-43278f525ee4',
+      'a989be61-8512-420e-9a9a-b73a33ece12d']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/Rebecka-Martinsson.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': 'd484d8f5-46ef-4926-9210-cc060c6f6000'
+    'link': 'https://www.goodreads.com/series/53215-rebecka-martinsson'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-10T13:32:57.468Z
+    'mgnl:createdBy': 'javier.benito@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:05.733Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:55.323Z
+    'mgnl:lastModified': 2022-10-07T14:13:17.313Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Rebecka Martinsson - Book Series'
+    'rating': 4
+    'type': 'b45e1c41-38a4-4fc8-9b73-0597cd15105e'
+    'user': 'Javier Benito'
+    'comments':
+      'jcr:uuid': '718a07f9-732a-4e09-bd99-60eb5dec302d'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-10T13:32:57.485Z
+      'mgnl:createdBy': 'javier.benito@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:05.733Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:17.313Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Brave-New-World':
+    'description': '<p><em>Brave New World</em> is a dystopian novel by English author
+      Aldous Huxley, written in 1931 and published in 1932. Largely set in a futuristic
+      World State, inhabited by genetically modified citizens and an intelligence-based
+      social hierarchy, the novel anticipates huge scientific advancements in reproductive
+      technology, sleep-learning, psychological manipulation and classical conditioning
+      that are combined to make a dystopian society which is challenged by only a
+      single individual: the story&#39;s protagonist.</p>
+
+      '
+    'genres': ['b069691b-c7b6-4ce4-9e4d-3aaeb9fa8f90', '77dc6e54-2c44-41fe-83c9-b77ea885b97b']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/Brave new world.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': '3c9214f6-c8f0-4c27-8745-88ad07eb8286'
+    'link': 'https://www.goodreads.com/book/show/5129.Brave_New_World'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-10T13:37:04.873Z
+    'mgnl:createdBy': 'javier.benito@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:05.413Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:55.508Z
+    'mgnl:lastModified': 2022-10-07T14:13:17.337Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Brave New World'
+    'rating': 4
+    'type': 'b45e1c41-38a4-4fc8-9b73-0597cd15105e'
+    'user': 'Javier Benito'
+    'comments':
+      'jcr:uuid': '4e42ac23-a72b-43d2-b459-4b29fb89e40e'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-10T13:37:04.888Z
+      'mgnl:createdBy': 'javier.benito@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:05.414Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:17.337Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Mr-Robot':
+    'description': '<p>Elliot, a brilliant but highly unstable young cyber-security
+      engineer and vigilante hacker, becomes a key figure in a complex game of global
+      dominance when he and his shadowy allies try to take down the corrupt corporation
+      he works for.</p>
+
+      '
+    'genres': ['00758a13-0f4d-409a-8bab-72581afb12bf', '77dc6e54-2c44-41fe-83c9-b77ea885b97b',
+      'a989be61-8512-420e-9a9a-b73a33ece12d', '45baf2c6-115c-48c0-b738-ebeef4cbb1de']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/Mr Robot.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': '2f473fb0-463e-4401-a08b-ae6038743fa3'
+    'link': 'https://www.imdb.com/title/tt4158110/'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-10T13:48:53.917Z
+    'mgnl:createdBy': 'javier.benito@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:05.084Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:55.705Z
+    'mgnl:lastModified': 2022-10-07T14:13:17.363Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Mr Robot'
+    'rating': 4.5
+    'type': 'f9334c32-fa92-4973-8be8-c1d83c27381a'
+    'user': 'Javier Benito'
+    'comments':
+      'jcr:uuid': '4f317174-dc3a-4cfb-90ea-a4d6696b4d85'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-10T13:48:53.932Z
+      'mgnl:createdBy': 'javier.benito@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:05.085Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:17.363Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Ex-Machina':
+    'description': '<p>Caleb Smith (Domhnall Gleeson) a programmer at a huge Internet
+      company, wins a contest that enables him to spend a week at the private estate
+      of Nathan Bateman (Oscar Isaac), his firm&#39;s brilliant CEO. When he arrives,
+      Caleb learns that he has been chosen to be the human component in a Turing test
+      to determine the capabilities and consciousness of Ava (Alicia Vikander), a
+      beautiful robot. However, it soon becomes evident that Ava is far more self-aware
+      and deceptive than either man imagined.</p>
+
+      '
+    'genres': ['e372d426-8fb9-4cc0-9d50-0d0a7493ecde', '77dc6e54-2c44-41fe-83c9-b77ea885b97b',
+      '45baf2c6-115c-48c0-b738-ebeef4cbb1de']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/Ex Machina.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': 'a81c09e5-8e5d-4c38-9004-dd8d5057ad7b'
+    'link': 'https://www.imdb.com/title/tt0470752/'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-10T15:33:50.680Z
+    'mgnl:createdBy': 'javier.benito@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:04.669Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:55.904Z
+    'mgnl:lastModified': 2022-10-07T14:13:17.388Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Ex Machina'
+    'rating': 5
+    'type': '2dce6e0a-406e-45be-9f45-915416f523c6'
+    'user': 'Javier Benito'
+    'comments':
+      'jcr:uuid': '2be00b42-391d-4fc7-b19a-56e832ed5ff2'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-10T15:33:50.698Z
+      'mgnl:createdBy': 'javier.benito@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:04.669Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:17.388Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Strata':
+    'description': '<p>Terry Pratchett doesn&#39;t need an introduction, but his earlier
+      novel Strata is not so well known even among the Discworld fans.<br />
+
+      The book chronicles the journey of a group of scientists to a recently discovered
+      planetary-sized disk and their quest for the truth concerning who built it,
+      and why.</p>
+
+
+      <p>It has more serious tone than the beloved Discworld series, but I think it&#39;s
+      very well written.</p>
+
+      '
+    'genres': ['e372d426-8fb9-4cc0-9d50-0d0a7493ecde']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/strata.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': 'fff397ad-ec58-4aa4-acc1-411e2e32ef44'
+    'link': 'https://www.goodreads.com/book/show/34493.Strata'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-10T16:21:24.682Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:04.373Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:56.138Z
+    'mgnl:lastModified': 2022-10-07T14:13:17.419Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Strata'
+    'rating': 5
+    'type': 'b45e1c41-38a4-4fc8-9b73-0597cd15105e'
+    'user': 'Robert'
+    'comments':
+      'jcr:uuid': '31671bdf-6da5-4a33-9928-b4b97b2f36c4'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-10T16:21:24.696Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:04.373Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:17.419Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'When-Breath-Becomes-Air':
+    'description': '<p>People don&#39;t think about cancer until its presence is felt
+      in their lives; until then, the risk seems too distant to take seriously.&nbsp;<br
+      />
+
+      <br />
+
+      The story in this book hit close to home, given that my mom died of lung cancer.<br
+      />
+
+      <br />
+
+      When Breath Becomes Air is a memoir by Paul Kalanithi, a neurosurgeon and writer.
+      He earned his B.A. in Human Biology and M.A. in English Literature from Stanford
+      and his Master of Philosophy in History and Philosophy of Science and Medicine
+      from Cambridge. Paul Kalanithi had spent his life searching for ways to live
+      a meaningful life until he was diagnosed with inoperable metastatic (terminal)
+      cancer while completing his training as a neurosurgeon.<br />
+
+      <br />
+
+      There were times that I wanted to drop the book because it made me feel anxious
+      and gut-wrenched. At one point, I felt weak in the knees after I found out that
+      his treatment - the holy grail of lung cancer treatment - wasn&#39;t helping.&nbsp;<em>&quot;Chemotherapy
+      almost killed me,&quot;</em>&nbsp;Paul shared, just before his health deteriorated.<br
+      />
+
+      <br />
+
+      The book was poetic and beautifully laid out. Paul&#39;s realizations and deep
+      thoughts kept me going despite the impending gloom. This book is a person&#39;s
+      memoir of his journey as he neared the end of his life.<br />
+
+      <br />
+
+      On a spiritual level, it is fascinating how this former atheist returned to
+      the Christian faith.<br />
+
+      <br />
+
+      <em>&quot;Science may provide the most useful way to organize empirical, reproducible
+      data, but its power to do so is predicated on its inability to grasp the most
+      central aspects of human life: hope, fear, love, hate, beauty, envy, honor,
+      weakness, striving, suffering, virtue.&quot;</em><br />
+
+      <br />
+
+      <em>&quot;We all have a notion of what it means to be good, and we can&#39;t
+      live up to it all the time.&quot;</em><br />
+
+      <br />
+
+      I hope that cancer advocates will read this poignant masterpiece.</p>
+
+      '
+    'genres': ['4e707554-4cea-4f43-bbac-c0d15d896784', 'c69fe4fe-6d10-4242-8666-b66a0056f9af',
+      'a0265800-0e9f-4646-b370-c6e889488ef1']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/when-breath-becomes-air.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': '458e613c-7d4f-4c11-820d-f1a4071fdeea'
+    'link': 'https://www.goodreads.com/book/show/25899336-when-breath-becomes-air'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-10T16:30:18.797Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:04.040Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.2'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:56.454Z
+    'mgnl:lastModified': 2022-10-07T14:13:17.449Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'When Breath Becomes Air'
+    'rating': 5
+    'type': 'b45e1c41-38a4-4fc8-9b73-0597cd15105e'
+    'user': 'Cass'
+    'comments':
+      'jcr:uuid': '73591063-5ef8-4b9f-bf54-1f745972b3bb'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-10T16:30:18.811Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:04.040Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:17.449Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Shtisel':
+    'description': '<p>Shtisel is an Israeli television series about the life of an
+      ultra-Orthodox Jewish family in Jerusalem.</p>
+
+
+      <p>The series shows the life of the Shtisel family in their strictly Orthodox
+      environment in the Jerusalem neighborhood of Geula. The main characters are
+      the family patriarch Shulem Shtisel, who as a rabbi runs a local religious elementary
+      school, his youngest adult son Akiva Shtisel and his daughter Giti Weiss with
+      their many-member family.</p>
+
+
+      <p>In the process, the challenges of the strict charedic rules and their confrontation
+      with the modern, liberal world of the big city repeatedly lead to adventurous,
+      amusing or dramatic situations.</p>
+
+
+      <p>What I like about the show is the bond that is built with each character.
+      The actions are very easy to follow and the inner conflict of the characters
+      is projected very credibly.</p>
+
+      '
+    'genres': ['65c1d5d4-f263-4b3f-bd3f-43278f525ee4']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/shtisel.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': '7d9ca16f-c3d2-48a5-9ccb-d85ee3b53365'
+    'link': 'https://www.netflix.com/de/title/81004164'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-10T18:59:28.883Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:03.738Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:56.801Z
+    'mgnl:lastModified': 2022-10-07T14:13:17.477Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Shtisel'
+    'rating': 5
+    'type': 'f9334c32-fa92-4973-8be8-c1d83c27381a'
+    'user': 'Jonas K'
+    'comments':
+      'jcr:uuid': 'd7b94ffd-2ca5-45ff-b748-9905c1fdeded'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-10T18:59:28.896Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:03.738Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:17.477Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Barn-Owl---Ancestral-Star':
+    'description': '<p>&ldquo;Ancestral Star&rdquo; by Barn Owl is one of my all-time
+      favourite albums. I listen to a lot of music, as well some more popular music
+      but especially for things I have to concentrate or thinking about I love to
+      listen to drone and ambient.</p>
+
+
+      <p>In my opinion, only in this type of music do you truly hear the range available
+      to the electric guitar and bass, through the enhancement of distortion, reverb,
+      echo and so on.</p>
+
+
+      <p>The instrument is working as a tool and are just the controller for the effects.
+      Intense drones dropping you directly into another dimension</p>
+
+      '
+    'genres': ['b4a72415-788a-4758-9f2e-0a4ad20d2f1e']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/ancestral-star.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': 'cebea784-1b94-45d5-9bf7-e028ef65ea6b'
+    'link': 'https://barnowlband.bandcamp.com/album/ancestral-star'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-10T19:01:29.858Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:03.450Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:56.992Z
+    'mgnl:lastModified': 2022-10-07T14:13:17.504Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Barn Owl - Ancestral Star'
+    'rating': 5
+    'type': 'fc234450-5ed7-42ee-a483-c58478212f90'
+    'user': 'Jonas K'
+    'comments':
+      'jcr:uuid': 'b3a97167-cd21-4161-94c7-a90912c0b2af'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-10T19:01:29.872Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:03.451Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:17.504Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Gone-Girl-(2014)':
+    'description': '<p>There are many reasons to love this movie. The script, an adaptation
+      of Gillian Flynn&rsquo;s twisty best-seller, perfectly blends a suspense narrative
+      with complex psychological characters showing the darkest side of human&nbsp;nature,&nbsp;regardless
+      of their gender.</p>
+
+
+      <p>The direction is sublime, as anything that David Fincher creates, with precious
+      attention to detail and one of the best female protagonists in modern cinema,
+      Amy Dunne, magnificently performed by Rosemund Pike. I promise you will never
+      forget her&nbsp;<a href="https://www.youtube.com/watch?v=0o4heKCLeTs" style="color:
+      rgb(17, 85, 204); font-family: Arial, Helvetica, sans-serif; font-style: normal;
+      font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans:
+      auto; text-align: start; text-indent: 0px; text-transform: none; white-space:
+      normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width:
+      0px;" target="_blank">monologue</a>&nbsp;about that masculine fantasy called
+      &quot;Cool Girl&quot;.</p>
+
+      '
+    'genres': ['a989be61-8512-420e-9a9a-b73a33ece12d']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/gone-girl.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': 'f01075c9-ea7d-4c51-886b-09eb464e4ae3'
+    'link': 'https://www.imdb.com/title/tt2267998/'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-10T19:16:19.625Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:03.198Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:57.212Z
+    'mgnl:lastModified': 2022-10-07T14:13:17.529Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Gone Girl (2014)'
+    'rating': 5
+    'type': '2dce6e0a-406e-45be-9f45-915416f523c6'
+    'user': 'Inma'
+    'comments':
+      'jcr:uuid': 'd80f67e8-9179-44ac-85dd-e944676f3ba6'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-10T19:16:19.639Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:03.198Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:17.529Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'The-Talented-Mr.-Ripley':
+    'description': '<p>This is the first novel of a series that has inspired multiple
+      movies about Tim Ripley, one of the most true-to-life psychopaths of our culture.
+      From a psychological point of view, Ripley is the perfect example of a narcissistic
+      personality, going from poles of excessive self-criticism to grandiosity.</p>
+
+
+      <p>Through Highsmith&#39;s narrative, the reader gets to understand his frustrations
+      and desires, so Ripley is at the same time a likable character and a cold-blooded
+      killer. Get ready to be trapped in a&nbsp;vortex of moral relativities, transferable
+      guilts, and recognizable emotions.</p>
+
+      '
+    'genres': ['a989be61-8512-420e-9a9a-b73a33ece12d', 'ba4e90a3-d536-4c8f-9402-eaaf5871f712']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/talented-mr-ripley.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': '0161d564-f5a3-4875-affe-3ca05935c151'
+    'link': 'https://www.goodreads.com/book/show/2247142.The_Talented_Mr_Ripley?from_search=true&from_srp=true&qid=3uH6kvRzvb&rank=1'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-10T19:18:42.055Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:02.884Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:57.405Z
+    'mgnl:lastModified': 2022-10-07T14:13:17.556Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'The Talented Mr. Ripley'
+    'rating': 5
+    'type': 'b45e1c41-38a4-4fc8-9b73-0597cd15105e'
+    'user': 'Inma'
+    'comments':
+      'jcr:uuid': 'cdaf35d0-2abb-4837-849c-99df9040adef'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-10T19:18:42.070Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:02.884Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:17.556Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'The-Lord-of-the-Rings--The-Fellowship-of-the-Rings':
+    'description': '<p>A meek Hobbit from the Shire and eight companions set out on
+      a journey to destroy the powerful One Ring and save Middle-earth from the Dark
+      Lord Sauron.</p>
+
+      '
+    'genres': ['b069691b-c7b6-4ce4-9e4d-3aaeb9fa8f90', 'b3b03341-c4b8-4513-acc9-2d2bb9199726']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/fellowship-of-the-ring.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': '05e07260-13d6-4a11-b686-909f9f022610'
+    'link': 'https://www.imdb.com/title/tt0120737/'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-10T19:34:52.238Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:02.643Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:57.654Z
+    'mgnl:lastModified': 2022-10-07T14:13:17.586Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'The Lord of the Rings: The Fellowship of the Rings'
+    'rating': 5
+    'type': '2dce6e0a-406e-45be-9f45-915416f523c6'
+    'user': 'Jarda'
+    'comments':
+      'jcr:uuid': '1511653c-afb0-4a03-9904-c33e49e15479'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-10T19:34:52.252Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:02.643Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:17.586Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Ha-Giang---Vietnam':
+    'description': '<p>Located in the far Northeast of Vietnam, Ha Giang province,
+      which borders China, is an off-the-beaten-path destination of breathtaking beauty.
+      You will see a lot of fantastic mountain scenery over the whole area.</p>
+
+
+      <p>Especially the green rice terraces, they become even more beautiful when
+      it turns yellow and gold near the harvest time. You can also stay with the locals,
+      buy local crafts, go trekking and much more.</p>
+
+      '
+    'genres': ['7b72028d-97e1-4c79-a608-a212e23aea91']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/ha-giang.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': '8ea0905e-195e-4f22-9e42-99e9a041a4ba'
+    'link': 'https://www.vietnamonline.com/destination/ha-giang.html'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-11T07:44:26.631Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:02.409Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:57.878Z
+    'mgnl:lastModified': 2022-10-07T14:13:17.612Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Ha Giang - Vietnam'
+    'rating': 5
+    'type': 'dce779c9-f8c5-4aea-ac06-1791fba59d95'
+    'user': 'Dominic Nguyen'
+    'comments':
+      'jcr:uuid': '3baab69b-7ca4-4de9-ba4e-4c6b34ca784b'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-11T07:44:26.674Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:02.409Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:17.612Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Valerian':
+    'description': '<p>Valerian is a fun, inventive, light-hearted graphic novel series
+      with stunning art. I love this series because absolutely anything could show
+      up when you turn the page. The art is a wierd mix of usually cartoony characters,
+      but richly detailed environments and spaceships.</p>
+
+
+      <p>The setup is that Valerian and Veronique are a team of space and time faring
+      cops out to help planets and civilizations in need. This broad concept allows
+      the authors to do pretty much anything and its not unusual to have mixed up
+      times with people riding bicycles with tophats in one book, and battling in
+      an astroid swarm in the next.</p>
+
+
+      <p>It&#39;s also clear that this series had a big impact on sci-fi films. Star
+      wars has several scenes that seem lifted directly from Valerian, and the 5th
+      Element flying taxi scenes are obviously inspired by these books. In fact the
+      director of 5th Element finally realized his dream of creating a movie for Valerian
+      in 2016. But don&#39;t be fooled - these stories are way more enjoyable than
+      the film. The joy is poring over these fantastic images and just enjoying the
+      fact that this crazy creation came from the minds and talents of two people</p>
+
+      '
+    'genres': ['e372d426-8fb9-4cc0-9d50-0d0a7493ecde', 'b3b03341-c4b8-4513-acc9-2d2bb9199726']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/Valerian-1.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': 'cd2324ce-1923-4e77-a608-f521632fb9c9'
+    'link': 'https://en.wikipedia.org/wiki/Val%C3%A9rian_and_Laureline'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-08T07:48:57.258Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:02.164Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.3'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:58.159Z
+    'mgnl:lastModified': 2022-10-07T14:13:47.489Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Valerian'
+    'rating': 5
+    'type': '085da34d-d2be-484b-abcf-b70b38d632fc'
+    'user': 'Topher'
+    'comments':
+      'jcr:uuid': 'b1994a07-068c-4bc4-a580-2a1d25a99cdc'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-08T07:48:57.294Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:02.164Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:47.489Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Bosch':
+    'description': "<ul style=\"list-style-type:none; margin-left:0; margin-right:0\"\
+      >\n\t<li style=\"list-style-type:none\">A suspenseful and gritty look into the\
+      \ life of LAPD Detective Harry Bosch, whose determination for justice puts both\
+      \ his job and his personal life in turmoil. If you are a fan of the novels of\
+      \ Michael Connelly, this series artfully weaves multiple plotlines into the\
+      \ arc of a full season that follows one major case to conclusion.&nbsp;&nbsp;</li>\n\
+      \t<li style=\"list-style-type:none\">&nbsp;</li>\n\t<li style=\"list-style-type:none\"\
+      >Why I Love it: Like all of us Bosch has his flaws, but his defiant and unapologetic\
+      \ conviction to finding justice demands respect, and makes for compelling drama\
+      \ to watch.</li>\n</ul>\n"
+    'genres': ['ba4e90a3-d536-4c8f-9402-eaaf5871f712', '65c1d5d4-f263-4b3f-bd3f-43278f525ee4']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/bosch.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': 'f703551a-0a73-4000-bd55-593c999f4611'
+    'link': 'https://www.imdb.com/title/tt3502248/'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-08T19:01:23.418Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:01.917Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.2'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:58.537Z
+    'mgnl:lastModified': 2022-10-07T14:13:47.514Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Bosch'
+    'rating': 5
+    'type': 'f9334c32-fa92-4973-8be8-c1d83c27381a'
+    'user': 'Brian'
+    'comments':
+      'jcr:uuid': '7a173f39-e99b-4687-b986-16d28db1d6b6'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-08T19:01:23.427Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:01.918Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:47.514Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'The-Best-Damn-Garage-in-Town':
+    'description': "<ul style=\"list-style-type:none; margin-left:0; margin-right:0\"\
+      >\n\t<li style=\"list-style-type:none\">A collection of stories, written by\
+      \ and covering the life of Smokey Yunick, one of the pioneers in automotive\
+      \ racing and NASCAR.</li>\n\t<li style=\"list-style-type:none\">&nbsp;</li>\n\
+      \t<li style=\"list-style-type:none\">Why I Love it: Smokey is entertaining,\
+      \ brash, and colorful as he recounts pushing the limits of what is possible\
+      \ or allowed.&nbsp; Loved by a few, tolerated by some, and disliked by many\
+      \ Smokey was a pioneer living life by his own rules and always in pursuit of\
+      \ more - someone I think we could all learn a few lessons from.</li>\n</ul>\n"
+    'genres': ['4e707554-4cea-4f43-bbac-c0d15d896784']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/best-damn-garage-in-town.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': 'dd97de34-dffc-487a-949f-4248cf28edda'
+    'link': 'https://www.goodreads.com/en/book/show/611778.Best_Damn_Garage_in_Town'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-08T19:04:03.034Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:01.710Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:58.733Z
+    'mgnl:lastModified': 2022-10-07T14:13:47.537Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'The Best Damn Garage in Town'
+    'rating': 5
+    'type': 'b45e1c41-38a4-4fc8-9b73-0597cd15105e'
+    'user': 'Brian'
+    'comments':
+      'jcr:uuid': '22aec4bf-20d3-45d5-b457-54ae687e005b'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-08T19:04:03.048Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:01.710Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:47.537Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Quizás-vivir-sea-esto':
+    'description': '<p>When Jorge was 14 years old he escapes home to climb an orange
+      tree in the middle of a storm just for personal satisfaction. Years later, his
+      self-improvement mindset set him to an adventure to climb the 14 highest peaks
+      on earth.</p>
+
+
+      <p>Quizas vivir sea esto is a book full of passion, dreams, lesson learnt where
+      Jorge explain the coldness, the tiredness, the joys the pain and the loneliness
+      during the different stages of his life.</p>
+
+      '
+    'genres': ['445145e3-5975-410c-82df-0a7c0f085dd9', 'b3b03341-c4b8-4513-acc9-2d2bb9199726',
+      '4e707554-4cea-4f43-bbac-c0d15d896784']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/quizas-vivir.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': '0e129b5f-a172-4ba0-89ec-4cd22b934f6b'
+    'link': 'https://www.goodreads.com/book/show/51326252-quiz-s-vivir-sea-esto'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-08T19:11:56.754Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:01.491Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:58.926Z
+    'mgnl:lastModified': 2022-10-07T14:13:47.561Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Quizás vivir sea esto'
+    'rating': 5
+    'type': 'b45e1c41-38a4-4fc8-9b73-0597cd15105e'
+    'user': 'David'
+    'comments':
+      'jcr:uuid': 'be171728-6480-4058-8116-934d5e901389'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-08T19:11:56.768Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:01.492Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:47.561Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Tender-is-the-Flesh':
+    'description': '<p>Working at the local processing plant, Marcos is in the business
+      of slaughtering humans &mdash;though no one calls them that anymore.</p>
+
+
+      <p style="list-style-type:none">Why I like it: A book that can make you go vege.</p>
+
+      '
+    'genres': ['97e26db1-ce78-433c-96a8-b70c53309fe8', '77dc6e54-2c44-41fe-83c9-b77ea885b97b']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/tender-is-the-flesh.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': '38ec4b70-b5bf-4264-bc3b-e996c94b8c53'
+    'link': 'https://www.goodreads.com/book/show/49090884-tender-is-the-flesh'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-08T19:19:41.875Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:01.293Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:59.129Z
+    'mgnl:lastModified': 2022-10-07T14:13:47.585Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Tender is the Flesh'
+    'rating': 5
+    'type': 'b45e1c41-38a4-4fc8-9b73-0597cd15105e'
+    'user': 'Bartosz'
+    'comments':
+      'jcr:uuid': 'aaa286d5-2c2c-4669-816b-8d27e5449b2c'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-08T19:19:41.888Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:01.293Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:47.585Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'Seksmisja':
+    'description': '<p>Two scientists are placed in hibernation and should be awaken
+      after three years. But when they wake up, it turns out that it has been fifty
+      years, and they are the only two males in a new, underground society composed
+      exclusively of women.<br />
+
+      <br />
+
+      Why I like it: Cause every time I watch it i find new thing to laugh at.</p>
+
+      '
+    'genres': ['a022095b-9f01-45b4-81ff-cf94da5d3be2', 'e372d426-8fb9-4cc0-9d50-0d0a7493ecde']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/seksmisja.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': '59839dc9-38b5-4a03-8fb9-a6c3ee417ff4'
+    'link': 'https://www.imdb.com/title/tt0088083/'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-08T19:23:37.362Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:01.085Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:59.305Z
+    'mgnl:lastModified': 2022-10-07T14:13:47.610Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'Seksmisja'
+    'rating': 5
+    'type': '2dce6e0a-406e-45be-9f45-915416f523c6'
+    'user': 'Bartosz'
+    'comments':
+      'jcr:uuid': 'da14aa86-f61d-42bb-83b9-b4e5edd37905'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-08T19:23:37.375Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:01.086Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:47.610Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'The-Course-of-Love':
+    'description': '<p>The Course of Love is probably the only non-romantic romance
+      novel in the world.</p>
+
+
+      <p>Questioning the image of love in romanticism, the author wrote a story that
+      does not end when the main characters get married. Instead of living happily
+      ever after, the couple&rsquo;s lives and relationship unfold, portraying their
+      struggles, hopes, and desires. It&rsquo;s a very realistic romance novel that
+      can teach us quite a bit about life and love.</p>
+
+      '
+    'genres': ['a0265800-0e9f-4646-b370-c6e889488ef1', 'ba428ca5-33b3-454c-9748-0d775534d063']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/the-course-of-love.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': 'e741f64a-738f-4731-97dd-be4dd15e1797'
+    'link': 'https://www.goodreads.com/book/show/27845690-the-course-of-love'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-09T10:16:01.863Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:00.904Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:59.497Z
+    'mgnl:lastModified': 2022-10-07T14:13:47.635Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'The Course of Love'
+    'rating': 5
+    'type': 'b45e1c41-38a4-4fc8-9b73-0597cd15105e'
+    'user': 'Sandra'
+    'comments':
+      'jcr:uuid': 'b794eec9-bf77-4c7b-bb0f-0aea7905593b'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-09T10:16:01.878Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:00.904Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:47.635Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'It-Takes-Two':
+    'description': '<p>Well-deserved Game of the Year in 2021, It Takes Two tells
+      a story of two people on a brink of a divorce being magically forced to work
+      on their relationship and take a look at it from, let&rsquo;s say, a different
+      angle as well at their own home and the whole world around them.</p>
+
+
+      <p>The game requires two people to play together remotely or in &ldquo;couch
+      lan&rdquo; mode. Besides of the fun and uplifting plot, the game has amazing
+      amount of different mechanics with elements of platformers, shooters, puzzle
+      games and even action RPGs.</p>
+
+      '
+    'genres': ['b3b03341-c4b8-4513-acc9-2d2bb9199726']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/it-takes-two.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': '5f651063-ebff-48c9-9d09-68a8aa79eafe'
+    'link': 'https://www.ea.com/games/it-takes-two'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-09T18:13:21.628Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:00.749Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.1'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:59.696Z
+    'mgnl:lastModified': 2022-10-07T14:13:47.660Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'It Takes Two'
+    'rating': 5
+    'type': 'd278f35a-2c5b-438c-a981-302a43780c25'
+    'user': 'Sasha'
+    'comments':
+      'jcr:uuid': 'f4f433a2-93a6-4519-9423-130f3ebc9301'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-09T18:13:21.640Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:00.749Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:47.660Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'The-Wages-of-Fear-(Le-Salaire-de-la-Peur)':
+    'description': '<p>Filmed almost 70 years ago this movie hasn&rsquo;t aged a bit
+      and will make you bite your fingernails.</p>
+
+
+      <p>In an attempt to make the ends meet after getting stuck in Central America,
+      a group of people sets off onto an extremely dangerous mission of delivering
+      nitroglycerin cargo. They have to do it as fast as possible, they are not exactly
+      friends to each other, they drive trucks and the roads are quite beaten.</p>
+
+      '
+    'genres': ['b3b03341-c4b8-4513-acc9-2d2bb9199726', 'a989be61-8512-420e-9a9a-b73a33ece12d']
+    'image': 's3:dam.td8tdv78a6qyzt6p.saas.magnolia-cloud.com/images/the-wages-of-fear.jpg'
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:recommendation'
+    'jcr:uuid': 'a5226b83-f399-4ee5-8234-9fc7c4a82bd6'
+    'link': 'https://www.imdb.com/title/tt0046268'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-09T18:15:05.564Z
+    'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+    'mgnl:lastActivated': 2022-10-07T14:15:00.591Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastActivatedVersion': '1.2'
+    'mgnl:lastActivatedVersionCreated': 2022-10-07T14:14:59.914Z
+    'mgnl:lastModified': 2022-10-07T14:13:47.690Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'name': 'The Wages of Fear (Le Salaire de la Peur)'
+    'rating': 5
+    'type': '2dce6e0a-406e-45be-9f45-915416f523c6'
+    'user': 'Sasha'
+    'comments':
+      'jcr:uuid': '7a8f2567-1698-4e22-b067-ab4a56ec76e5'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-09T18:15:05.578Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T14:15:00.591Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-10-07T14:13:47.690Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'

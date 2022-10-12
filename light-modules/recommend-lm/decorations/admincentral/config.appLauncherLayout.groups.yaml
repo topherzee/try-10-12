@@ -1,0 +1,9 @@
+recommender:
+  name: Recommender
+  apps:
+    genres:
+      name: genres
+    recommendations:
+      name: recommendations
+    types:
+      name: types

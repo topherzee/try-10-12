@@ -1,0 +1,189 @@
+'recommend':
+  'hideInNav': false
+  'jcr:mixinTypes': ['mgnl:hasVersion']
+  'jcr:primaryType': 'mgnl:page'
+  'jcr:uuid': '3fdf35bc-a410-438e-8da1-c4c424dae5ab'
+  'mgnl:activationStatus': true
+  'mgnl:created': 2022-03-07T12:34:40.675Z
+  'mgnl:createdBy': 'superuser'
+  'mgnl:lastActivated': 2022-10-07T13:59:29.577Z
+  'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'mgnl:lastModified': 2022-10-07T13:59:01.160Z
+  'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+  'mgnl:template': 'recommend-lm:pages/basic'
+  'title': 'Latest Reviews'
+  'mediaType':
+    'hideInNav': false
+    'jcr:primaryType': 'mgnl:page'
+    'jcr:uuid': '6be93c40-9ecb-4c38-be45-661c6b21f3bf'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-08T09:21:16.114Z
+    'mgnl:createdBy': 'superuser'
+    'mgnl:lastActivated': 2022-10-07T13:59:30.050Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastModified': 2022-03-08T10:00:13.386Z
+    'mgnl:lastModifiedBy': 'superuser'
+    'mgnl:template': 'recommend-lm:pages/basic'
+    'title': 'Media type detail'
+    'main':
+      'jcr:primaryType': 'mgnl:area'
+      'jcr:uuid': '6d806e5f-2c6f-4a50-b8b6-774755f5406d'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-08T09:59:41.656Z
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastActivated': 2022-10-07T13:59:30.053Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-03-08T10:00:13.386Z
+      'mgnl:lastModifiedBy': 'superuser'
+      '0':
+        'jcr:primaryType': 'mgnl:component'
+        'jcr:uuid': 'c7189b93-fc42-46e2-a870-d60ea3aeb019'
+        'mgnl:activationStatus': true
+        'mgnl:created': 2022-03-08T09:59:41.666Z
+        'mgnl:createdBy': 'superuser'
+        'mgnl:lastActivated': 2022-10-07T13:59:30.058Z
+        'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+        'mgnl:lastModified': 2022-03-08T09:59:41.666Z
+        'mgnl:lastModifiedBy': 'superuser'
+        'mgnl:template': 'recommend-lm:components/mediaType/data'
+      '00':
+        'jcr:primaryType': 'mgnl:component'
+        'jcr:uuid': 'cb3147df-68e4-4018-b3be-7e032d34b4b6'
+        'mgnl:activationStatus': true
+        'mgnl:created': 2022-03-08T10:00:13.387Z
+        'mgnl:createdBy': 'superuser'
+        'mgnl:lastActivated': 2022-10-07T13:59:30.060Z
+        'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+        'mgnl:lastModified': 2022-03-08T10:00:13.387Z
+        'mgnl:lastModifiedBy': 'superuser'
+        'mgnl:template': 'recommend-lm:components/mediaType/list'
+  'newRecommendation':
+    'hideInNav': false
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'mgnl:page'
+    'jcr:uuid': '873f938c-8d00-4263-a985-fb99157d41f1'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-08T14:47:20.153Z
+    'mgnl:createdBy': 'superuser'
+    'mgnl:lastActivated': 2022-10-07T13:59:29.834Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastModified': 2022-03-08T14:53:50.426Z
+    'mgnl:lastModifiedBy': 'superuser'
+    'mgnl:template': 'recommend-lm:pages/basic'
+    'noCache': false
+    'title': 'New recommendation'
+    'main':
+      'jcr:primaryType': 'mgnl:area'
+      'jcr:uuid': 'ad40de71-543f-474f-bf66-dbcfc8a3bc5e'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-08T14:53:42.431Z
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastActivated': 2022-10-07T13:59:29.837Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-03-08T14:53:50.426Z
+      'mgnl:lastModifiedBy': 'superuser'
+      '0':
+        'jcr:primaryType': 'mgnl:component'
+        'jcr:uuid': '985fb33b-7b6e-40f0-825b-9230dca68e92'
+        'mgnl:activationStatus': true
+        'mgnl:created': 2022-03-08T14:53:42.449Z
+        'mgnl:createdBy': 'superuser'
+        'mgnl:lastActivated': 2022-10-07T13:59:29.840Z
+        'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+        'mgnl:lastModified': 2022-03-08T14:53:42.449Z
+        'mgnl:lastModifiedBy': 'superuser'
+        'mgnl:template': 'recommend-lm:components/recommendation/data'
+  'main':
+    'jcr:primaryType': 'mgnl:area'
+    'jcr:uuid': '7abf28d1-f39e-44af-bb51-b4e15f8d495f'
+    'mgnl:activationStatus': true
+    'mgnl:created': 2022-03-07T15:28:47.253Z
+    'mgnl:createdBy': 'superuser'
+    'mgnl:lastActivated': 2022-10-07T13:59:29.582Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+    'mgnl:lastModified': 2022-10-07T13:59:01.160Z
+    'mgnl:lastModifiedBy': 'christopher.zimmermann@magnolia-cms.com'
+    '0':
+      'description': '<p>Reviews and recommendations from Magnolians.</p>
+
+        '
+      'jcr:primaryType': 'mgnl:component'
+      'jcr:uuid': '1e90aea0-4e2c-4489-adad-0e4bca19404c'
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-09T13:36:11.918Z
+      'mgnl:createdBy': 'superuser'
+      'mgnl:lastActivated': 2022-10-07T13:59:29.585Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-03-09T13:36:11.918Z
+      'mgnl:lastModifiedBy': 'superuser'
+      'mgnl:template': 'recommend-lm:components/hero'
+      'title': 'May We Recommend'
+    '04':
+      'jcr:primaryType': 'mgnl:component'
+      'jcr:uuid': '7c1c51f8-0ba8-45c8-870d-41ebec4bcace'
+      'limit': 3
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-11T11:22:06.686Z
+      'mgnl:createdBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T13:59:29.588Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-03-11T12:49:11.325Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:template': 'recommend-lm:components/latest'
+      'title': 'Latest Recommendations'
+    '00':
+      'jcr:primaryType': 'mgnl:component'
+      'jcr:uuid': '87595c5d-933f-46d4-aa99-502f7ddf2d81'
+      'limit': 3
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-09T14:11:33.814Z
+      'mgnl:createdBy': 'javier.benito@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T13:59:29.590Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-03-09T14:11:33.814Z
+      'mgnl:lastModifiedBy': 'javier.benito@magnolia-cms.com'
+      'mgnl:template': 'recommend-lm:components/latest'
+      'title': 'Latest movies'
+      'type': '2dce6e0a-406e-45be-9f45-915416f523c6'
+    '01':
+      'jcr:primaryType': 'mgnl:component'
+      'jcr:uuid': '327e0cfd-426a-4b5b-bd97-b7d9e450f7b2'
+      'limit': 3
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-09T14:29:11.727Z
+      'mgnl:createdBy': 'javier.benito@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T13:59:29.593Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-03-09T14:29:11.727Z
+      'mgnl:lastModifiedBy': 'javier.benito@magnolia-cms.com'
+      'mgnl:template': 'recommend-lm:components/latest'
+      'title': 'Latest books'
+      'type': 'b45e1c41-38a4-4fc8-9b73-0597cd15105e'
+    '02':
+      'jcr:primaryType': 'mgnl:component'
+      'jcr:uuid': 'b156ccd4-3c76-4ed1-9142-8c150619c7b1'
+      'limit': 3
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-09T14:29:35.726Z
+      'mgnl:createdBy': 'javier.benito@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T13:59:29.595Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-03-09T14:29:35.726Z
+      'mgnl:lastModifiedBy': 'javier.benito@magnolia-cms.com'
+      'mgnl:template': 'recommend-lm:components/latest'
+      'title': 'Latest TV series'
+      'type': 'f9334c32-fa92-4973-8be8-c1d83c27381a'
+    '03':
+      'jcr:primaryType': 'mgnl:component'
+      'jcr:uuid': '5c59a6dd-d070-4e57-9fad-1c5b1b1eef39'
+      'limit': 3
+      'mgnl:activationStatus': true
+      'mgnl:created': 2022-03-11T10:23:08.241Z
+      'mgnl:createdBy': 'robert.siska@magnolia-cms.com'
+      'mgnl:lastActivated': 2022-10-07T13:59:29.597Z
+      'mgnl:lastActivatedBy': 'christopher.zimmermann@magnolia-cms.com'
+      'mgnl:lastModified': 2022-03-11T11:59:05.069Z
+      'mgnl:lastModifiedBy': 'christopher.zimmermann+hack2022@magnolia-cms.com'
+      'mgnl:template': 'recommend-lm:components/latest'
+      'title': 'Latest Places'
+      'type': 'dce779c9-f8c5-4aea-ac06-1791fba59d95'
