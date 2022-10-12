@@ -21,9 +21,9 @@ references:
     referenceResolver:
       class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
       targetWorkspace: genres
-  # - name: commentsReference
-  #   propertyName: comments
-  #   referenceResolver:
-  #     class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
-  #     targetWorkspace: comments
+  - name: commentsReference
+    propertyName: comments
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: comments
 
