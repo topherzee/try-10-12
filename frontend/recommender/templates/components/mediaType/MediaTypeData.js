@@ -7,6 +7,8 @@ import { mediaTypeByName } from "../../../src/api";
 export default function MediaTypeData() {
   const [mediaType, setMediaType] = useState({});
   const { query } = useRouter();
+  console.log("MediaTypeData Start." + (new Date()).getSeconds())
+
   useEffect(() => {
     mediaTypeByName(query.type, setMediaType);
   }, []);
@@ -14,6 +16,7 @@ export default function MediaTypeData() {
 
   return (
     <>
+    M:
       {mediaType.name ? <Card sx={{ maxWidth: 345, textAlign: 'center' }}>
         <CardContent>
           {mediaTypeLogo && <CardMedia>

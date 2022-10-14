@@ -6,6 +6,7 @@ import ReviewGrid from "../ReviewGrid";
 export default function MediaTypeList() {
   const [recommendations, setRecommendations] = useState([]);
   const { query } = useRouter();
+  console.log("MediaTypeList Start." + (new Date()).getSeconds())
   useEffect(() => {
     recommendationsByTypeData(query.type, setRecommendations);
   }, []);

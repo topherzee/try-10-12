@@ -27,6 +27,7 @@ const pagesApi = defaultBaseUrl + '/.rest/delivery/pages/v1';
 const templateAnnotationsApi = defaultBaseUrl + '/.rest/template-annotations/v1';
 
 export async function getServerSideProps(context) {
+  console.log("page. gSSP Start. " + (new Date()).getSeconds())
   const isPagesApp = context.query?.mgnlPreview || null;
     let props = {
     isPagesApp,
@@ -38,6 +39,8 @@ export async function getServerSideProps(context) {
   // Fetching page content
   const pagesRes = await fetch(pagesApi + props.pagePath);
   props.page = await pagesRes.json();
+
+  console.log("page. gSSP End." + (new Date()).getSeconds())
 
   return {
     props,
