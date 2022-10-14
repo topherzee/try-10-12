@@ -2,6 +2,7 @@ class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
 workspace: types
 depth: 1
 limit: 30
+bypassWorkspaceAcls: true
 nodeTypes:
   - mgnl:type
 
