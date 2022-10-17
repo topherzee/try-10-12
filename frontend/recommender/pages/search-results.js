@@ -9,7 +9,7 @@ export async function getServerSideProps(context) {
   let props = {};
 
   const term = context.query.q
-  const url = setURLSearchParams(`${defaultBaseUrl}/.rest/delivery/recommendations/v1`, `q=${term}`)
+  const url = setURLSearchParams(`${defaultBaseUrl}/delivery/recommendations/v1`, `q=${term}`)
   const response = await fetch(url);
   const json = await response.json();
   props.results = json.results;

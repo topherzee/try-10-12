@@ -1,11 +1,14 @@
 const HOST = process.env.NEXT_PUBLIC_MGNL_HOST;
 
-const GENRES_URL = HOST + '/.rest/delivery/genres/v1';
-const MEDIA_TYPES_URL = HOST + '/.rest/delivery/types/v1';
-const RECOMMENDATIONS_BY_TYPE_URL = HOST + '/.rest/delivery/recommendations/v1';
+const GENRES_URL = HOST + '/delivery/genres/v1';
+const MEDIA_TYPES_URL = HOST + '/delivery/types/v1';
+const RECOMMENDATIONS_BY_TYPE_URL = HOST + '/delivery/recommendations/v1';
+const SUB_ID = process.env.NEXT_PUBLIC_MGNL_SUB_ID
+const H = {headers:{"X-subid-token": SUB_ID}};
 
 const listEntities = async (url, dataCallback) => {
   try {
+    url = url + "&subid_token=" + SUB_ID
     const list = await fetch(url).then(res => res.json());
     if (!list.results) {
       console.error("There are results");
@@ -45,7 +48,8 @@ export const mediaTypeByName = (type, dataCallback) => {
 
 export const mediaTypeById = async (type, dataCallback) => {
   try {
-    const mediaTypes = await fetch(MEDIA_TYPES_URL + '?@jcr:uuid=' + type).then(res => res.json());
+    const url = MEDIA_TYPES_URL + '?@jcr:uuid=' + type;
+    const mediaTypes = await fetch(url,H).then(res => res.json());
     if (!mediaTypes.results || mediaTypes.results.length !== 1) {
       console.error("Media type not found or multiple media types found: " + type);
     } else {
@@ -65,7 +69,8 @@ export const latestByType = async (type, dataCallback) => {
     }else{
       url = RECOMMENDATIONS_BY_TYPE_URL + '?orderBy=mgnl:created%20desc'
     }
-    const recommendations = await fetch(url).then(res => res.json());
+    url = url + "&subid_token=" + SUB_ID
+    const recommendations = await fetch(url).then(res => res.json()); //TODO
     dataCallback(recommendations.results);
   } catch (error) {
     console.error("Request error", error);
@@ -75,12 +80,16 @@ export const latestByType = async (type, dataCallback) => {
 export const recommendationsByTypeData = async (type, dataCallback) => {
   try {
     if (type=='all'){
-      const recommendations = await fetch(RECOMMENDATIONS_BY_TYPE_URL + '?orderBy=mgnl:created%20desc&limit=10').then(res => res.json()); // TODO
+      const url = RECOMMENDATIONS_BY_TYPE_URL + '?orderBy=mgnl:created%20desc&limit=10'
+      const recommendations = await fetch(url, H).then(res => res.json()); // TODO
       // console.log(recommendations);
       dataCallback(recommendations.results);
     }else{
       mediaTypeByName(type, async (mediaType) => {
-        const recommendations = await fetch(RECOMMENDATIONS_BY_TYPE_URL + '?type=' + mediaType['@id'] + "&orderBy=mgnl:created%20desc&limit=10").then(res => res.json()); // TODO
+        var url = RECOMMENDATIONS_BY_TYPE_URL + '?type=' + mediaType['@id'] + "&orderBy=mgnl:created%20desc&limit=10"
+        url = url + "&subid_token=" + SUB_ID
+
+        const recommendations = await fetch(url).then(res => res.json()); // TODO
         // console.log(recommendations);
         dataCallback(recommendations.results);
       })

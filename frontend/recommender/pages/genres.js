@@ -4,12 +4,14 @@ import Grid from '@mui/material/Grid';
 import {Button, Card, CardActions, CardContent, Typography} from "@mui/material";
 
 const defaultBaseUrl = process.env.NEXT_PUBLIC_MGNL_HOST;
+const SUB_ID = process.env.NEXT_PUBLIC_MGNL_SUB_ID
+const H = {headers:{"X-subid-token": SUB_ID}};
 
 export async function getServerSideProps(context) {
     let props = {};
 
-    const url = `${defaultBaseUrl}/.rest/delivery/genres/v1`;
-    const response = await fetch(url);
+    const url = `${defaultBaseUrl}/delivery/genres/v1`;
+    const response = await fetch(url,H);
     const json = await response.json();
     props.results = json.results;
 

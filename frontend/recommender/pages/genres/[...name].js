@@ -3,20 +3,22 @@ import { Typography } from '@mui/material';
 import ReviewGrid from '../../templates/components/ReviewGrid';
 
 const defaultBaseUrl = process.env.NEXT_PUBLIC_MGNL_HOST;
+const SUB_ID = process.env.NEXT_PUBLIC_MGNL_SUB_ID
+const H = {headers:{"X-subid-token": SUB_ID}};
 
 const fetchGenre = async (name) => {
     console.log("fetchGenre path:" + name)
-    const url = `${defaultBaseUrl}/.rest/delivery/genres/v1/${name}`;
-    //const url = `${defaultBaseUrl}/.rest/delivery/genres/v1/Science-Fiction`;
+    const url = `${defaultBaseUrl}/delivery/genres/v1/${name}`;
+    //const url = `${defaultBaseUrl}/delivery/genres/v1/Science-Fiction`;
     console.log("genre: " + url)
-    const response = await fetch(url);
+    const response = await fetch(url, H);
     const json = await response.json();
     return json;
 }
 
 const fetchRecommendations = async (genre) => {
-    const url = `${defaultBaseUrl}/.rest/delivery/recommendations/v1/?genres=${genre['@id']}`;
-    const response = await fetch(url);
+    const url = `${defaultBaseUrl}/delivery/recommendations/v1/?genres=${genre['@id']}`;
+    const response = await fetch(url, H);
     const json = await response.json();
     return json.results;
 }

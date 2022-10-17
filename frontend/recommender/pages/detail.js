@@ -5,8 +5,11 @@ import {createMarkup} from "../utils";
 export async function getServerSideProps(context) {
   const resolvedUrl = context.resolvedUrl;
 
-  // const HOST = "https://author-onehob4efwibvpms.saas.magnolia-cloud.com"
-  const REC_URL = process.env.NEXT_PUBLIC_MGNL_HOST + '/.rest/delivery/recommendations/v1';
+  const REC_URL = process.env.NEXT_PUBLIC_MGNL_HOST + '/delivery/recommendations/v1';
+
+  const SUB_ID = process.env.NEXT_PUBLIC_MGNL_SUB_ID
+const H = {headers:{"X-subid-token": SUB_ID}};
+
 
   const id = context.query.id
   //console.log("id:" + id)
@@ -14,13 +17,15 @@ export async function getServerSideProps(context) {
   let props = {};
 
   const url = REC_URL + '?@jcr:uuid=' +  id;
+//   const url = REC_URL + '?cb=fds&@jcr:uuid=' +  id + "";
+  
   console.log('url:' + url)
 
-  const pagesRes = await fetch(url);
+  const pagesRes = await fetch(url,H);
   const res = await pagesRes.json();
   props = res.results[0];
 
-  //console.log("props:" + JSON.stringify(props,null,2))
+  console.log("props:" + JSON.stringify(props,null,2))
 
   return {
     props,
