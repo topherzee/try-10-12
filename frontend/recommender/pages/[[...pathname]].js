@@ -41,7 +41,9 @@ export async function getServerSideProps(context) {
   global.mgnlInPageEditor = props.isPagesAppEdit;
 
   // Fetching page content
-  const pagesRes = await fetch(pagesApi + props.pagePath + "?fd", H);
+  const url = pagesApi + props.pagePath
+  console.log("page: " + url)
+  const pagesRes = await fetch(url , H);
   props.page = await pagesRes.json();
 
   console.log("page. gSSP End." + (new Date()).getSeconds())

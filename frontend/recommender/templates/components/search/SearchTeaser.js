@@ -40,7 +40,7 @@ export default function SearchTeaser({ item }) {
                
             </CardContent>
             <CardActions>
-                <Button size="small" variant="contained" href={`/detail?id=${item['@id']}`}>
+                <Button size="small" variant="contained" href={`/details${item['@path']}`}>
                     Learn More
                 </Button>
             </CardActions>
