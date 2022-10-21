@@ -24,14 +24,14 @@ const config = {
 // Use different defaultBaseUrl to point to public instances
 const defaultBaseUrl = process.env.NEXT_PUBLIC_MGNL_HOST;
 const pagesApi = defaultBaseUrl + '/delivery/pages/v1';
-const templateAnnotationsApi = defaultBaseUrl + '/template-annotations/v1';
+const templateAnnotationsApi = defaultBaseUrl + '/environments/main' + '/template-annotations/v1';
 
 const SUB_ID = process.env.NEXT_PUBLIC_MGNL_SUB_ID
 const H = {headers:{"X-subid-token": SUB_ID}};
 
 
 export async function getServerSideProps(context) {
-  console.log("page. gSSP Start. " + (new Date()).getSeconds())
+  console.log("Main page. gSSP Start. " + (new Date()).getSeconds())
   const isPagesApp = context.query?.mgnlPreview || null;
     let props = {
     isPagesApp,
@@ -46,7 +46,7 @@ export async function getServerSideProps(context) {
   const pagesRes = await fetch(url , H);
   props.page = await pagesRes.json();
 
-  console.log("page. gSSP End." + (new Date()).getSeconds())
+  console.log("Main page. gSSP End." + (new Date()).getSeconds())
 
   return {
     props,
@@ -60,7 +60,9 @@ export default function Pathname(props) {
   // Fetch template annotations only inside Magnolia WYSIWYG
   useEffect(() => {
     async function fetchTemplateAnnotations() {
-      const templateAnnotationsRes = await fetch(templateAnnotationsApi + pagePath, H);
+      const url = templateAnnotationsApi + pagePath + "&subid_token=" + SUB_ID
+
+      const templateAnnotationsRes = await fetch(url, H);
       const templateAnnotationsJson = await templateAnnotationsRes.json();
 
       setTemplateAnnotations(templateAnnotationsJson);
