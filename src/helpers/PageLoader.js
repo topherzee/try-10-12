@@ -44,7 +44,10 @@ class PageLoader extends React.Component {
 
     let templateJson = null;
     // if (EditorContextHelper.inEditor()) {
-      const templateResponse = await fetch(apiBase + process.env.REACT_APP_MGNL_API_TEMPLATES + pagePath);
+
+      //const url = "https://delivery-preview.saas.magnolia-cloud.com/environments/main/template-annotations/v1/react-minimal?mgnlPreview=false&mgnlChannel=desktop&subid_token=td8tdv78a6qyzt6p"
+      const url = apiBase + process.env.REACT_APP_MGNL_API_TEMPLATES + pagePath
+      const templateResponse = await fetch(url);
       templateJson = await templateResponse.json();
       console.log('definition:', templateJson);
     // }

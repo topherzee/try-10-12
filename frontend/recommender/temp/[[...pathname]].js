@@ -33,59 +33,15 @@ const templateAnnotationsApi =
 const SUB_ID = process.env.NEXT_PUBLIC_MGNL_SUB_ID;
 const H = { headers: { "X-subid-token": SUB_ID } };
 
-const fetchAllPages = async () => {
-  const url = `${defaultBaseUrl}/delivery/pagenav/v1/recommend@nodes`;
-  const response = await fetch(url, H);
-  const json = await response.json();
-  console.log("****** json:" + JSON.stringify(json, null, 2));
-  //var results = json.results;
-  json.push({ "@name": "", "@path": "/recommend" });
-
-  return json;
-};
-
-export async function getStaticPaths() {
-  console.log("Main page.getStaticPaths() Start. ");
-
-  const posts = await fetchAllPages();
-
-  console.log("****** json2:" + JSON.stringify(posts, null, 2));
-
-  const paths = posts.map((post) => ({
-    params: { pathname: ["recommend", post["@name"]] },
-  }));
-
-  // const paths = [
-  //   {
-  //     params: {
-  //       pathname: ["recommend", "dev2"],
-  //     },
-  //   },
-  // ];
-
-  // { fallback: false } means other routes should 404
-  return { paths, fallback: false };
-}
-
-// export async function getServerSideProps(context) {
-export async function getStaticProps(context) {
-  var params = context.params;
-  console.log("Main page. getStaticProps Start. ");
-  //console.log("params: " + JSON.stringify(params, null, 2));
-
-  const name = params.pathname;
-  const decodedName = decodeURI(name);
-  const decodedName2 = decodedName.replace(",", "/");
-  console.log("decodedName2: " + decodedName2);
-
-  const isPagesApp = false; //context.query?.mgnlPreview || null;
+export async function getServerSideProps(context) {
+  console.log("Main page. gSSP Start. " + new Date().getSeconds());
+  const isPagesApp = context.query?.mgnlPreview || null;
   let props = {
     isPagesApp,
     isPagesAppEdit: isPagesApp === "false",
-    pagePath: "/" + decodedName2,
+    pagePath:
+      nodeName + context.resolvedUrl.replace(new RegExp(".*" + nodeName), ""), // Find out page path to fetch from Magnolia
   };
-  // nodeName + params.resolvedUrl.replace(new RegExp(".*" + nodeName), ""), // Find out page path to fetch from Magnolia
-
   global.mgnlInPageEditor = props.isPagesAppEdit;
 
   // Fetching page content
@@ -95,6 +51,18 @@ export async function getStaticProps(context) {
   props.page = await pagesRes.json();
 
   console.log("Main page. gSSP End." + new Date().getSeconds());
+  //WORKING HERE - how to expoort something to render.
+
+  // const element = React.createElement("EditablePage", {
+  //   content: props.page,
+  //   config: config,
+  //   templateAnnotations: null,
+  // });
+  // const elementString = ReactDOMServer.renderToString(element);
+  // props.element = elementString;
+  // console.log("Main page. gSSP element:" + elementString);
+
+  //<EditablePage content={page} config={config} templateAnnotations={templateAnnotations} />
 
   return {
     props,
