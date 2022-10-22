@@ -37,30 +37,28 @@ const fetchAllPages = async () => {
   const url = `${defaultBaseUrl}/delivery/pagenav/v1/recommend@nodes`;
   const response = await fetch(url, H);
   const json = await response.json();
-  console.log("****** json:" + JSON.stringify(json, null, 2));
+  //console.log("****** json:" + JSON.stringify(json, null, 2));
   //var results = json.results;
-  json.push({ "@name": "", "@path": "/recommend" });
+  // json.push({ "@name": "recommend", "@path": "/recommend" });
+  // json.push({ "@name": "", "@path": "/recommend" });
 
   return json;
 };
 
 export async function getStaticPaths() {
   console.log("Main page.getStaticPaths() Start. ");
-
   const posts = await fetchAllPages();
-
   console.log("****** json2:" + JSON.stringify(posts, null, 2));
-
   const paths = posts.map((post) => ({
     params: { pathname: ["recommend", post["@name"]] },
   }));
+  paths.push({ params: { pathname: ["recommend"] } });
+  paths.push({ params: { pathname: [""] } });
 
+  //params: { pathname: [post["@name"]] },
+  //p
   // const paths = [
-  //   {
-  //     params: {
-  //       pathname: ["recommend", "dev2"],
-  //     },
-  //   },
+  //   {params: {pathname: ["recommend", "dev2"],},},
   // ];
 
   // { fallback: false } means other routes should 404
@@ -73,18 +71,30 @@ export async function getStaticProps(context) {
   console.log("Main page. getStaticProps Start. ");
   //console.log("params: " + JSON.stringify(params, null, 2));
 
+  console.log("pathname:" + JSON.stringify(params.pathname, null, 2));
+
   const name = params.pathname;
   const decodedName = decodeURI(name);
-  const decodedName2 = decodedName.replace(",", "/");
-  console.log("decodedName2: " + decodedName2);
+  var decodedName2 = decodedName.replace(",", "/");
+  if (decodedName2 === "undefined") {
+    decodedName2 = "";
+  }
+  console.log("decodedName2 yo: " + decodedName2);
+  decodedName2 = "/" + decodedName2;
+  decodedName2 = decodedName2.replace(new RegExp(".*" + nodeName), "");
 
-  const isPagesApp = false; //context.query?.mgnlPreview || null;
+  console.log("decodedName2 B: " + decodedName2);
+
+  // const pagePath = "/" + decodedName2;
+  const pagePath = nodeName + "/" + decodedName2;
+  console.log("pagePath: " + pagePath);
+
+  const isPagesApp = true; //context.query?.mgnlPreview || null;
   let props = {
     isPagesApp,
     isPagesAppEdit: isPagesApp === "false",
-    pagePath: "/" + decodedName2,
+    pagePath: pagePath,
   };
-  // nodeName + params.resolvedUrl.replace(new RegExp(".*" + nodeName), ""), // Find out page path to fetch from Magnolia
 
   global.mgnlInPageEditor = props.isPagesAppEdit;
 
