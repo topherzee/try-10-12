@@ -54,8 +54,10 @@ export const mediaTypeById = async (type, dataCallback) => {
   }
 
   try {
-    const url = MEDIA_TYPES_URL + "?@jcr:uuid=" + type;
-    const mediaTypes = await fetch(url, H).then((res) => res.json());
+    var url = MEDIA_TYPES_URL + "?@jcr:uuid=" + type;
+    url = url + "&subid_token=" + SUB_ID;
+    const mediaTypes = await fetch(url).then((res) => res.json());
+    //const mediaTypes = await fetch(url, H).then((res) => res.json());
     if (!mediaTypes.results || mediaTypes.results.length !== 1) {
       console.error(
         "Media type not found or multiple media types found: " + type
