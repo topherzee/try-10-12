@@ -1,7 +1,8 @@
 class: info.magnolia.rendering.spa.renderer.SpaRenderableDefinition
 visible: true
 
-baseUrl: 'http://localhost:3000'
+# baseUrl: 'http://localhost:3000'
+baseUrl: https://try-10-12-2curjct89-magnolia-pd-integration-magnolia-cms.vercel.app/
 # routeTemplate: '/{{@path}}'
 routeTemplate: '/api/preview?slug=/{language}{{@path}}'
 
