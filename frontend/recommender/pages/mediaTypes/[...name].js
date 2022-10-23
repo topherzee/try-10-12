@@ -37,9 +37,11 @@ const fetchRecommendations = async (type) => {
 export async function getStaticPaths() {
   const posts = await fetchAllMediaTypes();
 
-  const paths = posts.map((post) => ({
+  var paths = posts.map((post) => ({
     params: { name: ["Types", post["@name"]] },
   }));
+
+  // paths.push({ params: { name: ["all"] } });
 
   //console.log("paths:" + JSON.stringify(paths, null, 2));
 

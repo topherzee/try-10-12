@@ -13,7 +13,7 @@ const defaultBaseUrl = process.env.NEXT_PUBLIC_MGNL_HOST;
 const SUB_ID = process.env.NEXT_PUBLIC_MGNL_SUB_ID;
 const H = { headers: { "X-subid-token": SUB_ID } };
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   let props = {};
 
   const url = `${defaultBaseUrl}/delivery/types/v1`;

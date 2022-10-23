@@ -32,9 +32,7 @@ export default function Latest(props) {
       <Button
         size="small"
         href={
-          mediaType
-            ? `/mediaType?type=${mediaType["name"]}`
-            : "/mediaType?type=all"
+          mediaType ? "/mediaTypes" + mediaType["@path"] : "/mediaTypes/all"
         }
       >
         See All
