@@ -85,27 +85,12 @@ export async function getStaticProps({ params }) {
   const decodedName = decodeURI(name);
   const decodedName2 = decodedName.replace(",", "/");
   props = await fetchRec(decodedName2);
-  console.log("props:" + JSON.stringify(props, null, 2));
+  // console.log("props:" + JSON.stringify(props, null, 2));
 
   return {
     props,
   };
 }
-
-//     export async function getServerSideProps(context) {
-//   const resolvedUrl = context.resolvedUrl;
-//   let props = {};
-
-//     const name = context.query.name;
-//     const decodedName = decodeURI(name)
-//     const decodedName2 = decodedName.replace(',','/')
-//     props = await fetchRec(decodedName2);
-//   console.log("props:" + JSON.stringify(props,null,2))
-
-//   return {
-//     props,
-//   };
-// }
 
 export default function Detail({
   name,
@@ -130,7 +115,7 @@ export default function Detail({
           {name}
         </Typography>
 
-        <Button size="large" href={"/mediaType?type=" + type.name}>
+        <Button size="large" href={"/mediaTypes" + type["@path"]}>
           {type.name}
         </Button>
 

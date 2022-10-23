@@ -1,25 +1,23 @@
 import React, { useState, useEffect } from "react";
-import * as ReactDOMServer from "react-dom/server";
 
 import { languages, getCurrentLanguage, setURLSearchParams } from "../utils";
 
 import { EditablePage } from "@magnolia/react-editor";
 import Basic from "../templates/pages/Basic";
 import ReviewGrid from "../templates/components/ReviewGrid";
-import MediaTypeData from "../templates/components/mediaType/MediaTypeData";
-import MediaTypeList from "../templates/components/mediaType/MediaTypeList";
+// import MediaTypeData from "../templates/components/mediaType/MediaTypeData";
+// import MediaTypeList from "../templates/components/mediaType/MediaTypeList";
 import RecommendationData from "../templates/components/recommendation/RecommendationData";
 import Latest from "../templates/components/Latest";
 import Hero from "../templates/components/Hero";
-import { render } from "react-dom";
 
 const nodeName = "/recommend";
 const config = {
   componentMappings: {
     "recommend-lm:pages/basic": Basic,
     "recommend-lm:components/reviewgrid": ReviewGrid,
-    "recommend-lm:components/mediaType/data": MediaTypeData,
-    "recommend-lm:components/mediaType/list": MediaTypeList,
+    // "recommend-lm:components/mediaType/data": MediaTypeData,
+    // "recommend-lm:components/mediaType/list": MediaTypeList,
     "recommend-lm:components/recommendation/data": RecommendationData,
     "recommend-lm:components/hero": Hero,
     "recommend-lm:components/latest": Latest,
@@ -27,16 +25,16 @@ const config = {
 };
 
 // Use different defaultBaseUrl to point to public instances
-const defaultBaseUrl = process.env.NEXT_PUBLIC_MGNL_HOST;
-const pagesApi = defaultBaseUrl + "/delivery/pages/v1";
-const templateAnnotationsApi =
-  defaultBaseUrl + "/environments/main" + "/template-annotations/v1";
+var defaultBaseUrl; //
+var pagesApi;
+var templateAnnotationsApi;
 
 const SUB_ID = process.env.NEXT_PUBLIC_MGNL_SUB_ID;
 const H = { headers: { "X-subid-token": SUB_ID } };
 
 const fetchAllPages = async () => {
-  const url = `${defaultBaseUrl}/delivery/pagenav/v1/recommend@nodes`;
+  const publicFetchUrl = process.env.NEXT_PUBLIC_MGNL_HOST;
+  const url = `${publicFetchUrl}/delivery/pagenav/v1/recommend@nodes`;
   const response = await fetch(url, H);
   const json = await response.json();
   //console.log("****** json:" + JSON.stringify(json, null, 2));
@@ -49,15 +47,22 @@ const fetchAllPages = async () => {
 
 //http://localhost:3000/api/preview?slug=/recommend/dev2&mgnlPreview=false&mgnlChannel=desktop
 //http://localhost:3000/api/preview?slug=/recommend/dev2
+//TODO: Should use paths instead of name in order to support other base paths.
 export async function getStaticPaths() {
   console.log("Main page.getStaticPaths() Start. ");
   const posts = await fetchAllPages();
   //console.log("****** json2:" + JSON.stringify(posts, null, 2));
-  const paths = posts.map((post) => ({
+  const pathsRec = posts.map((post) => ({
     params: { pathname: ["recommend", post["@name"]] },
   }));
-  paths.push({ params: { pathname: ["recommend"] } });
+  const pathsRaw = posts.map((post) => ({
+    params: { pathname: [post["@name"]] },
+  }));
+  var paths = pathsRec.concat(pathsRaw);
+
   paths.push({ params: { pathname: [""] } });
+
+  //console.log("paths:" + JSON.stringify(paths, null, 2));
 
   //params: { pathname: [post["@name"]] },
   //p
@@ -78,6 +83,15 @@ export async function getStaticProps(context) {
   //     (context.preview ? context.previewData.query.slug : "")
   // );
   console.log("Context:" + JSON.stringify(context, null, 2));
+
+  if (context.preview) {
+    defaultBaseUrl = process.env.NEXT_PUBLIC_MGNL_HOST_PREVIEW;
+  } else {
+    defaultBaseUrl = process.env.NEXT_PUBLIC_MGNL_HOST;
+  }
+  pagesApi = defaultBaseUrl + "/delivery/pages/v1";
+  templateAnnotationsApi =
+    defaultBaseUrl + "/environments/main" + "/template-annotations/v1";
 
   var resolvedUrl = context.preview
     ? context.previewData.query.slug
