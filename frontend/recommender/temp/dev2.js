@@ -49,28 +49,30 @@ const fetchAllPages = async () => {
 
 //http://localhost:3000/api/preview?slug=/recommend/dev2&mgnlPreview=false&mgnlChannel=desktop
 //http://localhost:3000/api/preview?slug=/recommend/dev2
-export async function getStaticPaths() {
-  console.log("Main page.getStaticPaths() Start. ");
-  const posts = await fetchAllPages();
-  //console.log("****** json2:" + JSON.stringify(posts, null, 2));
-  const paths = posts.map((post) => ({
-    params: { pathname: ["recommend", post["@name"]] },
-  }));
-  paths.push({ params: { pathname: ["recommend"] } });
-  paths.push({ params: { pathname: [""] } });
+// export async function getStaticPaths() {
+//   console.log("Dev2. Main. getStaticPaths Start." + new Date().getSeconds());
 
-  //params: { pathname: [post["@name"]] },
-  //p
-  // const paths = [
-  //   {params: {pathname: ["recommend", "dev2"],},},
-  // ];
+//   const posts = await fetchAllPages();
+//   //console.log("****** json2:" + JSON.stringify(posts, null, 2));
 
-  // { fallback: false } means other routes should 404
-  return { paths, fallback: false };
-}
+//   // let paths = posts.map((post) => ({
+//   //   params: { pathname: ["recommend", post["@name"]] },
+//   // }));
+//   // paths.push({ params: { pathname: ["recommend"] } });
+//   // paths.push({ params: { pathname: [""] } });
+
+//   //params: { pathname: [post["@name"]] },
+//   //p
+//   let paths = [{ params: { pathname: ["recommend", "dev2"] } }];
+
+//   // { fallback: false } means other routes should 404
+//   return { paths, fallback: true };
+// }
 
 // export async function getServerSideProps(context) {
 export async function getStaticProps(context) {
+  console.log("Dev2. Main. getStaticProps Start." + new Date().getSeconds());
+
   // console.log(
   //   "PREVIEW: " +
   //     context.preview +
@@ -79,17 +81,17 @@ export async function getStaticProps(context) {
   // );
   console.log("Context:" + JSON.stringify(context, null, 2));
 
-  var resolvedUrl = context.preview
-    ? context.previewData.query.slug
-    : context.params.pathname
-    ? "/" + context.params.pathname.join("/")
-    : "";
+  // var resolvedUrl = context.preview
+  //   ? context.previewData.query.slug
+  //   : context.params.pathname
+  //   ? "/" + context.params.pathname.join("/")
+  //   : "";
+  var resolvedUrl = "/recommend/dev2";
   resolvedUrl = resolvedUrl.replace(new RegExp(".*" + nodeName), "");
   console.log("resolvedUrl: " + resolvedUrl);
   const currentLanguage = getCurrentLanguage(resolvedUrl);
   const isDefaultLanguage = currentLanguage === languages[0];
-  //const isPagesApp = context.previewData?.query?.mgnlPreview || null;
-  const isPagesApp = true;
+  const isPagesApp = context.previewData?.query?.mgnlPreview || null;
 
   let props = {
     isPagesApp,
@@ -111,61 +113,13 @@ export async function getStaticProps(context) {
   props.pagePath = pagePath;
 
   // Fetching page content
-  // Fetching page content
   const url = pagesApi + pagePath;
   //setURLSearchParams(pagesApi + pagePath, 'lang=' + currentLanguage)
   console.log("page: " + url);
   const pagesRes = await fetch(url, H);
   props.page = await pagesRes.json();
 
-  // const pagesRes = await fetch(setURLSearchParams(pagesApi + pagePath, 'lang=' + currentLanguage));
-  // props.page = await pagesRes.json();
-
-  // Fetch template annotations only inside Magnolia WYSIWYG
-  // if (isPagesApp) {
-  //   const templateAnnotationsRes = await fetch(templateAnnotationsApi + pagePath);
-
-  //   props.templateAnnotations = await templateAnnotationsRes.json();
-  // }
-
-  // var params = context.params;
-  // console.log("Main page. getStaticProps Start. ");
-  // //console.log("params: " + JSON.stringify(params, null, 2));
-
-  // console.log("pathname:" + JSON.stringify(params.pathname, null, 2));
-
-  // const name = params.pathname;
-  // const decodedName = decodeURI(name);
-  // var decodedName2 = decodedName.replace(",", "/");
-  // if (decodedName2 === "undefined") {
-  //   decodedName2 = "";
-  // }
-  // console.log("decodedName2 yo: " + decodedName2);
-  // decodedName2 = "/" + decodedName2;
-  // decodedName2 = decodedName2.replace(new RegExp(".*" + nodeName), "");
-
-  // console.log("decodedName2 B: " + decodedName2);
-
-  // // const pagePath = "/" + decodedName2;
-  // const pagePath = nodeName + "/" + decodedName2;
-  // console.log("pagePath: " + pagePath);
-
-  // const isPagesApp = true; //context.query?.mgnlPreview || null;
-  // let props = {
-  //   isPagesApp,
-  //   isPagesAppEdit: isPagesApp === "false",
-  //   pagePath: pagePath,
-  // };
-
-  // global.mgnlInPageEditor = props.isPagesAppEdit;
-
-  // // Fetching page content
-  // const url = pagesApi + props.pagePath;
-  // console.log("page: " + url);
-  // const pagesRes = await fetch(url, H);
-  // props.page = await pagesRes.json();
-
-  console.log("Main page. gSSP End." + new Date().getSeconds());
+  console.log("Main. getStaticProps End." + new Date().getSeconds());
 
   return {
     props,
@@ -179,18 +133,6 @@ export default function Pathname(props) {
   // Fetch template annotations only inside Magnolia WYSIWYG
   useEffect(() => {
     async function fetchTemplateAnnotations() {
-      //const url = templateAnnotationsApi + pagePath + "&subid_token=" + SUB_ID
-      //const url = "https://delivery-preview.saas.magnolia-cloud.com/environments/main/template-annotations/v1/recommend2/dev1" //&subid_token=td8tdv78a6qyzt6p"
-
-      // FAILS const url = "https://delivery-preview.saas.magnolia-cloud.com/environments/main/template-annotations/v1/recommend2/dev1?subid_token=td8tdv78a6qyzt6p"
-
-      // FAILS const url = "https://delivery-preview.saas.magnolia-cloud.com/environments/main/template-annotations/v1/recommend2/dev1" //&subid_token=td8tdv78a6qyzt6p"
-
-      // WORKS const url = "https://author-" + SUB_ID + ".saas.magnolia-cloud.com/.rest/environments/main/template-annotations/v1/recommend2"
-      //const url = "https://author-" + SUB_ID + ".saas.magnolia-cloud.com/.rest/environments/main/template-annotations/v1/recommend2/dev1" //+ pagePath
-      //WORKS https://author-td8tdv78a6qyzt6p.saas.magnolia-cloud.com/.rest/environments/main/template-annotations/v1/recommend2/dev1?mgnlPreview=false&mgnlChannel=desktop
-      //WORKS https://author-td8tdv78a6qyzt6p.saas.magnolia-cloud.com/.rest/environments/main/template-annotations/v1/recommend2/dev1?STUFFF
-
       var url =
         "https://author-" +
         SUB_ID +
@@ -216,6 +158,7 @@ export default function Pathname(props) {
   return (
     <>
       {/* {props.element} */}
+      {console.log("render" + new Date().getSeconds())}
 
       {shouldRenderEditablePage && (
         <EditablePage

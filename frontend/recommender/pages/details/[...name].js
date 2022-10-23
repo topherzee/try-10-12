@@ -34,10 +34,14 @@ const fetchRecs = async () => {
 };
 
 export async function getStaticPaths() {
+  console.log("Detail getStaticPaths Start." + new Date().getSeconds());
+
   // When this is true (in preview environments) don't
   // prerender any static pages
   // (faster builds, but slower initial page load)
   if (process.env.SKIP_BUILD_STATIC_GENERATION) {
+    console.log("Detail getStaticPaths BAILOUT");
+
     return {
       paths: [],
       fallback: "blocking",

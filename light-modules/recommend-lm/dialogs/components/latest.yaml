@@ -19,4 +19,5 @@ form:
       datasource:
         $type: jcrDatasource
         workspace: types
+        rootPath: "/Types"
 
