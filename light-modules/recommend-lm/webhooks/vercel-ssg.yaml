@@ -1,0 +1,14 @@
+name: vercel-ssg
+# url: https://api.netlify.com/build_hooks/62bae21a62a3cf10f8ed2714
+url: https://webhook.site/de008183-ea20-41f4-873f-df7c7fbd286b
+method: POST
+
+events:
+  - name: contentPublished
+    eventType: Published
+    entity: Content
+    filter: "@nodeType = 'mgnl:page'"
+  - name: contentUnpublished
+    eventType: Unpublished
+    entity: Content
+    filter: "@nodeType = 'mgnl:page'"
