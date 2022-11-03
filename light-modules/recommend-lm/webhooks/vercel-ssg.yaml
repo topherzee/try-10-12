@@ -6,8 +6,8 @@ events:
   - name: contentPublished
     eventType: Published
     entity: Content
-    filter: "@nodeType = 'mgnl:page' or @workspace = 'recommendations'"
+    # filter: "@nodeType = 'mgnl:page' or @workspace = 'recommendations'"
   - name: contentUnpublished
     eventType: Unpublished
     entity: Content
-    filter: "@nodeType = 'mgnl:page' or @workspace = 'recommendations'"
+    # filter: "@nodeType = 'mgnl:page' or @workspace = 'recommendations'"
