@@ -1,7 +1,7 @@
 class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
 workspace: recommendations
 depth: 2
-limit: 50
+limit: 30
 bypassWorkspaceAcls: true
 nodeTypes:
   - mgnl:recommendation

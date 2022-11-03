@@ -27,8 +27,16 @@ const fetchMediaType = async (name) => {
 };
 
 const fetchRecommendations = async (type) => {
-  const url = `${defaultBaseUrl}/delivery/recommendations/v1/?type=${type["@id"]}`;
-  console.log("fetchRecommendations:" + url + "&subid_token=" + SUB_ID);
+  const url = `${defaultBaseUrl}/delivery/recommendations/v1/?type=${type["@id"]}&orderBy=mgnl:created%20desc`;
+  // console.log("fetchRecommendations:" + url + "&subid_token=" + SUB_ID);
+  const response = await fetch(url, H);
+  const json = await response.json();
+  return json.results;
+};
+
+const fetchAllRecommendations = async () => {
+  const url = `${defaultBaseUrl}/delivery/recommendations/v1/?orderBy=mgnl:created%20desc`;
+  // console.log("fetchRecommendations:" + url + "&subid_token=" + SUB_ID);
   const response = await fetch(url, H);
   const json = await response.json();
   return json.results;
@@ -41,7 +49,7 @@ export async function getStaticPaths() {
     params: { name: ["Types", post["@name"]] },
   }));
 
-  // paths.push({ params: { name: ["all"] } });
+  paths.push({ params: { name: ["all"] } });
 
   //console.log("paths:" + JSON.stringify(paths, null, 2));
 
@@ -51,14 +59,24 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   let props = {};
-  console.log("params:" + JSON.stringify(params, null, 2));
+  // console.log("mediaTypes - params:" + JSON.stringify(params, null, 2));
 
   const name = params.name;
   const decodedName = decodeURI(name);
   const decodedName2 = decodedName.replace(",", "/");
-  props.mediaType = await fetchMediaType(decodedName2);
+
+  // console.log("mediaTypes - decodedName2: " + decodedName2);
+
+  if (decodedName2 === "all") {
+    props.mediaType = { name: "Latest" };
+    // props.mediaType.name = "All";
+    props.results = await fetchAllRecommendations();
+  } else {
+    props.mediaType = await fetchMediaType(decodedName2);
+    props.results = await fetchRecommendations(props.mediaType);
+  }
+
   // console.log("mediaType:" + JSON.stringify(props.mediaType, null, 2));
-  props.results = await fetchRecommendations(props.mediaType);
 
   return {
     props,

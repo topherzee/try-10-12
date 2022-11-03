@@ -47,6 +47,7 @@ export const mediaTypeByName = (type, dataCallback) => {
 };
 
 export const mediaTypeById = async (type, dataCallback) => {
+  console.log("mediaTypeByID type: " + type);
   if (type === undefined) {
     console.log("mediaTypeByID undefined");
     dataCallback({ name: "All" });
