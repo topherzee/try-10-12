@@ -1,0 +1,10 @@
+$type: deliveryEndpoint_v2
+workspace: norsu-activities
+depth: 2
+limit: 50
+bypassWorkspaceAcls: true
+# nodeTypes:
+#   - mgnl:genre
+nodeTypeMappings:
+  'mgnl:page': info.magnolia.pages.rest.norsu.PageNodeTypeResolver
+  'activity': info.magnolia.pages.rest.norsu.PageNodeTypeResolver

@@ -18,3 +18,22 @@ model:
     email:
       label: Email
       multiple: true
+    guides:
+      type: Guide
+      label: Guides
+      multiple: true
+
+  subModels:
+    - name: Guide
+      properties:
+        - name: name
+          label: Name
+        - name: phoneNumber
+          label: Phone Number
+  # subModels:
+  #   name: Guide
+  #   properties:
+  #     name:
+  #       label: Name
+  #     phoneNumber:
+  #       label: Phone Number
