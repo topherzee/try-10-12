@@ -1,8 +1,8 @@
 !content-type:activity
 name: activities-app
-label: Activities 3
+label: Activities
 
 #Optionally override any of the app configuration supplied by the content type.
 subApps:
   detail:
-    label: Activity Detail 2
+    label: Activity Detail

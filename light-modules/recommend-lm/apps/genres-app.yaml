@@ -1,6 +1,6 @@
 !content-type:genre
 name: genres-app
-label: Genres 4
+label: Genres
 
 subApps:
   detail:
