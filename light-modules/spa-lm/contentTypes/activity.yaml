@@ -1,6 +1,7 @@
 datasource:
   workspace: activities
   autoCreate: true
+
 model:
   nodeType: activity
   properties:
@@ -15,14 +16,18 @@ model:
       required: false
     image:
       type: asset
-    # content2:
-    #   type: richText
-    #   label: Description
-    #   i18n: true
-    #   required: false
-    # content:
-    #   type: richText
-    #   label: Description
-    #   i18n: true
-    #   required: false
+    email:
+      label: Email
+      multiple: true
+    guides:
+      type: Guide
+      label: Guides
+      multiple: true
 
+  subModels:
+    - name: Guide
+      properties:
+        - name: name
+          label: Name
+        - name: phoneNumber
+          label: Phone Number
