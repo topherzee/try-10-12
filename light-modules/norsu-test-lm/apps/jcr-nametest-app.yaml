@@ -1,0 +1,8 @@
+!content-type:jcr-nametest
+name: jcr-nametest-app
+label: JCR NameTest
+
+#Optionally override any of the app configuration supplied by the content type.
+subApps:
+  detail:
+    label: JCR Nametest
