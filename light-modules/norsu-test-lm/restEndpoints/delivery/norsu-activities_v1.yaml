@@ -2,7 +2,7 @@ $type: deliveryEndpoint_v2
 workspace: norsu-activities
 depth: 2
 limit: 50
-bypassWorkspaceAcls: true
+# bypassWorkspaceAcls: true
 # nodeTypes:
 #   - mgnl:genre
 
