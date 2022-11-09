@@ -1,0 +1,12 @@
+datasource:
+  $type: norsuContentTypeDatasource
+  workspace: norsu-nametest
+  autoCreate: true
+  
+model:
+  nodeType: nametest
+  properties:
+    title:
+      label: Title
+      i18n: true
+      required: true
