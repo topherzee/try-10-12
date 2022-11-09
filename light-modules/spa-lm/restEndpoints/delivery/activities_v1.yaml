@@ -1,7 +1,8 @@
 class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
 workspace: activities
 bypassWorkspaceAcls: true
-
+depth: 2
+limit: 50
 
 references:
   - name: assetReference
