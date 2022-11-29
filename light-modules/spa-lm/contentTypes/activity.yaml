@@ -15,11 +15,11 @@ model:
       required: false
     image:
       type: asset
-    # content2:
-    #   type: richText
-    #   label: Description
-    #   i18n: true
-    #   required: false
+    content2:
+      type: richText
+      label: Content2
+      i18n: true
+      required: false
     # content:
     #   type: richText
     #   label: Description
