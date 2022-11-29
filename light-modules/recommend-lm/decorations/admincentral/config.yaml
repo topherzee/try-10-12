@@ -1,11 +1,11 @@
 layout:
+  groups:
+    - name: act_group
+       label: Activities
+       apps:
+            - name: activities-app
   rows:
-    - cssClass: editor
-      groups:
-        - name: recommender
-          label: Recommender
-          apps:
-            - genres
-            - recommendations
-            - types
-
+    - name: three
+      groups: !override
+        custom: custom
+        recommend: act_group
