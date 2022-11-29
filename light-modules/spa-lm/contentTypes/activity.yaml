@@ -17,7 +17,7 @@ model:
       type: asset
     content2:
       type: richText
-      label: Content2
+      label: Content3
       i18n: true
       required: false
     # content:
