@@ -1,0 +1,13 @@
+layout:
+  groups:
+    - name: recommend
+       label: May we recommend
+       apps:
+            - name: <app-name>
+            - name: <app-name>
+  rows:
+    - name: three
+      groups: !override
+        custom: custom
+        recommend: recommend
+
