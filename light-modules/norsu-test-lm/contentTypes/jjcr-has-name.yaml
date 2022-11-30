@@ -1,0 +1,11 @@
+datasource:
+  workspace: jcr-has-name
+  autoCreate: true
+  
+model:
+  nodeType: nametest
+  properties:
+    name:
+      label: Name Prop
+    thing:
+      label: Thing

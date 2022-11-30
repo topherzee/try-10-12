@@ -1,0 +1,8 @@
+!content-type:jcr-has-name
+name: jcr-has-name-app
+label: JCR Has Name
+
+#Optionally override any of the app configuration supplied by the content type.
+subApps:
+  detail:
+    label: JCR Has Name
