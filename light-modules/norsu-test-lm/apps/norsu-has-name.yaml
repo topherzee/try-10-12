@@ -1,0 +1,8 @@
+!content-type:norsu-nametest
+name: norsu-has-name-app
+label: Norsu Has Name
+
+#Optionally override any of the app configuration supplied by the content type.
+subApps:
+  detail:
+    label: Norsu Has Name
