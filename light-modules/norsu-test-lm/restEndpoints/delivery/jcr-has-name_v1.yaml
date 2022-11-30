@@ -1,0 +1,6 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+workspace: jcr-has-name
+bypassWorkspaceAcls: true
+depth: 2
+limit: 50
+
