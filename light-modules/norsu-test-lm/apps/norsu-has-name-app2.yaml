@@ -1,8 +1,8 @@
 !content-type:norsu-has-name
-name: norsu-has-name-app
-label: Norsu Has Name
+name: norsu-has-name-app2
+label: Norsu Has Name 2
 
 #Optionally override any of the app configuration supplied by the content type.
 subApps:
   detail:
-    label: Norsu Has Name
+    label: Norsu Has Name 2
