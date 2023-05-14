@@ -9,3 +9,6 @@ model:
       label: Name Prop
     thing:
       label: Thing
+    nametest:
+      label: Name Link
+      type: reference:jcr-nametest
