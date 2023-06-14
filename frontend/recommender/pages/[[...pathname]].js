@@ -128,9 +128,12 @@ export async function getStaticProps(context) {
   // Fetching page content
   const url = pagesApi + pagePath;
   //setURLSearchParams(pagesApi + pagePath, 'lang=' + currentLanguage)
-  console.log("page: " + url);
+  console.log("page: ", url, " H:", H);
   const pagesRes = await fetch(url, H);
+  console.log("a");
   props.page = await pagesRes.json();
+  console.log("b");
+  // console.log(props.page);
 
   // const pagesRes = await fetch(setURLSearchParams(pagesApi + pagePath, 'lang=' + currentLanguage));
   // props.page = await pagesRes.json();
@@ -193,6 +196,7 @@ export default function Pathname(props) {
   // Fetch template annotations only inside Magnolia WYSIWYG
   useEffect(() => {
     async function fetchTemplateAnnotations() {
+      console.log("fetchTemplateAnnotations()");
       //const url = templateAnnotationsApi + pagePath + "&subid_token=" + SUB_ID
       //const url = "https://delivery-preview.saas.magnolia-cloud.com/environments/main/template-annotations/v1/recommend2/dev1" //&subid_token=td8tdv78a6qyzt6p"
 
@@ -205,14 +209,23 @@ export default function Pathname(props) {
       //WORKS https://author-td8tdv78a6qyzt6p.saas.magnolia-cloud.com/.rest/environments/main/template-annotations/v1/recommend2/dev1?mgnlPreview=false&mgnlChannel=desktop
       //WORKS https://author-td8tdv78a6qyzt6p.saas.magnolia-cloud.com/.rest/environments/main/template-annotations/v1/recommend2/dev1?STUFFF
 
-      var url =
-        "https://author-" +
-        SUB_ID +
-        ".saas.magnolia-cloud.com/.rest/environments/main/template-annotations/v1" +
-        pagePath;
-      url = url.split("?")[0] + "?STUFFF";
+      // var url =
+      //   "https://author-" +
+      //   SUB_ID +
+      //   ".saas.magnolia-cloud.com/.rest/environments/main/template-annotations/v1" +
+      //   pagePath;
 
-      console.log("templataes URL: " + url);
+      // var previewBaseUrl = process.env.NEXT_PUBLIC_MGNL_HOST_PREVIEW;
+      var previewBaseUrl = "https://delivery-preview.saas.magnolia-cloud.com";
+
+      var templateAnnotationsApi =
+        previewBaseUrl + "/environments/main" + "/template-annotations/v1";
+
+      var url = templateAnnotationsApi + pagePath;
+      url = url + "?DSDS";
+      //url = url.split("?")[0] + "?STUFFF";
+
+      console.log("templates URL: " + url);
       const templateAnnotationsRes = await fetch(url, H);
       // const templateAnnotationsRes = await fetch(url);
       const templateAnnotationsJson = await templateAnnotationsRes.json();

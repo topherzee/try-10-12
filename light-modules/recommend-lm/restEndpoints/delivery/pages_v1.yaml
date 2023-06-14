@@ -5,4 +5,4 @@ nodeTypes:
 includeSystemProperties: true
 bypassWorkspaceAcls: true
 limit: 50
-depth: 10
+depth: 11
